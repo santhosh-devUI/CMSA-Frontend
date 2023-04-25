@@ -24,6 +24,9 @@ import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
 
+import { StudentRegistrationComponent } from './student/student-registration/student-registration.component';
+import { HomeComponent } from './welcome-page/home/home.component';
+import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +42,10 @@ import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.
     AddOfficerComponent,
     EditOfficerComponent,
     DeleteOfficerComponent,
-    ViewOfficerComponent
+    ViewOfficerComponent,
+    StudentRegistrationComponent,
+    HomeComponent,
+    LoginsPageComponent
   ],
   imports: [
     BrowserModule,
