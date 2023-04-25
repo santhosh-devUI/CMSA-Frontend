@@ -23,6 +23,8 @@ import { AddOfficerComponent } from './admin/officer/add-officer/add-officer.com
 import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.component';
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
 
 import { StudentRegistrationComponent } from './student/student-registration/student-registration.component';
 import { HomeComponent } from './welcome-page/home/home.component';
@@ -50,6 +52,9 @@ import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.comp
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
     BrowserAnimationsModule,
     MaterialModule,
     LayoutModule,
