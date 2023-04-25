@@ -29,6 +29,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { StudentRegistrationComponent } from './student/student-registration/student-registration.component';
 import { HomeComponent } from './welcome-page/home/home.component';
 import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.component';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
 
 @NgModule({
   declarations: [
@@ -47,7 +48,8 @@ import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.comp
     ViewOfficerComponent,
     StudentRegistrationComponent,
     HomeComponent,
-    LoginsPageComponent
+    LoginsPageComponent,
+    StudentDashboardComponent
   ],
   imports: [
     BrowserModule,
