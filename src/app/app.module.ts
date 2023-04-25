@@ -19,6 +19,10 @@ import { MatButtonModule } from '@angular/material/button';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
+import { AddOfficerComponent } from './admin/officer/add-officer/add-officer.component';
+import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.component';
+import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
+import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
 
 
 @NgModule({
@@ -31,7 +35,11 @@ import { MatListModule } from '@angular/material/list';
     PlacementLoginComponent,
     StudentLoginComponent,
     SuperadminLoginComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AddOfficerComponent,
+    EditOfficerComponent,
+    DeleteOfficerComponent,
+    ViewOfficerComponent
   ],
   imports: [
     BrowserModule,
