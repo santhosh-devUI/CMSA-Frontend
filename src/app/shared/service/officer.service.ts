@@ -2,15 +2,18 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class OfficerService {
-super=['heelo', "nolll"]
-  constructor(
-    private http:HttpClient
-  ) { }
+  super = ['heelo', 'nolll'];
+  constructor(private http: HttpClient) {}
 
-  officerLogin(e:any,m:any,t:any){
-    return this.http.get(`http://localhost:3000/officer/login?empid=${e}&mobileno=${m}&typeofemployee=${t}`)
+  officerLogin(e: any, m: any, t: any) {
+    return this.http.get(
+      `http://localhost:3000/officer/login?empid=${e}&mobileno=${m}&typeofemployee=${t}`
+    );
+  }
+  addEmployees(data: any) {
+    return this.http.post('http://localhost:3000/officer/addemp', data);
   }
 }

@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { OfficerService } from 'src/app/shared/service/officer.service';
 
 @Component({
@@ -11,7 +12,8 @@ export class OfficerLoginComponent implements OnInit {
   officerloginForm!:FormGroup
   constructor(
     private fb:FormBuilder,
-    private officerService:OfficerService
+    private officerService:OfficerService,
+    private router:Router
   ) { }
 
   ngOnInit(): void {
@@ -30,7 +32,7 @@ export class OfficerLoginComponent implements OnInit {
        this.officerService.officerLogin(emp,mobile,toe).subscribe((res:any)=>{
         if(res){
           alert('success')
-          console.log(res);
+ this.router.navigate(['/officer-dashboard'])
           
         }else{
           alert('login failed')
