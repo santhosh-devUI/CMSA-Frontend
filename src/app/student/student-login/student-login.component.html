@@ -6,6 +6,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 </nav>
+<form [formGroup]="studentLogin" (ngSubmit)="submit()">
 <div class="container-fluid main">
     <div class="row">
         <div class="col-sm-7 student">
@@ -27,16 +28,21 @@
                                 <h1 class="title mb-4">Student Login</h1>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Email address</label>
-                                <input type="email" class="form-control">
-
+                                <label class="form-label">Hallticket No.</label>
+                                <input [class.is-invalid]= "hallticket?.invalid && hallticket?.touched" type="email" class="form-control" formControlName="hallticket">
+                                    <div *ngIf= "hallticket?.invalid && hallticket?.touched">
+                                    <small class="text-danger" *ngIf= "hallticket?.errors?.['required']">hallticket number required</small>
+                                    </div>
                             </div>
                             <div class="mb-3">
-                                <label class="form-label">Password</label>
-                                <input type="password" class="form-control">
+                                <label class="form-label">Mobile No.</label>
+                                <input [class.is-invalid]= "mobileno?.invalid && mobileno?.touched" type="text" class="form-control" formControlName="mobileno">
+                                <div *ngIf= "mobileno?.invalid && mobileno?.touched">
+                                    <small class="text-danger" *ngIf= "mobileno?.errors?.['required']">Mobileno. required</small>
+                                </div>
                             </div>
                             <div class="mb-2 mt-2 text-center">
-                                <button type="submit" class="btn btn-blue">Login</button>
+                                <button type="submit" class="btn btn-blue" [disabled]="studentLogin.invalid">Login</button>
                             </div>
                             <div class="row mb-2">
                                 <a routerLink="/student-reg">Don't have an account? Register</a>
@@ -48,3 +54,4 @@
         </div>
     </div>
 </div>
+</form>

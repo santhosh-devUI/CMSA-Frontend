@@ -1,0 +1,119 @@
+<h1>Student Profile</h1>
+
+<section style="background-color: #eee;">
+    <div class="container py-5">
+      <div class="row">
+        <div class="col-lg-4">
+          <div class="card mb-4">
+            <div class="card-body text-center">
+              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-chat/ava3.webp" alt="avatar"
+                class="rounded-circle img-fluid" style="width: 150px;">
+              <h3 class="my-3">{{student.firstname}}&nbsp;{{student.lastname}}</h3>
+          
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-8">
+          <div class="card mb-4">
+            <div class="card-body">
+                <div class="row">
+            <div class="col-sm-6">
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Full Name </p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{student.firstname}}&nbsp;{{student.lastname}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Gender </p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{student.gender}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Date of Birth</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{student.dob}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Mobile</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{student.mobileno}}</p>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <div class="col-sm-3">
+                  <p class="mb-0">Address</p>
+                </div>
+                <div class="col-sm-9">
+                  <p class="text-muted mb-0">{{student.address}},{{student.city}},{{student.state}}</p>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Email Id</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{student.emailid}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Religion</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{student.religion}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Hallticket No.</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{student.hallticket}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Caste</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{student.caste}}</p>
+                  </div>
+                </div>
+                <hr>
+                <div class="row">
+                  <div class="col-sm-3">
+                    <p class="mb-0">Emcet Rank</p>
+                  </div>
+                  <div class="col-sm-9">
+                    <p class="text-muted mb-0">{{student.eamcetrank}}</p>
+                  </div>
+                </div>
+              </div>
+        </div>
+        </div>
+          </div>
+          
+        </div>
+      </div>
+    </div>
+  </section>
