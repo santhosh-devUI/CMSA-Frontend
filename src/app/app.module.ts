@@ -30,6 +30,14 @@ import { StudentRegistrationComponent } from './student/student-registration/stu
 import { HomeComponent } from './welcome-page/home/home.component';
 import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.component';
 import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
+import { OfficerDashboardComponent } from './officer/officer-dashboard/officer-dashboard.component';
+import { OfficerHomeComponent } from './officer/officer-home/officer-home.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { OfficerAddEmployeeComponent } from './officer/officer-add-employee/officer-add-employee.component';
+import { OfficerAddFeeComponent } from './officer/officer-add-fee/officer-add-fee.component';
+import { OfficerAddStudentComponent } from './officer/officer-add-student/officer-add-student.component';
 
 @NgModule({
   declarations: [
@@ -49,7 +57,12 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
     StudentRegistrationComponent,
     HomeComponent,
     LoginsPageComponent,
-    StudentDashboardComponent
+    StudentDashboardComponent,
+    OfficerDashboardComponent,
+    OfficerHomeComponent,
+    OfficerAddEmployeeComponent,
+    OfficerAddFeeComponent,
+    OfficerAddStudentComponent
   ],
   imports: [
     BrowserModule,
@@ -64,7 +77,10 @@ import { StudentDashboardComponent } from './student/student-dashboard/student-d
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
