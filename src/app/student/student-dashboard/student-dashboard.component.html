@@ -3,20 +3,20 @@
     
 
     <div class="col-sm-8">
-    <a class="navbar-brand   col-lg-2  ms-4 fs-2 " >STUDENT DASH-BOARD</a>
+    <a class="navbar-brand   col-lg-2  ms-4 fs-1 " >STUDENT DASH-BOARD</a>
     <button class="navbar-toggler  d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     </div>
 
       <div class="col-sm-2">
-        <input class="form-control w-75  rounded-top " type="text" placeholder="Search" ><i class="bi bi-search"></i>
+        <input class="form-control w-100  rounded-top " type="text" placeholder="Search" >
       </div>
       
       <div class="col-sm-1">
         <div class="navbar-nav">
           <div class="nav-item  text-nowrap">
-           <button class=" btn btn-primary ">Signout</button>
+           <button class=" btn btn-warning ">Signout</button>
        </div>
        </div>
       </div>
@@ -26,47 +26,51 @@
   
   <div class="container-fluid">
     <div class="row">
-      <nav id="sidebarMenu" class="col-md-3 col-lg-2 d-md-block bg-body-tertiary sidebar collapse">
-        <div class="position-sticky pt-3 sidebar-sticky">
+      <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block bg-body-tertiary  fs-5 sidebar collapse">
+        <div class="position-sticky pt-4 sidebar-sticky">
           <ul class="nav flex-column">
             <li class="nav-item">
-              <a class="nav-link active" aria-current="page" >
+              <a class="nav-link active" aria-current="page" routerLink="view-profile">
                 <span data-feather="home" class="align-text-bottom"></span>
-                Dashboard
+               View-Profile
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link" routerLink="view-timetable">
                 <span data-feather="file" class="align-text-bottom"></span>
-                Orders
+              View-Timetable
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link" routerLink="view-marks">
                 <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                Products
+                View-Marks
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link" routerLink="view-fee">
                 <span data-feather="users" class="align-text-bottom"></span>
-                Customers
+               View-Fee
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link">
+              <a class="nav-link" routerLink="view-books">
                 <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-                Reports
+              View-Books
               </a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" >
+              <a class="nav-link" routerLink="update-profile">
                 <span data-feather="layers" class="align-text-bottom"></span>
-                Integrations
+                Update-Profile
               </a>
             </li>
           </ul>
          </div>
         </nav>
+        <div class="col-md-9 ms-2">
+          <router-outlet></router-outlet>
+        </div>
     </div>
     </div>
+    

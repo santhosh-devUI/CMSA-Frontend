@@ -14,6 +14,13 @@ import { OfficerHomeComponent } from './officer/officer-home/officer-home.compon
 import { OfficerAddEmployeeComponent } from './officer/officer-add-employee/officer-add-employee.component';
 import { OfficerAddFeeComponent } from './officer/officer-add-fee/officer-add-fee.component';
 import { OfficerAddStudentComponent } from './officer/officer-add-student/officer-add-student.component';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
+import { ViewProfileComponent } from './student/view-profile/view-profile.component';
+import { ViewMarksComponent } from './student/view-marks/view-marks.component';
+import { ViewFeeComponent } from './student/view-fee/view-fee.component';
+import { ViewBooksComponent } from './student/view-books/view-books.component';
+import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
+import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -37,6 +44,14 @@ const routes: Routes = [
       { path: 'officer-add-fee', component: OfficerAddFeeComponent },
     ],
   },
+  { path:'student-dashboard',component:StudentDashboardComponent, children:[
+    { path:'view-profile',component:ViewProfileComponent},
+    { path:'view-marks',component:ViewMarksComponent},
+    { path:'view-fee',component:ViewFeeComponent},
+    { path:'view-books',component:ViewBooksComponent},
+    { path:'update-profile',component:UpdateProfileComponent},
+    { path:'view-timetable',component:ViewTimetableComponent}
+  ]}
 ];
 
 @NgModule({

@@ -41,6 +41,12 @@ import { OfficerAddStudentComponent } from './officer/officer-add-student/office
 import { StudentRecordsComponent } from './admin/students-list/student-records/student-records.component';
 import { FacultyListComponent } from './admin/faculty-list/faculty-list.component';
 import { FeeDetailsComponent } from './admin/fee-details/fee-details.component';
+import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
+import { ViewMarksComponent } from './student/view-marks/view-marks.component';
+import { ViewFeeComponent } from './student/view-fee/view-fee.component';
+import { ViewBooksComponent } from './student/view-books/view-books.component';
+import { ViewProfileComponent } from './student/view-profile/view-profile.component';
+import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
 
 @NgModule({
   declarations: [
@@ -68,7 +74,13 @@ import { FeeDetailsComponent } from './admin/fee-details/fee-details.component';
     OfficerAddStudentComponent,
     StudentRecordsComponent,
     FacultyListComponent,
-    FeeDetailsComponent
+    FeeDetailsComponent,
+    ViewTimetableComponent,
+    ViewMarksComponent,
+    ViewFeeComponent,
+    ViewBooksComponent,
+    ViewProfileComponent,
+    UpdateProfileComponent
   ],
   imports: [
     BrowserModule,
