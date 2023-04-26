@@ -1,0 +1,286 @@
+<!-- <div class="container">
+    <h2 class="head mt-4 mb-2">Faculty</h2>
+
+    <div class="table-responsive text-nowrap mt-4">
+        <table class="table mt-1">
+            <thead>
+                <tr class="heading">
+                    <th scope="col">S.NO</th>
+                    <th scope="col">ID</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Mobileno</th>
+                    <th scope="col">EmailId</th>
+                    <th scope="col">Type Of Officer</th>
+                    <th scope="col">JoiningDate</th>
+                    <th scope="col">Experience</th>
+                    <th scope="col">Qualification</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">Salary</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">BankDetails</th>
+                    <th scope="col">Photo</th>
+                    <th scope="col">AadharCopy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <th scope="row"></th>
+                    <td></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div> -->
+
+
+<div class="container">
+    <h2 class="head mt-4 mb-2">Faculty</h2>
+</div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-12">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" data-bs-toggle="pill" href="#EEE-Faculty" role="tab" aria-controls="pills-EEE-Faculty" aria-selected="true">EEE-FACULTY</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="pill" href="#ECE-Faculty" role="tab" aria-controls="pills-ECE-Faculty" aria-selected="false">ECE-FACULTY</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="pill" href="#CIVIL-Faculty" role="tab" aria-controls="pills-CIVIL-Faculty" aria-selected="false">CIVIL-FACULTY</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#MECH-Faculty" role="tab" aria-controls="pills-MECH-Faculty" aria-selected="false">MECH-FACULTY</a>
+              </li>
+          </ul>
+
+<!--EEE-Department Students Record-->
+
+          <div class="tab-content mt-3">
+          <div class="tab-pane fade show active" id="EEE-Faculty">            
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">Joining Date</th>
+                            <th scope="col">Experience</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">EmployeeType</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Bank-Details</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let EEE of EEEfaculty; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td><b>{{EEE.empid}}</b></td>
+                            <td style="color:blue; font-weight: bold;">{{EEE.name}}</td>
+                            <td>{{EEE.department}}</td>
+                            <td>{{EEE.mobileno}}</td>
+                            <td>{{EEE.emailid}}</td>
+                            <td>{{EEE.joiningdate}}</td>
+                            <td>{{EEE.yearofexperience}}</td>
+                            <td>{{EEE.salary}}</td>
+                            <td>{{EEE.typeofemployee}}</td>
+                            <td>
+                                <span>{{EEE.address}}</span>,
+                                <span>{{EEE.city}}</span>,
+                                <span>{{EEE.state}}</span>,
+                                <span>{{EEE.pincode}}</span>
+                            </td>
+                            <td>
+                                <span>{{EEE.bankname}}</span>,
+                                <span>{{EEE.bankaccountno}}</span>,
+                                <span>{{EEE.ifsccode}}</span>,
+                                <span>{{EEE.branchname}}</span>
+                                <span>{{EEE.pancardno}}</span>
+                            </td>
+                            <td><img src="{{EEE.photo}}" width="100%" height="70%"></td>
+                            <td><img src="{{EEE.aadharcopy}}" width="50%" height="50%"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+<!--ECE-Department Students Record-->
+
+          <div class="tab-pane fade" id="ECE-Faculty">            
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">Joining Date</th>
+                            <th scope="col">Experience</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">EmployeeType</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Bank-Details</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ECE of ECEfaculty; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td><b>{{ECE.empid}}</b></td>
+                            <td style="color:blue; font-weight: bold;">{{ECE.name}}</td>
+                            <td>{{ECE.department}}</td>
+                            <td>{{ECE.mobileno}}</td>
+                            <td>{{ECE.emailid}}</td>
+                            <td>{{ECE.joiningdate}}</td>
+                            <td>{{ECE.yearofexperience}}</td>
+                            <td>{{ECE.salary}}</td>
+                            <td>{{ECE.typeofemployee}}</td>
+                            <td>
+                                <span>{{ECE.address}}</span>,
+                                <span>{{ECE.city}}</span>,
+                                <span>{{ECE.state}}</span>,
+                                <span>{{ECE.pincode}}</span>
+                            </td>
+                            <td>
+                                <span>{{ECE.bankname}}</span>,
+                                <span>{{ECE.bankaccountno}}</span>,
+                                <span>{{ECE.ifsccode}}</span>,
+                                <span>{{ECE.branchname}}</span>
+                                <span>{{ECE.pancardno}}</span>
+                            </td>
+                            <td><img src="{{ECE.photo}}" width="100%" height="70%"></td>
+                            <td><img src="{{ECE.aadharcopy}}" width="50%" height="50%"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+<!--CIVIL-Department Students Record-->
+
+          <div class="tab-pane fade" id="CIVIL-Faculty">
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">Joining Date</th>
+                            <th scope="col">Experience</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">EmployeeType</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Bank-Details</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let CIVIL of CIVILfaculty; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td><b>{{CIVIL.empid}}</b></td>
+                            <td style="color:blue; font-weight: bold;">{{CIVIL.name}}</td>
+                            <td>{{CIVIL.department}}</td>
+                            <td>{{CIVIL.mobileno}}</td>
+                            <td>{{CIVIL.emailid}}</td>
+                            <td>{{CIVIL.joiningdate}}</td>
+                            <td>{{CIVIL.yearofexperience}}</td>
+                            <td>{{CIVIL.salary}}</td>
+                            <td>{{CIVIL.typeofemployee}}</td>
+                            <td>
+                                <span>{{CIVIL.address}}</span>,
+                                <span>{{CIVIL.city}}</span>,
+                                <span>{{CIVIL.state}}</span>,
+                                <span>{{CIVIL.pincode}}</span>
+                            </td>
+                            <td>
+                                <span>{{CIVIL.bankname}}</span>,
+                                <span>{{CIVIL.bankaccountno}}</span>,
+                                <span>{{CIVIL.ifsccode}}</span>,
+                                <span>{{CIVIL.branchname}}</span>
+                                <span>{{CIVIL.pancardno}}</span>
+                            </td>
+                            <td><img src="{{CIVIL.photo}}" width="100%" height="70%"></td>
+                            <td><img src="{{CIVIL.aadharcopy}}" width="50%" height="50%"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+<!--MECH-Department Students Record-->
+
+          <div class="tab-pane fade" id="MECH-Faculty">
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">Joining Date</th>
+                            <th scope="col">Experience</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">EmployeeType</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Bank-Details</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let MECH of MECHfaculty; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td><b>{{MECH.empid}}</b></td>
+                            <td style="color:blue; font-weight: bold;">{{MECH.name}}</td>
+                            <td>{{MECH.department}}</td>
+                            <td>{{MECH.mobileno}}</td>
+                            <td>{{MECH.emailid}}</td>
+                            <td>{{MECH.joiningdate}}</td>
+                            <td>{{MECH.yearofexperience}}</td>
+                            <td>{{MECH.salary}}</td>
+                            <td>{{MECH.typeofemployee}}</td>
+                            <td>
+                                <span>{{MECH.address}}</span>,
+                                <span>{{MECH.city}}</span>,
+                                <span>{{MECH.state}}</span>,
+                                <span>{{MECH.pincode}}</span>
+                            </td>
+                            <td>
+                                <span>{{MECH.bankname}}</span>,
+                                <span>{{MECH.bankaccountno}}</span>,
+                                <span>{{MECH.ifsccode}}</span>,
+                                <span>{{MECH.branchname}}</span>
+                                <span>{{MECH.pancardno}}</span>
+                            </td>
+                            <td><img src="{{MECH.photo}}" width="100%" height="70%"></td>
+                            <td><img src="{{MECH.aadharcopy}}" width="50%" height="50%"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+
+        </div>        
+        </div>
+    </div>
+  </div>

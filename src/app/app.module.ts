@@ -38,6 +38,9 @@ import { MatMenuModule } from '@angular/material/menu';
 import { OfficerAddEmployeeComponent } from './officer/officer-add-employee/officer-add-employee.component';
 import { OfficerAddFeeComponent } from './officer/officer-add-fee/officer-add-fee.component';
 import { OfficerAddStudentComponent } from './officer/officer-add-student/officer-add-student.component';
+import { StudentRecordsComponent } from './admin/students-list/student-records/student-records.component';
+import { FacultyListComponent } from './admin/faculty-list/faculty-list.component';
+import { FeeDetailsComponent } from './admin/fee-details/fee-details.component';
 
 @NgModule({
   declarations: [
@@ -62,7 +65,10 @@ import { OfficerAddStudentComponent } from './officer/officer-add-student/office
     OfficerHomeComponent,
     OfficerAddEmployeeComponent,
     OfficerAddFeeComponent,
-    OfficerAddStudentComponent
+    OfficerAddStudentComponent,
+    StudentRecordsComponent,
+    FacultyListComponent,
+    FeeDetailsComponent
   ],
   imports: [
     BrowserModule,
