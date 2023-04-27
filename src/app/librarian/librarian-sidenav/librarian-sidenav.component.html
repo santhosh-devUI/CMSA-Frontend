@@ -5,15 +5,24 @@
     </div>
     <mat-divider></mat-divider>
     <h2 matSubheader class="mt-2">APPLICATIONS</h2>
-  
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/home">
+ 
+    <a mat-list-item >
+      <mat-icon>dashboard</mat-icon> Dashboard
+    </a> 
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="librarian-profile">
       <mat-icon>home</mat-icon> Home
     </a>
-    <a mat-list-item routerLinkActive="list-item-active" routerLink="/dashboard">
-      <mat-icon>dashboard</mat-icon> Dashboard
-    </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 3 </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 4 </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 5 </a>
-    <a mat-list-item> <mat-icon>edit</mat-icon> Link 6 </a>
+
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="librarian-viewstudents">
+       <mat-icon>face</mat-icon> View-Students </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="librarian-addbooks"> 
+      <mat-icon>book</mat-icon> Add-Books </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="librarian-viewbooks">
+       &nbsp;<i class="bi bi-book"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View-Books </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="librarian-addstudentbooks">
+       &nbsp;<i class="bi bi-bookmark-check"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Add Student-Books </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="librarian-viewstudentbooks">
+       &nbsp;<i class="bi bi-journal-medical"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; View Student-Books </a>
+    <a mat-list-item routerLinkActive="list-item-active" routerLink="librarian-changepassword">
+       &nbsp;<i class="bi bi-file-lock2"></i>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Change-Password </a>
   </mat-nav-list>

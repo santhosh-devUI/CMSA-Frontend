@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LibrarianEditbooksComponent } from '../librarian-editbooks/librarian-editbooks.component';
+import { LibrarianService } from 'src/app/shared/service/librarian.service';
 
 @Component({
   selector: 'app-librarian-viewbooks',
@@ -8,11 +9,20 @@ import { LibrarianEditbooksComponent } from '../librarian-editbooks/librarian-ed
   styleUrls: ['./librarian-viewbooks.component.scss']
 })
 export class LibrarianViewbooksComponent implements OnInit {
+  books: any;
 
-  constructor(private dialog:MatDialog) { }
+  constructor(private dialog:MatDialog , private libraraianService:LibrarianService) { }
 
   ngOnInit(): void {
+      this.getBooks();
   }
+
+getBooks(){
+  this.libraraianService.GetBooks().subscribe((res)=>{
+    this.books = res;
+  })
+} 
+
 editbooks(){
   this.dialog.open(LibrarianEditbooksComponent,{
     width:'50%'

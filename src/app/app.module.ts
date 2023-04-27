@@ -58,6 +58,8 @@ import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
 import { ViewProfileComponent } from './student/view-profile/view-profile.component';
 import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
+import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
+import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
 
 @NgModule({
   declarations: [
@@ -102,7 +104,9 @@ import { UpdateProfileComponent } from './student/update-profile/update-profile.
     LibrarianViewbooksComponent,
     LibrarianStudentviewbooksComponent,
     LibrarianEditstudentbooksComponent,
-    LibrarianEditbooksComponent
+    LibrarianEditbooksComponent,
+    LibrarianViewstudentsComponent,
+    LibrarianChangepasswordComponent
   ],
   imports: [
     BrowserModule,
