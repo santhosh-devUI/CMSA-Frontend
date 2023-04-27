@@ -21,6 +21,13 @@ import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
 import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
 import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
+import { FacultyDashboardComponent } from './faculty/faculty-dashboard/faculty-dashboard.component';
+import { FacultyProfileComponent } from './faculty/faculty-profile/faculty-profile.component';
+import { FacultyAddTimetableComponent } from './faculty/faculty-add-timetable/faculty-add-timetable.component';
+import { FacultyViewTimetableComponent } from './faculty/faculty-view-timetable/faculty-view-timetable.component';
+import { FacultyAddMarksComponent } from './faculty/faculty-add-marks/faculty-add-marks.component';
+import { FacultyViewMarksComponent } from './faculty/faculty-view-marks/faculty-view-marks.component';
+import { FacultyViewStudentsComponent } from './faculty/faculty-view-students/faculty-view-students.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -32,26 +39,6 @@ const routes: Routes = [
   { path: 'library-login', component: LibrarianLoginComponent },
   { path: 'student-login', component: StudentLoginComponent },
   { path: 'student-reg', component: StudentRegistrationComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent },
-  {
-    path: 'officer-dashboard',
-    component: OfficerDashboardComponent,
-    children: [
-      { path: '', redirectTo: 'officer-home', pathMatch: 'full' },
-      { path: 'officer-home', component: OfficerHomeComponent },
-      { path: 'officer-add-emp', component: OfficerAddEmployeeComponent },
-      { path: 'officer-add-student', component: OfficerAddStudentComponent },
-      { path: 'officer-add-fee', component: OfficerAddFeeComponent },
-    ],
-  },
-  { path:'student-dashboard',component:StudentDashboardComponent, children:[
-    { path:'view-profile',component:ViewProfileComponent},
-    { path:'view-marks',component:ViewMarksComponent},
-    { path:'view-fee',component:ViewFeeComponent},
-    { path:'view-books',component:ViewBooksComponent},
-    { path:'update-profile',component:UpdateProfileComponent},
-    { path:'view-timetable',component:ViewTimetableComponent}
-  ]}
 ];
 
 @NgModule({

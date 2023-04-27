@@ -20,6 +20,13 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FacultyAddMarksComponent } from './faculty/faculty-add-marks/faculty-add-marks.component';
+import { FacultyDashboardComponent } from './faculty/faculty-dashboard/faculty-dashboard.component';
+import { FacultyProfileComponent } from './faculty/faculty-profile/faculty-profile.component';
+import { FacultyViewStudentsComponent } from './faculty/faculty-view-students/faculty-view-students.component';
+import { FacultyViewMarksComponent } from './faculty/faculty-view-marks/faculty-view-marks.component';
+import { FacultyAddTimetableComponent } from './faculty/faculty-add-timetable/faculty-add-timetable.component';
+import { FacultyViewTimetableComponent } from './faculty/faculty-view-timetable/faculty-view-timetable.component';
 
 import { StudentRegistrationComponent } from './student/student-registration/student-registration.component';
 import { HomeComponent } from './welcome-page/home/home.component';
@@ -64,7 +71,14 @@ import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-of
     ViewOfficerComponent,
     StudentRegistrationComponent,
     HomeComponent,
-    LoginsPageComponent
+    LoginsPageComponent,
+    FacultyAddMarksComponent,
+    FacultyDashboardComponent,
+    FacultyProfileComponent,
+    FacultyViewStudentsComponent,
+    FacultyViewMarksComponent,
+    FacultyAddTimetableComponent,
+    FacultyViewTimetableComponent
   ],
   imports: [
     BrowserModule,
