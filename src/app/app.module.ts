@@ -25,6 +25,17 @@ import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-of
 import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
+import { LibrarianDashboardComponent } from './librarian/librarian-dashboard/librarian-dashboard.component';
+import { LibrarianHeaderComponent } from './librarian/librarian-header/librarian-header.component';
+import { LibrarianHomeComponent } from './librarian/librarian-home/librarian-home.component';
+import { LibrarianSidenavComponent } from './librarian/librarian-sidenav/librarian-sidenav.component';
+import { LibrarianNavbarComponent } from './librarian/librarian-navbar/librarian-navbar.component';
+import { LibrarianAddbooksComponent } from './librarian/librarian-addbooks/librarian-addbooks.component';
+import { LibrarianAddstudentbooksComponent } from './librarian/librarian-addstudentbooks/librarian-addstudentbooks.component';
+import { LibrarianViewbooksComponent } from './librarian/librarian-viewbooks/librarian-viewbooks.component';
+import { LibrarianStudentviewbooksComponent } from './librarian/librarian-studentviewbooks/librarian-studentviewbooks.component';
+import { LibrarianEditstudentbooksComponent } from './librarian/librarian-editstudentbooks/librarian-editstudentbooks.component';
+import { LibrarianEditbooksComponent } from './librarian/librarian-editbooks/librarian-editbooks.component';
 
 import { StudentRegistrationComponent } from './student/student-registration/student-registration.component';
 import { HomeComponent } from './welcome-page/home/home.component';
@@ -80,7 +91,18 @@ import { UpdateProfileComponent } from './student/update-profile/update-profile.
     ViewFeeComponent,
     ViewBooksComponent,
     ViewProfileComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    LibrarianDashboardComponent,
+    LibrarianHeaderComponent,
+    LibrarianHomeComponent,
+    LibrarianSidenavComponent,
+    LibrarianNavbarComponent,
+    LibrarianAddbooksComponent,
+    LibrarianAddstudentbooksComponent,
+    LibrarianViewbooksComponent,
+    LibrarianStudentviewbooksComponent,
+    LibrarianEditstudentbooksComponent,
+    LibrarianEditbooksComponent
   ],
   imports: [
     BrowserModule,

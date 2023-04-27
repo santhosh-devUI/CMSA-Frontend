@@ -1,0 +1,39 @@
+<div class="container-fluid page">
+    <div class="d-flex page__box p-3 mt-2">Add-Books</div>
+    </div>
+<div>
+    <form>
+        <mat-card>
+            <h2>Add-Book Form</h2>
+           <mat-form-field appearance="outline" class="mt-3">
+            <mat-label>Book Name</mat-label>
+            <input matInput placeholder="Enter Bookname">
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+            <mat-label>Author</mat-label>
+            <input matInput placeholder="Enter Author name">
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+            <mat-label>Select Department</mat-label>
+           <mat-select>
+            <mat-option value="EEE">EEE</mat-option>
+            <mat-option value="MECH">MECH</mat-option>
+            <mat-option value="CSE">CSE</mat-option>
+            <mat-option value="ECE">ECE</mat-option>
+            <mat-option value="IT">IT</mat-option>
+           </mat-select>
+        </mat-form-field>
+        <mat-form-field appearance="outline">
+            <mat-label>Price</mat-label>
+            <input matInput placeholder="Enter Price" type="number">
+           </mat-form-field>
+           <mat-form-field appearance="outline">
+            <mat-label>Quantity</mat-label>
+            <input matInput placeholder="Enter Quantity" type="number">
+           </mat-form-field>
+           <div class="text-center">
+            <button mat-raised-button >Add Book</button>
+        </div>
+        </mat-card>
+    </form>
+</div>
