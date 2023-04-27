@@ -6,6 +6,7 @@
         <span class="navbar-toggler-icon"></span>
     </button>
 </nav>
+<form [formGroup]="studentRegistration" (ngSubmit)="submit()">
     <div class="container py-2">
         <div class="row">
             <div class="col-sm-12">
@@ -18,11 +19,11 @@
                                     <div class="row">
                                         <div class="col-sm-6 mb-2">
                                             <label class="form-label">First name</label>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" formControlName="firstname">
                                         </div>
                                         <div class="col-sm-6 mb-2">
                                             <label class="form-label">Last name</label>
-                                            <input type="text" class="form-control " />
+                                            <input type="text" class="form-control " formControlName="lastname">
                                         </div>
                                     </div>
                                     <div class="row">
@@ -31,84 +32,84 @@
                                                 <label class="form-label">Gender</label>
                                                 <div class="col-sm-4">
                                                     <input class="form-check-input" type="radio" name="gender"
-                                                        id="femaleGender" value="option1" />&nbsp;
+                                                        id="femaleGender" value="option1" formControlName="gender">&nbsp;
                                                     <label class="form-check-label" for="femaleGender">Female</label>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <input class="form-check-input" type="radio" name="gender"
-                                                        id="maleGender" value="option2" />&nbsp;
+                                                        id="maleGender" value="option2" formControlName="gender">&nbsp;
                                                     <label class="form-check-label" for="maleGender">Male</label>
                                                 </div>
                                                 <div class="col-sm-4">
                                                     <input class="form-check-input" type="radio" name="gender"
-                                                        id="otherGender" value="option3" />&nbsp;
+                                                        id="otherGender" value="option3" formControlName="gender">&nbsp;
                                                     <label class="form-check-label" for="otherGender">Other</label>
                                                 </div>
                                             </div>
                                         </div>
                                         <div class="col-sm-6 mb-2">
                                             <label class="form-label">Date Of Birth</label>
-                                            <input type="date" class="form-control " />
+                                            <input type="date" class="form-control " formControlName="dob">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 mb-2">
                                             <label class="form-label">Mobile Number</label>
-                                            <input type="number" class="form-control" />
+                                            <input type="number" class="form-control" formControlName="mobileno">
                                         </div>
                                         <div class="col-sm-6 mb-2">
                                             <label class="form-label">Email Id</label>
-                                            <input type="email" class="form-control " />
+                                            <input type="email" class="form-control " formControlName="emailid">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 mb-2">
                                             <label class="form-label">Hall Ticket Number</label>
-                                            <input type="text" class="form-control" />
+                                            <input type="text" class="form-control" formControlName="hallticket">
                                         </div>
                                         <div class="col-sm-6 mb-2">
                                             <label class="form-label">Eamcet Rank</label>
-                                            <input type="number" class="form-control " />
+                                            <input type="number" class="form-control " formControlName="eamcetrank">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 mb-4">
                                             <label class="form-label">Type Of Student</label>
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example" formControlName="typeofStudent">
                                                 <option selected>--- select ---</option>
-                                                <option value="1">dayscholar</option>
-                                                <option value="2">hosteller</option>
+                                                <option value="dayscholar">dayscholar</option>
+                                                <option value="hosteller">hosteller</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-6 mb-4">
                                             <label class="form-label">Branch</label>
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example" formControlName="branch">
                                                 <option selected>--- select ---</option>
-                                                <option value="1">EEE</option>
-                                                <option value="2">ECE</option>
-                                                <option value="1">CSE</option>
-                                                <option value="2">MECH</option>
+                                                <option value="EEE">EEE</option>
+                                                <option value="ECE">ECE</option>
+                                                <option value="CSE">CSE</option>
+                                                <option value="MECH">MECH</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 mb-4">
                                             <label for="formFile" class="form-label">Upload Your Photo</label>
-                                            <input class="form-control" type="file" id="formFile">
+                                            <input class="form-control" type="file" id="formFile" formControlName="photo">
                                         </div>
                                         <div class="col-sm-6 mb-4">
                                             <label for="formFile" class="form-label">Upload Your Aadhar Card</label>
-                                            <input class="form-control" type="file" id="formFile">
+                                            <input class="form-control" type="file" id="formFile" formControlName="aadharcopy">
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 mb-4">
                                             <label for="formFile" class="form-label">Upload Your Allotment Order</label>
-                                            <input class="form-control" type="file" id="formFile">
+                                            <input class="form-control" type="file" id="formFile" formControlName="allotmentorder">
                                         </div>
                                         <div class="col-sm-6 mb-4">
                                             <label class="form-label">Admission Fee</label>
-                                            <input type="number" class="form-control " />
+                                            <input type="number" class="form-control " formControlName="adminssionfee" >
                                         </div>
                                     </div>
                                 </div>
@@ -121,13 +122,13 @@
                                         <div class="col-sm-6 mb-4">
                                             <div class="form-outline form-white">
                                                 <label class="form-label">Parent Name</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" formControlName="parentname">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 mb-4">
                                             <div class="form-outline form-white">
                                                 <label class="form-label">Parent Profession</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" formControlName="parentprofession">
                                             </div>
 
                                         </div>
@@ -136,13 +137,13 @@
                                         <div class="col-sm-6 mb-4">
                                             <div class="form-outline form-white">
                                                 <label class="form-label">Parent Mobile Number</label>
-                                                <input type="number" class="form-control" />
+                                                <input type="number" class="form-control" formControlName="parentsmobileno">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 mb-4">
                                             <div class="form-outline form-white">
                                                 <label class="form-label">Family Income</label>
-                                                <input type="number" class="form-control" />
+                                                <input type="number" class="form-control" formControlName="familyincome">
                                             </div>
 
                                         </div>
@@ -150,43 +151,43 @@
                                     <div class="row">
                                         <div class="col-sm-6 mb-4">
                                             <label class="form-label">Religion</label>
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example" formControlName="religion">
                                                 <option selected>--- select ---</option>
-                                                <option value="1">Hindu</option>
-                                                <option value="2">Muslim</option>
-                                                <option value="2">Christian</option>
+                                                <option value="Hindu">Hindu</option>
+                                                <option value="Muslim">Muslim</option>
+                                                <option value="Christian">Christian</option>
                                             </select>
                                         </div>
                                         <div class="col-sm-6 mb-4">
                                             <label class="form-label">Caste</label>
-                                            <select class="form-select" aria-label="Default select example">
+                                            <select class="form-select" aria-label="Default select example" formControlName="caste">
                                                 <option selected>--- select ---</option>
-                                                <option value="1">Bc-a</option>
-                                                <option value="2">Bc-b</option>
-                                                <option value="1">Bc-c</option>
-                                                <option value="2">Bc-d</option>
-                                                <option value="2">Sc</option>
-                                                <option value="2">St</option>
+                                                <option value="Bc-a">Bc-a</option>
+                                                <option value="Bc-b">Bc-b</option>
+                                                <option value="Bc-c">Bc-c</option>
+                                                <option value="Bc-d">Bc-d</option>
+                                                <option value="Sc">Sc</option>
+                                                <option value="St">St</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="mb-3">
                                         <label class="form-label" for="form3Examplea3">Address</label>
                                         <div class="form-outline form-white">
-                                            <textarea type="text" rows="5" class="form-control"></textarea>
+                                            <textarea type="text" rows="5" class="form-control"  formControlName="address"></textarea>
                                         </div>
                                     </div>
                                     <div class="row">
                                         <div class="col-sm-6 mb-4">
                                             <div class="form-outline form-white">
                                                 <label class="form-label">City</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" formControlName="city">
                                             </div>
                                         </div>
                                         <div class="col-sm-6 mb-4">
                                             <div class="form-outline form-white">
                                                 <label class="form-label">State</label>
-                                                <input type="text" class="form-control" />
+                                                <input type="text" class="form-control" formControlName="state">
                                             </div>
                                         </div>
                                     </div>
@@ -201,3 +202,4 @@
             </div>
         </div>
     </div>
+</form>

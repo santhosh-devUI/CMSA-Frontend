@@ -81,6 +81,7 @@ console.log(data);
       this.Api.addOfficer(data).subscribe((res:any)=>{
         if(res){
           alert("officer Register Successfull")
+          window.location.reload()
         }else{
           alert('something went wrong')
         }

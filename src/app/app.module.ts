@@ -21,6 +21,31 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { StudentRegistrationComponent } from './student/student-registration/student-registration.component';
+import { HomeComponent } from './welcome-page/home/home.component';
+import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.component';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
+import { OfficerDashboardComponent } from './officer/officer-dashboard/officer-dashboard.component';
+import { OfficerHomeComponent } from './officer/officer-home/officer-home.component';
+import { MatGridListModule } from '@angular/material/grid-list';
+import { MatCardModule } from '@angular/material/card';
+import { MatMenuModule } from '@angular/material/menu';
+import { OfficerAddEmployeeComponent } from './officer/officer-add-employee/officer-add-employee.component';
+import { OfficerAddFeeComponent } from './officer/officer-add-fee/officer-add-fee.component';
+import { OfficerAddStudentComponent } from './officer/officer-add-student/officer-add-student.component';
+import { StudentRecordsComponent } from './admin/students-list/student-records/student-records.component';
+import { FacultyListComponent } from './admin/faculty-list/faculty-list.component';
+import { FeeDetailsComponent } from './admin/fee-details/fee-details.component';
+import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
+import { ViewMarksComponent } from './student/view-marks/view-marks.component';
+import { ViewFeeComponent } from './student/view-fee/view-fee.component';
+import { ViewBooksComponent } from './student/view-books/view-books.component';
+import { ViewProfileComponent } from './student/view-profile/view-profile.component';
+import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
+import { AddOfficerComponent } from './admin/officer/add-officer/add-officer.component';
+import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.component';
+import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
+import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +57,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     PlacementLoginComponent,
     StudentLoginComponent,
     SuperadminLoginComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    AddOfficerComponent,
+    EditOfficerComponent,
+    DeleteOfficerComponent,
+    ViewOfficerComponent,
+    StudentRegistrationComponent,
+    HomeComponent,
+    LoginsPageComponent
   ],
   imports: [
     BrowserModule,
@@ -47,7 +79,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     MatButtonModule,
     MatSidenavModule,
     MatIconModule,
-    MatListModule
+    MatListModule,
+    MatGridListModule,
+    MatCardModule,
+    MatMenuModule
   ],
   providers: [],
   bootstrap: [AppComponent]
