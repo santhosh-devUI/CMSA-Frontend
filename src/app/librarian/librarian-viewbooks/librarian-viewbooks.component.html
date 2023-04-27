@@ -16,13 +16,13 @@
               </tr>
             </thead>
             <tbody>
-             <tr>
-                <th>1</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+             <tr *ngFor="let B of books index as i">
+                <th>{{i+1}}</th>
+                <th>{{B.bookname}}</th>
+                <th>{{B.author}}</th>
+                <th>{{B.department}}</th>
+                <th>{{B.price}}</th>
+                <th>{{B.quantity}}</th>
                 <th>
                     <button mat-icon-button color="primary" (click)="editbooks()"><mat-icon>edit</mat-icon></button>
                     <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
