@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './welcome-page/home/home.component';
 import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.component';
@@ -28,6 +28,14 @@ import { FacultyViewTimetableComponent } from './faculty/faculty-view-timetable/
 import { FacultyAddMarksComponent } from './faculty/faculty-add-marks/faculty-add-marks.component';
 import { FacultyViewMarksComponent } from './faculty/faculty-view-marks/faculty-view-marks.component';
 import { FacultyViewStudentsComponent } from './faculty/faculty-view-students/faculty-view-students.component';
+import { LibrarianNavbarComponent } from './librarian/librarian-navbar/librarian-navbar.component';
+import { LibrarianHomeComponent } from './librarian/librarian-home/librarian-home.component';
+import { LibrarianAddbooksComponent } from './librarian/librarian-addbooks/librarian-addbooks.component';
+import { LibrarianViewbooksComponent } from './librarian/librarian-viewbooks/librarian-viewbooks.component';
+import { LibrarianAddstudentbooksComponent } from './librarian/librarian-addstudentbooks/librarian-addstudentbooks.component';
+import { LibrarianStudentviewbooksComponent } from './librarian/librarian-studentviewbooks/librarian-studentviewbooks.component';
+import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
+import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -39,6 +47,39 @@ const routes: Routes = [
   { path: 'library-login', component: LibrarianLoginComponent },
   { path: 'student-login', component: StudentLoginComponent },
   { path: 'student-reg', component: StudentRegistrationComponent },
+  { path: 'admin-dashboard', component: AdminDashboardComponent },
+  {
+    path: 'officer-dashboard',
+    component: OfficerDashboardComponent,
+    children: [
+      { path: '', redirectTo: 'officer-home', pathMatch: 'full' },
+      { path: 'officer-home', component: OfficerHomeComponent },
+      { path: 'officer-add-emp', component: OfficerAddEmployeeComponent },
+      { path: 'officer-add-student', component: OfficerAddStudentComponent },
+      { path: 'officer-add-fee', component: OfficerAddFeeComponent },
+    ],
+  },
+  { path:'student-dashboard',component:StudentDashboardComponent, children:[
+    { path:'view-profile',component:ViewProfileComponent},
+    { path:'view-marks',component:ViewMarksComponent},
+    { path:'view-fee',component:ViewFeeComponent},
+    { path:'view-books',component:ViewBooksComponent},
+    { path:'update-profile',component:UpdateProfileComponent},
+    { path:'view-timetable',component:ViewTimetableComponent}
+  ]},
+  {path:'librarian-dashboard' , component:LibrarianNavbarComponent,
+    children:[
+      {path:'' , redirectTo:'librarian-profile',pathMatch:'full'},
+      {path:'librarian-profile' , component:LibrarianHomeComponent},
+      {path:'librarian-viewstudents' , component:LibrarianViewstudentsComponent},
+      {path:'librarian-addbooks' , component:LibrarianAddbooksComponent},
+      {path:'librarian-viewbooks' , component:LibrarianViewbooksComponent},
+      {path:'librarian-addstudentbooks' , component:LibrarianAddstudentbooksComponent},
+      {path:'librarian-viewstudentbooks' , component:LibrarianStudentviewbooksComponent},
+      {path:'librarian-changepassword' , component:LibrarianChangepasswordComponent}
+    ]
+  },
+
 ];
 
 @NgModule({

@@ -27,7 +27,17 @@ import { FacultyViewStudentsComponent } from './faculty/faculty-view-students/fa
 import { FacultyViewMarksComponent } from './faculty/faculty-view-marks/faculty-view-marks.component';
 import { FacultyAddTimetableComponent } from './faculty/faculty-add-timetable/faculty-add-timetable.component';
 import { FacultyViewTimetableComponent } from './faculty/faculty-view-timetable/faculty-view-timetable.component';
-
+import { LibrarianDashboardComponent } from './librarian/librarian-dashboard/librarian-dashboard.component';
+import { LibrarianHeaderComponent } from './librarian/librarian-header/librarian-header.component';
+import { LibrarianHomeComponent } from './librarian/librarian-home/librarian-home.component';
+import { LibrarianSidenavComponent } from './librarian/librarian-sidenav/librarian-sidenav.component';
+import { LibrarianNavbarComponent } from './librarian/librarian-navbar/librarian-navbar.component';
+import { LibrarianAddbooksComponent } from './librarian/librarian-addbooks/librarian-addbooks.component';
+import { LibrarianAddstudentbooksComponent } from './librarian/librarian-addstudentbooks/librarian-addstudentbooks.component';
+import { LibrarianViewbooksComponent } from './librarian/librarian-viewbooks/librarian-viewbooks.component';
+import { LibrarianStudentviewbooksComponent } from './librarian/librarian-studentviewbooks/librarian-studentviewbooks.component';
+import { LibrarianEditstudentbooksComponent } from './librarian/librarian-editstudentbooks/librarian-editstudentbooks.component';
+import { LibrarianEditbooksComponent } from './librarian/librarian-editbooks/librarian-editbooks.component';
 import { StudentRegistrationComponent } from './student/student-registration/student-registration.component';
 import { HomeComponent } from './welcome-page/home/home.component';
 import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.component';
@@ -53,6 +63,8 @@ import { AddOfficerComponent } from './admin/officer/add-officer/add-officer.com
 import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.component';
 import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
+import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
+import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
 
 @NgModule({
   declarations: [
@@ -78,7 +90,35 @@ import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-of
     FacultyViewStudentsComponent,
     FacultyViewMarksComponent,
     FacultyAddTimetableComponent,
-    FacultyViewTimetableComponent
+    FacultyViewTimetableComponent,
+    StudentDashboardComponent,
+    OfficerDashboardComponent,
+    OfficerHomeComponent,
+    OfficerAddEmployeeComponent,
+    OfficerAddFeeComponent,
+    OfficerAddStudentComponent,
+    StudentRecordsComponent,
+    FacultyListComponent,
+    FeeDetailsComponent,
+    ViewTimetableComponent,
+    ViewMarksComponent,
+    ViewFeeComponent,
+    ViewBooksComponent,
+    ViewProfileComponent,
+    UpdateProfileComponent,
+    LibrarianDashboardComponent,
+    LibrarianHeaderComponent,
+    LibrarianHomeComponent,
+    LibrarianSidenavComponent,
+    LibrarianNavbarComponent,
+    LibrarianAddbooksComponent,
+    LibrarianAddstudentbooksComponent,
+    LibrarianViewbooksComponent,
+    LibrarianStudentviewbooksComponent,
+    LibrarianEditstudentbooksComponent,
+    LibrarianEditbooksComponent,
+    LibrarianViewstudentsComponent,
+    LibrarianChangepasswordComponent
   ],
   imports: [
     BrowserModule,
