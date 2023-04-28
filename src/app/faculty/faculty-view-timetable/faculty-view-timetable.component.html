@@ -1,211 +1,170 @@
 <section style="background-color: #eee;">
 
-<div class="container py-5">
-    <div class="container ">
-        <div aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4 text-center">
-            <h1>TIME TABLE</h1>
-    </div>
-    <div class="mb-5">
-        <form [formGroup]="ViewttForm" (ngSubmit)="search()">
-            <div class="row justify-content-center">
-            <div class="col-sm-4">
-                <label class="form-label "><b>Branch</b></label>
-                <select class="form-select form-control" formControlName="branch">
-                    <option value="" readonly>--select--</option>   
-                    <option value="EEE">Electrical Engg</option>
-                    <option value="MECH">Mechanical Engg</option>
-                    <option value="ECE">Electronics Engg</option>
-                    <option value="CSE">Computer Engg</option> 
-                </select> 
-                
+    <div class="container py-5">
+        <div class="container ">
+            <div class=" p-3 mb-4 text-center ">
+                <h1 style="font-weight: bold;">TIME TABLE</h1><hr>
             </div>
-            <div class="col-sm-2 mt-4">
-                <button type="submit" class="btn btn-primary">Search</button>
+
+            <div class="card table-responsive">
+                <table class="table table-bordered  mb-0  m-auto">
+                    <thead class="bg-secondary">
+                        <tr>
+                            <th>Day</th>
+                            <th>Hour-1</th>
+                            <th>Subject</th>
+                            <th>Faculty</th>
+                            <th>Hour-2</th>
+                            <th>Subject</th>
+                            <th>Faculty</th>
+                            <th>Hour-3</th>
+                            <th>Subject</th>
+                            <th>Faculty</th>
+                            <th>Hour-4</th>
+                            <th>Lab</th>
+                            <th>Faculty</th>
+                            <th>Action</th>
+
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let timetable of timetables">
+                            <td>{{timetable.day}}</td>
+                            <td>{{timetable.hour1}}</td>
+                            <td>{{timetable.subject1}}</td>
+                            <td>{{timetable.faculty1}}</td>
+                            <td>{{timetable.hour2}}</td>
+                            <td>{{timetable.subject2}}</td>
+                            <td>{{timetable.faculty2}}</td>
+                            <td>{{timetable.hour3}}</td>
+                            <td>{{timetable.subject3}}</td>
+                            <td>{{timetable.faculty3}}</td>
+                            <td>{{timetable.hour4}}</td>
+                            <td>{{timetable.lab}}</td>
+                            <td>{{timetable.labasst}}</td>
+                            <td>
+                                <button type="button" class="btn" (click)="Edit(timetable)" data-bs-toggle="modal"
+                                    data-bs-target=".bd-example-modal-lg"><i class="bi bi-pencil-square"></i> </button>
+                                <button type="button" class="btn" (click)="deletett(timetable._id)"><i
+                                        class="bi bi-trash"></i> </button>
+                            </td>
+                        </tr>
+
+                    </tbody>
+                </table>
             </div>
         </div>
-    </form>
-    </div>
 
-<div class="card table-responsive">
-    <table class="table  mb-0  m-auto">
-        <thead class="bg-light">
-          <tr>
-            <th>Hour-1</th>
-            <th>Subject</th>
-            <th>Faculty</th>
-            <th>Hour-2</th>
-            <th>Subject</th>
-            <th>Faculty</th>
-            <th>Hour-3</th>
-            <th>Subject</th>
-            <th>Faculty</th>
-            <th>Hour-4</th>
-            <th>Lab</th>
-            <th>Faculty</th>
-            <th>Action</th>
 
-          </tr>
-        </thead>
-        <tbody>
-          <tr *ngFor="let timetable of timetables">
-          <td>{{timetable.hour1}}</td>
-          <td>{{timetable.subject1}}</td>
-          <td>{{timetable.faculty1}}</td>
-          <td>{{timetable.hour2}}</td>
-          <td>{{timetable.subject2}}</td>
-          <td>{{timetable.faculty2}}</td>
-          <td>{{timetable.hour3}}</td>
-          <td>{{timetable.subject3}}</td>
-          <td>{{timetable.faculty3}}</td>
-          <td>{{timetable.hour4}}</td>
-          <td>{{timetable.lab}}</td>
-          <td>{{timetable.labasst}}</td>
-          <td>
-            <button type="button" class="btn"  data-bs-toggle="modal"data-bs-target=".bd-example-modal-lg"><i class="bi bi-pencil-square"></i> </button>
-            <button type="button"class="btn" (click)="deletett(timetable._id)"><i class="bi bi-trash"></i> </button>
-          </td>
-          </tr>
-         
-        </tbody>
-      </table>
-    </div>
-</div>
+        <!-- model -->
+        <div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
+            aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+                <div class="modal-content">
+                    <div class="container py-5">
+                        <div class="row">
+                            <div class="col">
+                                <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4 text-center">
+                                    <h1>STUDENTS EDIT TIMETABLE</h1>
+                                </nav>
+                            </div>
+                        </div>
 
-  
-<!-- model -->
-<div class="modal fade bd-example-modal-lg " tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel"
-aria-hidden="true">
-<div class="modal-dialog modal-lg">
-  <div class="modal-content">
-<div class="container py-5">
-    <div class="row">
-        <div class="col">
-            <nav aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4 text-center">
-                <h1>STUDENTS EDIT TIMETABLE</h1>
-            </nav>
-        </div>
-    </div>
+                        <div class="col-sm-9 m-auto">
+                            <div class="card mb-4 bg-light rounded-3 p-3">
+                                <div class="card-body">
+                                    <form [formGroup]="ViewtimetableForm">
+                                        <div class="col-sm-12">
+                                            <div class="row mb-3">
+                                                <div class="col-sm-6 ">
+                                                    <label class="form-label">Day</label>
+                                                    <select class="form-select form-control" formControlName="day">
+                                                        <option readonly>--select--</option>
+                                                        <option value="Monday">Monday</option>
+                                                        <option value="Tueday">Tueday</option>
+                                                        <option value="Wednesday">Wednesday</option>
+                                                        <option value="Thursday">Thursday</option>
+                                                        <option value="Friday">Friday</option>
+                                                        <option value="Saturday">Saturday</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                            <div class="row  mb-3">
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Hour-1</label>
+                                                    <input type="text" class="form-control" readonly
+                                                        formControlName="hour1">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Subject</label>
+                                                    <input type="text" class="form-control" formControlName="subject1">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Faculty</label>
+                                                    <input type="text" class="form-control" formControlName="faculty1">
+                                                </div>
+                                            </div>
+                                            <div class="row  mb-3">
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Hour-2</label>
+                                                    <input type="text" class="form-control" readonly
+                                                        formControlName="hour2">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Subject</label>
+                                                    <input type="text" class="form-control" formControlName="subject2">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Faculty</label>
+                                                    <input type="text" class="form-control" formControlName="faculty2">
+                                                </div>
+                                            </div>
+                                            <div class="row  mb-3">
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Hour-3</label>
+                                                    <input type="text" class="form-control" readonly
+                                                        formControlName="hour3">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Subject</label>
+                                                    <input type="text" class="form-control" formControlName="subject3">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Faculty</label>
+                                                    <input type="text" class="form-control" formControlName="faculty3">
+                                                </div>
+                                            </div>
+                                            <div class="row  mb-3">
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Hour-4</label>
+                                                    <input type="text" class="form-control" readonly
+                                                        formControlName="hour4">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Lab</label>
+                                                    <input type="text" class="form-control" formControlName="lab">
+                                                </div>
+                                                <div class="col-sm-4">
+                                                    <label class="form-label ">Lab Asst</label>
+                                                    <input type="text" class="form-control" formControlName="labasst">
+                                                </div>
+                                            </div>
+                                        </div>
 
-    <div class="col-sm-9 m-auto">
-        <div class="card mb-4 bg-light rounded-3 p-3">
-            <div class="card-body">
-                <form>
-                    <div class="col-sm-12">
-                    <div class="row mb-3" >
-                        <div class="col-sm-6 ">
-                            <label class="form-label">Day</label>
-                            <select class="form-select form-control">
-                                <option value="" readonly>--select--</option>
-                                <option value="">Monday</option>
-                                <option value="">Tueday</option>
-                                <option value="">Wednesday</option>
-                                <option value="">Thursday</option>
-                                <option value="">Friday</option>
-                                <option value="">Saturday</option>
-
-                            </select>
-                        </div>
-                      
-                        <div class="col-sm-6">
-                            <label class="form-label">Branch</label>
-                            <select class="form-select form-control">
-                                <option value="" readonly>--select--</option>   
-                                <option value="">Electrical Engg</option>
-                                <option value="">Mechanical Engg</option>
-                                <option value="">Electronics Engg</option>
-                                <option value="">Computer Engg</option> 
-                            </select>               
-                                 </div>
-                    </div>
-                    <div class="row  mb-3">
-                        <div class="col-sm-4">
-                            <label class="form-label ">Hour-1</label>
-                            <select class="form-select form-control">
-                                <option value="" readonly>--select--</option>   
-                                <option value="">9:30-10-30</option>
-                                <option value="">10:30-11:30</option>
-                                <option value="">11:30-12:30</option>
-                                <option value="">1:30-4:30</option> 
-                            </select>                          </div>
-                        <div class="col-sm-4">
-                            <label class="form-label ">Subject</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-sm-4">
-                            <label class="form-label ">Faculty</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row  mb-3">
-                        <div class="col-sm-4">
-                            <label class="form-label ">Hour-2</label>
-                            <select class="form-select form-control">
-                                <option value="" readonly>--select--</option>   
-                                <option value="">9:30-10-30</option>
-                                <option value="">10:30-11:30</option>
-                                <option value="">11:30-12:30</option>
-                                <option value="">1:30-4:30</option> 
-                            </select>                           </div>
-                        <div class="col-sm-4">
-                            <label class="form-label ">Subject</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-sm-4">
-                            <label class="form-label ">Faculty</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row  mb-3">
-                        <div class="col-sm-4">
-                            <label class="form-label ">Hour-3</label>
-                            <select class="form-select form-control">
-                                <option value="" readonly>--select--</option>   
-                                <option value="">9:30-10-30</option>
-                                <option value="">10:30-11:30</option>
-                                <option value="">11:30-12:30</option>
-                                <option value="">1:30-4:30</option> 
-                            </select>                           </div>
-                        <div class="col-sm-4">
-                            <label class="form-label ">Subject</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-sm-4">
-                            <label class="form-label ">Faculty</label>
-                            <input type="text" class="form-control">
-                        </div>
-                    </div>
-                    <div class="row  mb-3">
-                        <div class="col-sm-4">
-                            <label class="form-label ">Hour-4</label>
-                            <select class="form-select form-control">
-                                <option value="" readonly>--select--</option>   
-                                <option value="">9:30-10-30</option>
-                                <option value="">10:30-11:30</option>
-                                <option value="">11:30-12:30</option>
-                                <option value="">1:30-4:30</option> 
-                            </select>                           </div>
-                        <div class="col-sm-4">
-                            <label class="form-label ">Lab</label>
-                            <input type="text" class="form-control">
-                        </div>
-                        <div class="col-sm-4">
-                            <label class="form-label ">Lab Asst</label>
-                            <input type="text" class="form-control">
+                                    </form>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-secondary"
+                                        data-bs-dismiss="modal">Close</button>
+                                    <button type="button" (click)="UpdateTT()" class="btn btn-primary">Save
+                                        changes</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
-               
-                </form>
             </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
+
         </div>
     </div>
-</div>
-  </div>
- 
-</div></div>
 </section>

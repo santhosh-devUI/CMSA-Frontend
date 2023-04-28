@@ -38,6 +38,21 @@ import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstuden
 import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
 
 const routes: Routes = [
+  {path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
+{path:'faculty-profile',component:FacultyProfileComponent},
+{path:'faculty-addtt',component:FacultyAddTimetableComponent},
+{path:'faculty-viewtt',component:FacultyViewTimetableComponent},
+{path:'faculty-addmarks',component:FacultyAddMarksComponent},
+{path:'faculty-viewmarks',component:FacultyViewMarksComponent},
+{path:'faculty-viewstudents',component:FacultyViewStudentsComponent},
+
+
+
+
+
+
+
+  ]},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'logins-page', component: LoginsPageComponent },
@@ -48,17 +63,12 @@ const routes: Routes = [
   { path: 'student-login', component: StudentLoginComponent },
   { path: 'student-reg', component: StudentRegistrationComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
-  {
-    path: 'officer-dashboard',
-    component: OfficerDashboardComponent,
-    children: [
+  {path: 'officer-dashboard',component: OfficerDashboardComponent,children: [
       { path: '', redirectTo: 'officer-home', pathMatch: 'full' },
       { path: 'officer-home', component: OfficerHomeComponent },
       { path: 'officer-add-emp', component: OfficerAddEmployeeComponent },
       { path: 'officer-add-student', component: OfficerAddStudentComponent },
-      { path: 'officer-add-fee', component: OfficerAddFeeComponent },
-    ],
-  },
+      { path: 'officer-add-fee', component: OfficerAddFeeComponent },]},
   { path:'student-dashboard',component:StudentDashboardComponent, children:[
     { path:'view-profile',component:ViewProfileComponent},
     { path:'view-marks',component:ViewMarksComponent},

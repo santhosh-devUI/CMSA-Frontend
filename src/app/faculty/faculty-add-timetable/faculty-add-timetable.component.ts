@@ -12,6 +12,7 @@ export class FacultyAddTimetableComponent implements OnInit {
   constructor(private facultyservice : FacultyService,private fb : FormBuilder) { }
   TimetableForm!:FormGroup
   ngOnInit(): void {
+    
 this.TimetableForm=this.fb.group({
 day:['',[Validators.required]],
 branch:['',[Validators.required]],
@@ -36,6 +37,8 @@ labasst:['',[Validators.required]],
 if(this.TimetableForm.valid){
 this.facultyservice.AddTimetable(this.TimetableForm.value).subscribe((res:any)=>{
   alert("Added Success")
+  window.location.reload()
+
   console.log(res);
   
 })

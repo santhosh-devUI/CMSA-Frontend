@@ -1,61 +1,88 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
 
-<section style="background-color: #eee;">
-<nav class="navbar navbar-dark navbar-expand-sm bg-secondary">
-    <div class="container">
-    <a  class="navbar-brand fs-1" >
-    <i class="bi bi-hospital fs-1 "></i> &nbsp;
-    BITS
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse">
-        <span class="navbar-toggler-icon"></span>
-    </button>
-    <div id="navbarCollapse" class="collapse navbar-collapse">
-    <ul class="navbar-nav ml-auto  fs-5">
-        <li class="nav-item">
-            <a  class="nav-link" routerLink="faculty-profile">
-                Profile
-            </a>
-        </li>
-        
-        <li class="nav-item">
-            <a  class="nav-link" routerLink="faculty-viewstudents">
-                ViewStudents
-            </a>
-        </li>
-        <li class="nav-item">
-            <a  class="nav-link" routerLink="faculty-addtt">
-            AddTimetable
-            </a>
-        </li>
-        <li class="nav-item" routerLink="faculty-viewtt">
-            <a class="nav-link">
-                ViewTimeTable
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" routerLink="faculty-addmarks">
-                AddMarks
-            </a>
-        </li>
-        <li class="nav-item">
-            <a   class="nav-link" routerLink="faculty-viewmarks">
-                ViewMarks
-            </a>
-        </li>
-      
-        <li class="nav-item">
-            <a  class="nav-link" routerLink="faculty-login">
-                Logout
-            </a>
-        </li>
 
-    </ul>
-    </div></div></nav>
+    <div class="container-fluid">
 
-    
-    <div>
-        
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse py-3" id="navbarSupportedContent">
+            <a class="navbar-brand ms-5 mt-lg-0 fs-1 " style="color: rgb(42, 145, 236) ;font-weight: bold;">
+                BITS
+            </a>
+        </div>
+
+        <div class="d-flex align-items-center">
+            <a class="me-3 " style="color: rgb(105, 101, 101);font-weight: bold;" routerLink="faculty-profile">
+                PROFILE
+            </a>
+            <div class="dropdown">
+                <a class="dropdown-toggle d-flex align-items-center hidden-arrow" id="navbarDropdownMenuAvatar"
+                    role="button" data-mdb-toggle="dropdown" aria-expanded="false" routerLink="faculty-profile">
+                    <img src="{{faculty.photo}}" class="rounded-circle" height="45"
+                        alt="Black and White Portrait of a Man" loading="lazy" />
+                </a>
+            </div>
+        </div>
     </div>
+</nav>
 
-    <router-outlet></router-outlet>
-</section>
+<nav class="navbar navbar-expand-lg navbar-light bg-primary">
+
+    <div class="container-fluid">
+
+        <button class="navbar-toggler" type="button" data-mdb-toggle="collapse"
+            data-mdb-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="fas fa-bars"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+            <ul class="navbar-nav m-auto mb-2 mb-lg-0 fs-5 py-2">
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="faculty-viewstudents">
+                        Students
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="faculty-addtt">
+                        Add-Timetable
+                    </a>
+                </li>
+                <li class="nav-item" routerLink="faculty-viewtt">
+                    <a class="nav-link">
+                        Timetable
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="faculty-addmarks">
+                        Add-Marks
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="faculty-viewmarks">
+                        Student-Marks
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="faculty-profile">
+                        Profile
+                    </a>
+                </li>
+
+                <li class="nav-item">
+                    <a class="nav-link" routerLink="/faculty-login">
+                        Logout
+                    </a>
+                </li>
+
+            </ul>
+        </div>
+    </div>
+</nav>
+<router-outlet></router-outlet>

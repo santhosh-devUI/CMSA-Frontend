@@ -19,15 +19,18 @@ export class FacultyService {
   AddMarks(data:any){
      return this.http.post("http://localhost:3000/faculty/addmarks",data)
   }
-  ViewMarks(h:any){
-    return this.http.get("http://localhost:3000/faculty/viewmarks?hallticket="+h)
-
+  ViewMarks(){
+    return this.http.get("http://localhost:3000/faculty/viewmarks")
   }
-  EditMarks(){
+  ViewStudentMarks(h:any){
+    return this.http.get("http://localhost:3000/faculty/viewstudentmarks?hallticket="+h)
+  }
+  EditMarks(id:any,data:any){
+    return this.http.put("http://localhost:3000/faculty/updatemarks/"+id,data) 
 
   }
   DeleteMarks(id:any){
-return this.http.delete("http://localhost:3000/faculty/delMarks"+id)
+return this.http.delete("http://localhost:3000/faculty/delMarks/"+id)
   }
   AddTimetable(data:any){
     return this.http.post("http://localhost:3000/faculty/addtt",data)
@@ -35,8 +38,9 @@ return this.http.delete("http://localhost:3000/faculty/delMarks"+id)
   ViewTimetable(b:any){
     return this.http.get("http://localhost:3000/faculty/viewtt?branch="+b)
   }
-  EditTimetable(){
-    
+  EditTimetable(id:any,data:any){
+    return this.http.put("http://localhost:3000/faculty/updatett/"+id,data) 
+
   }
   DeleteTimetable(id:any){
     return this.http.delete("http://localhost:3000/faculty/deletett/"+id)

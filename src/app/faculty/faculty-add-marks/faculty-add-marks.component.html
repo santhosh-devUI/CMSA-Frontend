@@ -1,6 +1,7 @@
+<section style="background-color: #eee;">
 <div class="container py-5">
-        <div aria-label="breadcrumb" class="bg-light rounded-3 p-3 mb-4 text-center">
-                <h1>STUDENTS ADD MARKS</h1>
+        <div class=" p-3 mb-4 text-center ">
+                <h1 style="font-weight: bold;">STUDENTS ADD MARKS</h1><hr>
         </div>
     <div class="col-sm-12 m-auto">
         <div class="card mb-4 bg-light rounded-3 p-3">
@@ -71,9 +72,9 @@
                         </div>
                         <div class="col-sm-4">
                             <label class="form-label ">Marks Scored</label>
-                            <input type="text" class="form-control" formControlName="subject3marks">
+                            <input type="text" class="form-control" formControlName="subject3marks" (change)="calculateMarks()">
                         </div>
-                    </div>
+                    </div><hr>
                     <div class="row  mb-3">
                         <div class="col-sm-4">
                            
@@ -110,3 +111,4 @@
         </div>
     </div>
 </div>
+</section>

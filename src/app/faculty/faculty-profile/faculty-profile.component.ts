@@ -17,6 +17,7 @@ x: any;
 
   ngOnInit(): void {
     this.empid = JSON.parse(localStorage.getItem('faculty')!).empid
+    
     this.facultyservice.ViewProfile(this.empid).subscribe((res:any)=>{
       this.faculty=res
       console.log(res);
@@ -65,8 +66,11 @@ Edit(){
   })
 }
     UpdateProfile(){
-this.facultyservice.EditProfile(this.faculty._id,this.AddEmpForm.value).subscribe((res:any)=>{
+      let id=JSON.parse(localStorage.getItem('faculty')!)._id
+this.facultyservice.EditProfile(id,this.AddEmpForm.value).subscribe((res:any)=>{
   alert('updated succesfully')
+  window.location.reload()
+
   console.log(res);
   
 })

@@ -30,7 +30,7 @@ export class FacultyLoginComponent implements OnInit {
       if(res){
         localStorage.setItem('faculty',JSON.stringify(res));
         alert("Login Success")
-        this.route.navigate(['faculty-dashboard'])
+        this.route.navigate(['/faculty-dashboard'])
         
         console.log(res)
       }else{
