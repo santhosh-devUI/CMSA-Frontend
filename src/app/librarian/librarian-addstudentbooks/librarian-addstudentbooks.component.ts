@@ -20,7 +20,7 @@ export class LibrarianAddstudentbooksComponent implements OnInit {
       hallticket : new FormControl('',[Validators.required]),
       studentname : new FormControl('',[Validators.required]),
       bookname : new FormControl('',[Validators.required]),
-      autho : new FormControl('',[Validators.required]),
+      author : new FormControl('',[Validators.required]),
       branchname : new FormControl('',[Validators.required]),
       price : new FormControl('',[Validators.required]),
       date : new FormControl('',[Validators.required]),
