@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { StudentService } from 'src/app/shared/service/student.service';
 
 @Component({
   selector: 'app-view-marks',
@@ -6,10 +7,16 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./view-marks.component.scss']
 })
 export class ViewMarksComponent implements OnInit {
-
-  constructor() { }
+  viewmarks:any
+  constructor(private studentservice:StudentService) { }
 
   ngOnInit(): void {
-  }
+    let stuMarks= JSON.parse(localStorage.getItem('student')!).hallticket
 
+    this.studentservice.viewMarks(stuMarks).subscribe((res:any)=>{
+      this.viewmarks = res
+      
+  })
+
+}
 }
