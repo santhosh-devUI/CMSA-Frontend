@@ -45,11 +45,11 @@ const routes: Routes = [
     ],
   },
   { path:'student-dashboard',component:StudentDashboardComponent, children:[
+    {path:'',redirectTo:'view-timetable',pathMatch:'full'},
     { path:'view-profile',component:ViewProfileComponent},
     { path:'view-marks',component:ViewMarksComponent},
     { path:'view-fee',component:ViewFeeComponent},
     { path:'view-books',component:ViewBooksComponent},
-    { path:'update-profile',component:UpdateProfileComponent},
     { path:'view-timetable',component:ViewTimetableComponent}
   ]}
 ];

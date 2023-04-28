@@ -1,76 +1,33 @@
-<div class="row">
-  <header class="navbar text-center  sticky-top flex-md-nowrap p-0 shadow">
-    
-
-    <div class="col-sm-8">
-    <a class="navbar-brand   col-lg-2  ms-4 fs-1 " >STUDENT DASH-BOARD</a>
-    <button class="navbar-toggler  d-md-none collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    </div>
-
-      <div class="col-sm-2">
-        <input class="form-control w-100  rounded-top " type="text" placeholder="Search" >
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInViewport
+      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+      [mode]="(isHandset$ | async) ? 'over' : 'side'"
+      [opened]="(isHandset$ | async) === false">
+    <a  routerLink="view-profile" ><img src="../../../assets/images/bitslogo.jpg" class="c-logo"></a>
+    <mat-nav-list>
+      <a mat-list-item class="list" routerLink="view-timetable" routerLinkActive="active">Time-Table</a>
+      <a mat-list-item class="list" routerLink="view-marks" routerLinkActive="active">Marks</a>
+      <a mat-list-item class="list" routerLink="view-fee" routerLinkActive="active">Fees</a>
+      <a mat-list-item class="list" routerLink="view-books" routerLinkActive="active">Library Books</a>
+      <a mat-list-item class="list" routerLink="view-profile" routerLinkActive="active">Profile</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="primary">
+      <button
+        type="button"
+        aria-label="Toggle sidenav"
+        mat-icon-button
+        (click)="drawer.toggle()"
+        *ngIf="isHandset$ | async">
+        <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+      </button>
+      <span class="c-name">BITS</span>
+      <span style="flex: 1 1 auto;"></span>
+      <div>
+        <button mat-raised-button color="warn" (click)="logout()">Logout</button>
       </div>
-      
-      <div class="col-sm-1">
-        <div class="navbar-nav">
-          <div class="nav-item  text-nowrap">
-           <button class=" btn btn-warning ">Signout</button>
-       </div>
-       </div>
-      </div>
-    </header>
-  </div>  
- 
-  
-  <div class="container-fluid">
-    <div class="row">
-      <nav id="sidebarMenu" class="col-md-2 col-lg-2 d-md-block bg-body-tertiary  fs-5 sidebar collapse">
-        <div class="position-sticky pt-4 sidebar-sticky">
-          <ul class="nav flex-column">
-            <li class="nav-item">
-              <a class="nav-link active" aria-current="page" routerLink="view-profile">
-                <span data-feather="home" class="align-text-bottom"></span>
-               View-Profile
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="view-timetable">
-                <span data-feather="file" class="align-text-bottom"></span>
-              View-Timetable
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="view-marks">
-                <span data-feather="shopping-cart" class="align-text-bottom"></span>
-                View-Marks
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="view-fee">
-                <span data-feather="users" class="align-text-bottom"></span>
-               View-Fee
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="view-books">
-                <span data-feather="bar-chart-2" class="align-text-bottom"></span>
-              View-Books
-              </a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link" routerLink="update-profile">
-                <span data-feather="layers" class="align-text-bottom"></span>
-                Update-Profile
-              </a>
-            </li>
-          </ul>
-         </div>
-        </nav>
-        <div class="col-md-9 ms-2">
-          <router-outlet></router-outlet>
-        </div>
-    </div>
-    </div>
-    
+    </mat-toolbar>
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>
