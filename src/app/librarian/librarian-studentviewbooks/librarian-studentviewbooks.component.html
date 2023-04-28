@@ -33,14 +33,14 @@
                 <th>{{BK.hallticket}}</th>
                 <th>{{BK.studentname}}</th>
                 <th>{{BK.bookname}}</th>
-                <th>{{BK.autho}}</th>
+                <th>{{BK.author}}</th>
                 <th>{{BK.branchname}}</th>
                 <th>{{BK.price}}</th>
                 <th>{{BK.date | date}}</th>
                 <th>{{BK.fine}}</th>
                 <th>{{BK.clearedBy}}</th>
                 <th>
-                    <button mat-icon-button color="primary" (click)="editstudentbooks()"><mat-icon>edit</mat-icon></button>
+                    <button mat-icon-button color="primary" (click)="editstudentbooks(BK)"><mat-icon>edit</mat-icon></button>
                     <button mat-icon-button color="warn"><mat-icon>delete</mat-icon></button>
                 </th>
              </tr>

@@ -24,10 +24,11 @@ export class LibrarianStudentviewbooksComponent implements OnInit {
     })
   }
 
-  editstudentbooks(){
+  editstudentbooks(e:any){
     this.dialog.open(LibrarianEditstudentbooksComponent,{
       width:'60%',
-      height:'80%'
+      height:'80%',
+      data:e
     })
   }
 }
