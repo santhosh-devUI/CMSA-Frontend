@@ -21,6 +21,13 @@ import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
 import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
 import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
+import { FacultyDashboardComponent } from './faculty/faculty-dashboard/faculty-dashboard.component';
+import { FacultyProfileComponent } from './faculty/faculty-profile/faculty-profile.component';
+import { FacultyAddTimetableComponent } from './faculty/faculty-add-timetable/faculty-add-timetable.component';
+import { FacultyViewTimetableComponent } from './faculty/faculty-view-timetable/faculty-view-timetable.component';
+import { FacultyAddMarksComponent } from './faculty/faculty-add-marks/faculty-add-marks.component';
+import { FacultyViewMarksComponent } from './faculty/faculty-view-marks/faculty-view-marks.component';
+import { FacultyViewStudentsComponent } from './faculty/faculty-view-students/faculty-view-students.component';
 import { LibrarianNavbarComponent } from './librarian/librarian-navbar/librarian-navbar.component';
 import { LibrarianHomeComponent } from './librarian/librarian-home/librarian-home.component';
 import { LibrarianAddbooksComponent } from './librarian/librarian-addbooks/librarian-addbooks.component';
@@ -31,6 +38,21 @@ import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstuden
 import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
 
 const routes: Routes = [
+  {path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
+{path:'faculty-profile',component:FacultyProfileComponent},
+{path:'faculty-addtt',component:FacultyAddTimetableComponent},
+{path:'faculty-viewtt',component:FacultyViewTimetableComponent},
+{path:'faculty-addmarks',component:FacultyAddMarksComponent},
+{path:'faculty-viewmarks',component:FacultyViewMarksComponent},
+{path:'faculty-viewstudents',component:FacultyViewStudentsComponent},
+
+
+
+
+
+
+
+  ]},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'logins-page', component: LoginsPageComponent },
@@ -41,17 +63,12 @@ const routes: Routes = [
   { path: 'student-login', component: StudentLoginComponent },
   { path: 'student-reg', component: StudentRegistrationComponent },
   { path: 'admin-dashboard', component: AdminDashboardComponent },
-  {
-    path: 'officer-dashboard',
-    component: OfficerDashboardComponent,
-    children: [
+  {path: 'officer-dashboard',component: OfficerDashboardComponent,children: [
       { path: '', redirectTo: 'officer-home', pathMatch: 'full' },
       { path: 'officer-home', component: OfficerHomeComponent },
       { path: 'officer-add-emp', component: OfficerAddEmployeeComponent },
       { path: 'officer-add-student', component: OfficerAddStudentComponent },
-      { path: 'officer-add-fee', component: OfficerAddFeeComponent },
-    ],
-  },
+      { path: 'officer-add-fee', component: OfficerAddFeeComponent },]},
   { path:'student-dashboard',component:StudentDashboardComponent, children:[
     { path:'view-profile',component:ViewProfileComponent},
     { path:'view-marks',component:ViewMarksComponent},
