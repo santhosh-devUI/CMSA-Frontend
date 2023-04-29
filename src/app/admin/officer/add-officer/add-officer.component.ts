@@ -75,7 +75,6 @@ export class AddOfficerComponent implements OnInit {
       photo:this.photourl,
       aadharcopy:this.aadharurl
     }
-console.log(data);
 
     if(this.AddOfficerForm.valid){
       this.Api.addOfficer(data).subscribe((res:any)=>{

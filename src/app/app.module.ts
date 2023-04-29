@@ -58,6 +58,7 @@ import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
 import { ViewProfileComponent } from './student/view-profile/view-profile.component';
 import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
+import { LibraryComponent } from './admin/library/library.component';
 import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
 import { AddOfficerComponent } from './admin/officer/add-officer/add-officer.component';
 import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.component';
@@ -106,6 +107,7 @@ import { LibrarianChangepasswordComponent } from './librarian/librarian-changepa
     ViewBooksComponent,
     ViewProfileComponent,
     UpdateProfileComponent,
+    LibraryComponent,
     StudentDashboardComponent,
     LibrarianDashboardComponent,
     LibrarianHeaderComponent,

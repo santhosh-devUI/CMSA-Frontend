@@ -6,16 +6,16 @@
         <div class="col-12 col-md-8 col-lg-12">
           <ul class="nav nav-pills">
             <li class="nav-item">
-              <a class="nav-link active" data-bs-toggle="pill" href="#EEE-Students" role="tab" aria-controls="pills-EEE-Students" aria-selected="true">EEE-STUDENTS</a>
+              <a class="nav-link active" data-bs-toggle="pill" href="#EEE-Students" role="tab" aria-controls="pills-EEE-Students" aria-selected="true" (click)="forEEEStudents()">EEE-STUDENTS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="pill" href="#ECE-Students" role="tab" aria-controls="pills-ECE-Students" aria-selected="false">ECE-STUDENTS</a>
+              <a class="nav-link" data-bs-toggle="pill" href="#ECE-Students" role="tab" aria-controls="pills-ECE-Students" aria-selected="false" (click)="forECEStudents()">ECE-STUDENTS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="pill" href="#CIVIL-Students" role="tab" aria-controls="pills-CIVIL-Students" aria-selected="false">CIVIL-STUDENTS</a>
+              <a class="nav-link" data-bs-toggle="pill" href="#CIVIL-Students" role="tab" aria-controls="pills-CIVIL-Students" aria-selected="false" (click)="forCIVILStudents()">CIVIL-STUDENTS</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="pill" href="#MECH-Students" role="tab" aria-controls="pills-MECH-Students" aria-selected="false">MECH-STUDENTS</a>
+                <a class="nav-link" data-bs-toggle="pill" href="#MECH-Students" role="tab" aria-controls="pills-MECH-Students" aria-selected="false" (click)="forMECHStudents()">MECH-STUDENTS</a>
               </li>
           </ul>
 
@@ -26,12 +26,12 @@
             <div class="row mt-4">
                 <div class="col-lg-10">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchValue">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchEEEValue">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="search-student-btn">
-                        <button type="btn" class="btn btn-primary" (click)="searchdata()" >Search</button>
+                        <button type="btn" class="btn btn-primary" (click)="searchEEEdata()" >Search</button>
                     </div>
                 </div>
             </div>
@@ -80,12 +80,12 @@
             <div class="row mt-4">
                 <div class="col-lg-10">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchValue">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchECEValue">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="search-student-btn">
-                        <button type="btn" class="btn btn-primary" (click)="searchdata()">Search</button>
+                        <button type="btn" class="btn btn-primary" (click)="searchECEdata()">Search</button>
                     </div>
                 </div>
             </div>
@@ -134,12 +134,12 @@
             <div class="row mt-4">
                 <div class="col-lg-10">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchValue">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchCIVILValue">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="search-student-btn">
-                        <button type="btn" class="btn btn-primary" (click)="searchdata()">Search</button>
+                        <button type="btn" class="btn btn-primary" (click)="searchCIVILdata()">Search</button>
                     </div>
                 </div>
             </div>
@@ -189,12 +189,12 @@
             <div class="row mt-4">
                 <div class="col-lg-10">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchValue">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchMECHValue">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="search-student-btn">
-                        <button type="btn" class="btn btn-primary" (click)="searchdata()">Search</button>
+                        <button type="btn" class="btn btn-primary" (click)="searchMECHdata()">Search</button>
                     </div>
                 </div>
             </div>
