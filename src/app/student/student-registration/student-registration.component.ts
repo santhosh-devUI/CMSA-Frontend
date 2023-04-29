@@ -41,7 +41,7 @@ export class StudentRegistrationComponent implements OnInit {
   }
 submit(){
 this.studentRegistration.value
-console.log(this.studentRegistration.value,'s')
+
 }
 }
 
