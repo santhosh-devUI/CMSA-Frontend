@@ -8,55 +8,50 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FeeDetailsComponent implements OnInit {
   SearchValue:any
-  EEEfee: any;
-  ECEfee:any;
-  MECHfee:any;
-  CIVILfee:any;
+  Totalfee: any;
   collegeFee: any;
+  Studentfee: any;
+  searchvalue: any;
 
 
   constructor(private Api:AdminService) { }
 
   ngOnInit(): void {
     this.Api.ShowFee().subscribe((res:any)=>{
-      this.collegeFee = res;
+      this.collegeFee = res;  
     })
-    this.Api.Branchwisefee("EEE").subscribe((res:any)=>{
-      this.EEEfee = res;
-      console.log(res,"EEE");
+    this.Api.StudentTotalfee().subscribe((res:any)=>{
+      this.Totalfee = res;
     })
-    this.Api.Branchwisefee("ECE").subscribe((res:any)=>{
-      this.ECEfee = res;
-      console.log(res,"ECE");
-    })
-    this.Api.Branchwisefee("MECH").subscribe((res:any)=>{
-      this.MECHfee = res;
-      console.log(res,"MECH");
-    })
-    this.Api.Branchwisefee("CIVIL").subscribe((res:any)=>{
-      this.CIVILfee = res;
-      console.log(res,"CIVIL");
+    this.Api.StudentFee().subscribe((res:any)=>{
+      this.Studentfee = res;
     })
   }
-  searchdata(){
+  searchstdfeedata(){
     let FilteredValue = this.SearchValue
+    console.log(FilteredValue);
+    
+    if(this.SearchValue==undefined || this.SearchValue==''){
+      this.Api.StudentTotalfee().subscribe((res:any)=>{
+        this.Totalfee = res;
+      })
+    }else{
+      console.log("else block");
+      this.Api.Searchtotalstudfee(FilteredValue).subscribe((res:any)=>{
+        this.Totalfee = res;      
+      })
+      
+    }
+    
 
-    this.Api.SearchStudentsFee(FilteredValue).subscribe((res:any)=>{
-      console.log(res,"filtervalue");
-      this.EEEfee = res;      
+  }
+  searchdata(){
+    let Filterdata = this.searchvalue
+
+    this.Api.SearchStudentsFee(Filterdata).subscribe((res:any)=>{
+      this.Studentfee = res;      
     })
-    this.Api.SearchStudentsFee(FilteredValue).subscribe((res:any)=>{
-      console.log(res,"filtervalue");
-      this.ECEfee = res;      
-    })  
-    this.Api.SearchStudentsFee(FilteredValue).subscribe((res:any)=>{
-      console.log(res,"filtervalue");
-      this.MECHfee = res;      
-    })
-    this.Api.SearchStudentsFee(FilteredValue).subscribe((res:any)=>{
-      console.log(res,"filtervalue");
-      this.CIVILfee = res;      
-    })
+
   }
 
 }

@@ -31,7 +31,7 @@ export class AdminLoginComponent implements OnInit {
 
     this.AdminApi.getAdmin(UserName,Password).subscribe((res:any)=>{
       if(res){
-        alert("Admin Login Done")
+        localStorage.setItem('admin',JSON.stringify(res))
         this.Routes.navigate(['admin-dashboard'])
       }else{
         alert("Invalid Credentials")

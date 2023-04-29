@@ -47,6 +47,7 @@ import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
 import { ViewProfileComponent } from './student/view-profile/view-profile.component';
 import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
+import { LibraryComponent } from './admin/library/library.component';
 
 @NgModule({
   declarations: [
@@ -80,7 +81,8 @@ import { UpdateProfileComponent } from './student/update-profile/update-profile.
     ViewFeeComponent,
     ViewBooksComponent,
     ViewProfileComponent,
-    UpdateProfileComponent
+    UpdateProfileComponent,
+    LibraryComponent
   ],
   imports: [
     BrowserModule,

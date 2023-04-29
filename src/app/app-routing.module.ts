@@ -21,6 +21,14 @@ import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
 import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
 import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
+import { FacultyListComponent } from './admin/faculty-list/faculty-list.component';
+import { FeeDetailsComponent } from './admin/fee-details/fee-details.component';
+import { StudentRecordsComponent } from './admin/students-list/student-records/student-records.component';
+import { AddOfficerComponent } from './admin/officer/add-officer/add-officer.component';
+import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
+import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.component';
+import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
+import { LibraryComponent } from './admin/library/library.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -32,7 +40,19 @@ const routes: Routes = [
   { path: 'library-login', component: LibrarianLoginComponent },
   { path: 'student-login', component: StudentLoginComponent },
   { path: 'student-reg', component: StudentRegistrationComponent },
-  { path: 'admin-dashboard', component: AdminDashboardComponent },
+
+  { path: 'admin-dashboard', component: AdminDashboardComponent, children:[
+    {path:'home',component:AdminDashboardComponent},
+    {path:'add-officer',component:AddOfficerComponent},
+    {path:'view-officer',component:ViewOfficerComponent},
+    {path:'Update-officer',component:EditOfficerComponent},
+    {path:'delete-officer',component:DeleteOfficerComponent},
+    {path:'Faculty',component:FacultyListComponent},
+    {path:'Fee',component:FeeDetailsComponent},
+    {path:'Students-Records',component:StudentRecordsComponent},
+    {path:'Library',component:LibraryComponent}
+  ]},
+
   {
     path: 'officer-dashboard',
     component: OfficerDashboardComponent,
