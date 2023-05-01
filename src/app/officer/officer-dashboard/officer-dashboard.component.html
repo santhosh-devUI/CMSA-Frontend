@@ -7,15 +7,18 @@
       <a mat-list-item class="links" routerLink="officer-add-emp" routerLinkActive="active">Add Employee</a>
       <a mat-list-item class="links" routerLink="officer-add-student" routerLinkActive="active">Add Student</a>
       <a mat-list-item class="links" routerLink="officer-add-fee" routerLinkActive="active">Add Fee</a>
+      <a mat-list-item class="links" routerLink="officer-view-emp" routerLinkActive="active">View Employees</a>
+      <a mat-list-item class="links" routerLink="officer-view-std" routerLinkActive="active">View Students</a>
+      <a mat-list-item class="links" routerLink="officer-view-fee" routerLinkActive="active">View Students Fee</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar>
+    <mat-toolbar color="red">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>BITS</span>
+      <span class="title">BITS</span>
       <span class="space"></span>
       <div>
         <button class="btn">Logout</button>

@@ -1,0 +1,71 @@
+<div class="container">
+    <div class="row">
+        <h1 class="p-2 text-center">Search Students By Hallticket Number</h1>
+        <div class="col-sm-3">
+            <h2> Enter Hallticket Number : </h2>
+        </div>
+        <div class="col-sm-7">
+            <input type="text" class="form-control form-control-sm">
+        </div>
+        <div class="col-sm-2">
+            <button class="btn btn-info btn-sm fw-bold">Search</button>
+        </div>
+
+    </div>
+    <div class="table-responsive">
+
+        <table class="table table-bordered">
+            <thead class="bg-dark text-white">
+                <tr>
+                    <th>Name Of The Student</th>
+                    <th>Hallticket No.</th>
+                    <th>Email Id</th>
+                    <th>Mobile Number</th>
+                    <th>Parent Name</th>
+                    <th>Parent Mobile</th>
+                    <th>Branch</th>
+                    <th>Type</th>
+                    <th>Address</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let s of allStudents">
+
+                    <td>
+                        <div class="d-flex align-items-center">
+                            <img src="{{s.photo}}" alt="" width="50px" height="50px" class="rounded-circle" />
+                            <div class="ms-3">
+                                <h4 class="fw-bold">{{s.firstname}} <br> {{s.lastname}}</h4>
+                            </div>
+                        </div>
+                    </td>
+                    <td>
+                        <h4 class="fw-bold mt-2 htn">{{s.hallticket}}</h4>
+                    </td>
+                    <td>
+                        <h4 class="fw-bold mt-2"><i class="bi bi-envelope-at-fill"></i> {{s.emailid}}</h4>
+                    </td>
+                    <td>
+                        <h4 class="fw-bold mt-2"> <i class="bi bi-telephone-outbound"></i> {{s.mobileno}}</h4>
+                    </td>
+                    <td>
+                        <h4 class="fw-bold mt-2">{{s.parentname}}</h4>
+                    </td>
+                   
+                    <td>
+                        <h4 class="fw-bold mt-2"> <i class="bi bi-telephone-outbound"></i> {{s.parentsmobileno}}</h4>
+                    </td>
+                    <td>
+                        <h4 class="fw-bold mt-2"><i class="bi bi-mortarboard-fill"></i> {{s.branch}}</h4>
+                    </td>
+                    <td>
+                        <h4 class="fw-bold mt-2">{{s.typeofStudent}}</h4>
+                    </td>
+                    <td>
+                        <h4 class="fw-bold mt-2"><i class="bi bi-geo-alt"></i>{{s.address}}</h4>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
