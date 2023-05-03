@@ -66,6 +66,11 @@ import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
 import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
+import { SuperadminDashboardComponent } from './superadmin/superadmin-dashboard/superadmin-dashboard.component';
+import { SViewOfficerComponent } from './superadmin/s-view-officer/s-view-officer.component';
+import { SViewFacultyComponent } from './superadmin/s-view-faculty/s-view-faculty.component';
+import { SViewFeeComponent } from './superadmin/Fee/s-view-fee/s-view-fee.component';
+import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.component';
 
 @NgModule({
   declarations: [
@@ -134,7 +139,13 @@ import { LibrarianChangepasswordComponent } from './librarian/librarian-changepa
   ViewFeeComponent,
     ViewBooksComponent,
  ViewProfileComponent ,
-   UpdateProfileComponent, 
+   UpdateProfileComponent,
+   SuperadminDashboardComponent,
+   SViewOfficerComponent,
+   SViewFacultyComponent,
+   SViewFeeComponent,
+   SEditFeeComponent,
+
   ],
   imports: [
     BrowserModule,
