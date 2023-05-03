@@ -1,3 +1,4 @@
+import { SuperadminLoginComponent } from './superadmin/superadmin-login/superadmin-login.component';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './welcome-page/home/home.component';
@@ -44,6 +45,11 @@ import { LibrarianAddstudentbooksComponent } from './librarian/librarian-addstud
 import { LibrarianStudentviewbooksComponent } from './librarian/librarian-studentviewbooks/librarian-studentviewbooks.component';
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
 import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
+import { SuperadminDashboardComponent } from './superadmin/superadmin-dashboard/superadmin-dashboard.component';
+import { SViewOfficerComponent } from './superadmin/s-view-officer/s-view-officer.component';
+import { SViewFacultyComponent } from './superadmin/s-view-faculty/s-view-faculty.component';
+import { SViewFeeComponent } from './superadmin/Fee/s-view-fee/s-view-fee.component';
+import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.component';
 
 const routes: Routes = [
   {path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
@@ -64,12 +70,20 @@ const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'logins-page', component: LoginsPageComponent },
+  {path:'superadmin-login',component:SuperadminLoginComponent},
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'officer-login', component: OfficerLoginComponent },
   { path: 'faculty-login', component: FacultyLoginComponent },
   { path: 'library-login', component: LibrarianLoginComponent },
   { path: 'student-login', component: StudentLoginComponent },
   { path: 'student-reg', component: StudentRegistrationComponent },
+  
+  {path:'superadmin-dashboard',component:SuperadminDashboardComponent, children:[
+    {path:'superadmin-viewOfficer',component:SViewOfficerComponent},
+    {path:'superadmin-viewFaculty',component:SViewFacultyComponent},
+    {path:'superadmin-viewFee',component:SViewFeeComponent},
+    {path:'superadmin-EditFee',component:SEditFeeComponent}
+  ]},
 
   { path: 'admin-dashboard', component: AdminDashboardComponent, children:[
     {path:'home',component:AdminDashboardComponent},
