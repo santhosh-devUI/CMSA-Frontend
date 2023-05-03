@@ -14,11 +14,11 @@ export class SuperadminService {
   getOfficer(){
     return this.http.get('http://localhost:3000/superadmin/officer')
   }
-  getFaculty(){
-    return this.http.get('http://localhost:3000/superadmin/faculty')
+  getFaculty(department:any){
+    return this.http.get('http://localhost:3000/superadmin/faculty?department=' + department)
   }
-  getStudents(){
-    return this.http.get('http://localhost:3000/superadmin/students')
+  getStudents(branch:any){
+    return this.http.get('http://localhost:3000/superadmin/students?branch=' + branch)
   }
   searchStudentsfee(hallticket:any){
     return this.http.get('http://localhost:3000/admin/searchstudent?hallticket=' + hallticket)

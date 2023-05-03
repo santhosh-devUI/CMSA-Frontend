@@ -20,20 +20,20 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-nav-list>
-          <a mat-list-item routerLinkActive="active" routerLinkActive="active"><span class="material-symbols-outlined">grid_view</span> &nbsp; Home</a>
+          <a mat-list-item routerLinkActive="active"><span class="material-symbols-outlined">grid_view</span> &nbsp; Home</a>
           <a mat-list-item [matMenuTriggerFor]="belowMenu">
               <span class="material-symbols-outlined">person</span> &nbsp; Officers <span class="material-symbols-outlined">arrow_drop_down</span></a>
               <mat-menu #belowMenu="matMenu" yPosition="below">
-                <a mat-menu-item routerLink="view-officer" routerLinkActive="active"> Officer List</a>
-                <a mat-menu-item routerLink="add-officer" routerLinkActive="active"> Officer Add</a>
+                <a mat-menu-item routerLink="admin-view-officer" routerLinkActive="active"> Officer List</a>
+                <a mat-menu-item routerLink="admin-add-officer" routerLinkActive="active"> Officer Add</a>
               </mat-menu>
-          <a mat-list-item routerLink="Students-Records" routerLinkActive="active">
+          <a mat-list-item routerLink="admin-Students-Records" routerLinkActive="active">
               <span class="material-symbols-outlined">school</span> &nbsp; Students </a>
-          <a mat-list-item routerLink="Faculty" routerLinkActive="active">
+          <a mat-list-item routerLink="admin-Faculty" routerLinkActive="active">
             <span class="material-symbols-outlined">supervisor_account</span> &nbsp; Faculty</a>
-          <a mat-list-item routerLink="Library" routerLinkActive="active">
+          <a mat-list-item routerLink="admin-Library" routerLinkActive="active">
             <span class="material-symbols-outlined">library_books</span> &nbsp; Library</a>
-          <a mat-list-item routerLink="Fee" routerLinkActive="active">
+          <a mat-list-item routerLink="admin-Fee" routerLinkActive="active">
             <span class="material-symbols-outlined">currency_rupee</span> &nbsp; Fee</a>
     </mat-nav-list>
   </mat-sidenav>

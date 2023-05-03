@@ -50,6 +50,7 @@ import { SViewOfficerComponent } from './superadmin/s-view-officer/s-view-office
 import { SViewFacultyComponent } from './superadmin/s-view-faculty/s-view-faculty.component';
 import { SViewFeeComponent } from './superadmin/Fee/s-view-fee/s-view-fee.component';
 import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.component';
+import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-view-studentslist.component';
 
 const routes: Routes = [
   {path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
@@ -82,19 +83,20 @@ const routes: Routes = [
     {path:'superadmin-viewOfficer',component:SViewOfficerComponent},
     {path:'superadmin-viewFaculty',component:SViewFacultyComponent},
     {path:'superadmin-viewFee',component:SViewFeeComponent},
-    {path:'superadmin-EditFee',component:SEditFeeComponent}
+    {path:'superadmin-EditFee',component:SEditFeeComponent},
+    {path:'superadmin-viewStudents',component:SViewStudentslistComponent}
   ]},
 
   { path: 'admin-dashboard', component: AdminDashboardComponent, children:[
-    {path:'home',component:AdminDashboardComponent},
-    {path:'add-officer',component:AddOfficerComponent},
-    {path:'view-officer',component:ViewOfficerComponent},
-    {path:'Update-officer',component:EditOfficerComponent},
-    {path:'delete-officer',component:DeleteOfficerComponent},
-    {path:'Faculty',component:FacultyListComponent},
-    {path:'Fee',component:FeeDetailsComponent},
-    {path:'Students-Records',component:StudentRecordsComponent},
-    {path:'Library',component:LibraryComponent}
+    {path:'admin-home',component:AdminDashboardComponent},
+    {path:'admin-add-officer',component:AddOfficerComponent},
+    {path:'admin-view-officer',component:ViewOfficerComponent},
+    {path:'admin-Update-officer',component:EditOfficerComponent},
+    {path:'admin-delete-officer',component:DeleteOfficerComponent},
+    {path:'admin-Faculty',component:FacultyListComponent},
+    {path:'admin-Fee',component:FeeDetailsComponent},
+    {path:'admin-Students-Records',component:StudentRecordsComponent},
+    {path:'admin-Library',component:LibraryComponent}
   ]},
 
   {
