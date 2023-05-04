@@ -72,6 +72,8 @@ import { SViewFacultyComponent } from './superadmin/s-view-faculty/s-view-facult
 import { SViewFeeComponent } from './superadmin/Fee/s-view-fee/s-view-fee.component';
 import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.component';
 import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-view-studentslist.component';
+import { SViewBooksComponent } from './superadmin/s-view-books/s-view-books.component';
+import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin-home.component';
 
 @NgModule({
   declarations: [
@@ -147,6 +149,8 @@ import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-v
    SViewFeeComponent,
    SEditFeeComponent,
    SViewStudentslistComponent,
+   SViewBooksComponent,
+   SuperadminHomeComponent,
 
   ],
   imports: [
