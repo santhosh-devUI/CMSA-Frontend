@@ -11,6 +11,10 @@ export class SViewStudentslistComponent implements OnInit {
   ECEStudentsdata:any;
   CIVILStudentsdata:any;
   MECHStudentsdata:any;
+  SearchMECHValue:any
+  SearchCIVILValue:any
+  SearchECEValue:any
+  SearchEEEValue:any
 
   constructor(private Api:SuperadminService) { }
 
@@ -38,5 +42,16 @@ export class SViewStudentslistComponent implements OnInit {
     })
   }
   
+  searchEEEdata(){
 
+  }
+  searchECEdata(){
+
+  }
+  searchCIVILdata(){
+
+  }
+  searchMECHdata(){
+
+  }
 }

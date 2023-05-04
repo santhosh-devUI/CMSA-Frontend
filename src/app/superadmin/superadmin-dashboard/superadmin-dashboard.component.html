@@ -3,20 +3,22 @@
       [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
-    <mat-toolbar>Menu</mat-toolbar>
+      <a routerLink="officer-home"><img class="logo" src="/assets/images/bitslogo.jpg" alt="logo"></a>
     <mat-nav-list>
-      <a mat-list-item><span class="material-symbols-outlined">grid_view</span> &nbsp; Home</a>
-        <a mat-list-item routerLinkActive="active" routerLink="superadmin-viewOfficer"><span class="material-symbols-outlined">person</span> &nbsp; Officer</a>
-        <a mat-list-item routerLink="superadmin-viewStudents" >
+      <a mat-list-item class="links" routerLink="superadmin-home" routerLinkActive="active"><span class="material-symbols-outlined">grid_view</span> &nbsp; Home</a>
+        <a mat-list-item class="links" routerLinkActive="active" routerLink="superadmin-viewOfficer"><span class="material-symbols-outlined">person</span> &nbsp; Officer</a>
+        <a mat-list-item class="links" routerLink="superadmin-viewStudents" routerLinkActive="active">
           <span class="material-symbols-outlined">school</span> &nbsp; Students </a>
-      <a mat-list-item routerLink="superadmin-viewFaculty" >
+      <a mat-list-item class="links" routerLink="superadmin-viewFaculty" routerLinkActive="active" >
         <span class="material-symbols-outlined">supervisor_account</span> &nbsp; Faculty</a>
-      <a mat-list-item routerLink="superadmin-viewFee" >
+        <a mat-list-item class="links" routerLink="superadmin-viewBooks" routerLinkActive="active">
+          <span class="material-symbols-outlined">library_books</span> &nbsp; Library</a>
+      <a mat-list-item class="links" routerLink="superadmin-viewFee" routerLinkActive="active">
         <span class="material-symbols-outlined">currency_rupee</span> &nbsp; Fee</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-    <mat-toolbar color="primary">
+    <mat-toolbar class="headsection">
       <button
         type="button"
         aria-label="Toggle sidenav"
@@ -25,7 +27,11 @@
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
       </button>
-      <span>cms-angular</span>
+      <span>BITS</span>
+      <span class="spacer"></span>
+      <span>
+        <button class="btn btn-primary">logout</button>
+      </span>
     </mat-toolbar>
 <router-outlet></router-outlet>
   </mat-sidenav-content>

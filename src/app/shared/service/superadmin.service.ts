@@ -14,16 +14,31 @@ export class SuperadminService {
   getOfficer(){
     return this.http.get('http://localhost:3000/superadmin/officer')
   }
+  getStudents(branch:any){
+    return this.http.get('http://localhost:3000/superadmin/students?branch=' + branch)
+  }
+  Searchtotalstudfee(hallticket:any){
+    return this.http.get('http://localhost:3000/superadmin/searchstufee?hallticket=' + hallticket)
+  }
   getFaculty(department:any){
     return this.http.get('http://localhost:3000/superadmin/faculty?department=' + department)
   }
-  getStudents(branch:any){
-    return this.http.get('http://localhost:3000/superadmin/students?branch=' + branch)
+  viewFee(){
+    return this.http.get('http://localhost:3000/superadmin/fee')
+  }
+  StudentTotalfee(branch:any){
+    return this.http.get('http://localhost:3000/superadmin/studentfee?branch=' + branch)
   }
   searchStudentsfee(hallticket:any){
     return this.http.get('http://localhost:3000/admin/searchstudent?hallticket=' + hallticket)
   }
-  viewFee(){
-    return this.http.get('http://localhost:3000/superadmin/fee')
+  updateStdFee(id:any,data:any){
+    return this.http.put('http://localhost:3000/superadmin/updatestfee/'+ id,data)
+  }
+  viewBooks(){
+    return this.http.get('http://localhost:3000/superadmin/totalbooks')
+  }
+  viewStdBooks(){
+    return this.http.get('http://localhost:3000/superadmin/showstubooks')
   }
 }
