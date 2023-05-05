@@ -74,6 +74,13 @@ import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.compon
 import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-view-studentslist.component';
 import { SViewBooksComponent } from './superadmin/s-view-books/s-view-books.component';
 import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin-home.component';
+import { OfficerViewStudentsComponent } from './officer/officer-view-students/officer-view-students.component';
+import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
+import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
+import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
+import { OfficerEditStudentComponent } from './officer/officer-edit-student/officer-edit-student.component';
+import { OfficerDeleteStudentComponent } from './officer/officer-delete-student/officer-delete-student.component';
+import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 
 @NgModule({
   declarations: [
@@ -106,6 +113,13 @@ import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin
     OfficerAddEmployeeComponent,
     OfficerAddFeeComponent,
     OfficerAddStudentComponent,
+    OfficerViewStudentsComponent,
+    OfficerStudentFeeStatusComponent,
+    OfficerViewFeeComponent,
+    OfficerViewEmpComponent,
+    OfficerEditStudentComponent,
+    OfficerDeleteStudentComponent,
+    OfficerProfileComponent,
     StudentRecordsComponent,
     FacultyListComponent,
     FeeDetailsComponent,
@@ -151,7 +165,7 @@ import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin
    SViewStudentslistComponent,
    SViewBooksComponent,
    SuperadminHomeComponent,
-
+    
   ],
   imports: [
     BrowserModule,

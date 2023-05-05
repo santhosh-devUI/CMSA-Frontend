@@ -1,28 +1,29 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
 import { Router } from '@angular/router';
-import { log } from 'console';
 import { OfficerService } from 'src/app/shared/service/officer.service';
 
 @Component({
-  selector: 'app-student-registration',
-  templateUrl: './student-registration.component.html',
-  styleUrls: ['./student-registration.component.scss'],
+  selector: 'app-officer-edit-student',
+  templateUrl: './officer-edit-student.component.html',
+  styleUrls: ['./officer-edit-student.component.scss'],
 })
-export class StudentRegistrationComponent implements OnInit {
-  studentRegistration!: FormGroup;
+export class OfficerEditStudentComponent implements OnInit {
+  studentEditForm!: FormGroup;
   htn: any;
   photourl: any;
   aadharurl: any;
   AOurl: any;
   constructor(
+    @Inject(MAT_DIALOG_DATA) public data: any,
     private fb: FormBuilder,
     private officerApi: OfficerService,
-    private Routes: Router
+    private dialogRef: MatDialogRef<OfficerEditStudentComponent>
   ) {}
 
   ngOnInit(): void {
-    this.studentRegistration = this.fb.group({
+    this.studentEditForm = this.fb.group({
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
       gender: ['', [Validators.required]],
@@ -46,7 +47,35 @@ export class StudentRegistrationComponent implements OnInit {
       aadharcopy: ['', [Validators.required]],
       allotmentorder: ['', [Validators.required]],
       adminssionfee: ['', [Validators.required]],
-      status: ['pending', [Validators.required]],
+      status: ['Paid', [Validators.required]],
+    });
+
+    this.studentEditForm.patchValue({
+      id: this.data.id,
+      firstname: this.data.firstname,
+      lastname: this.data.lastname,
+      gender: this.data.gender,
+      dob: this.data.dob,
+      mobileno: this.data.mobileno,
+      emailid: this.data.emailid,
+      hallticket: this.data.hallticket,
+      religion: this.data.religion,
+      caste: this.data.caste,
+      parentname: this.data.parentname,
+      parentprofession: this.data.parentprofession,
+      parentsmobileno: this.data.parentsmobileno,
+      familyincome: this.data.familyincome,
+      address: this.data.address,
+      city: this.data.city,
+      state: this.data.state,
+      eamcetrank: this.data.eamcetrank,
+      branch: this.data.branch,
+      typeofStudent: this.data.typeofStudent,
+      photo: this.data.photo,
+      aadharcopy: this.data.aadharcopy,
+      allotmentorder: this.data.allotmentorder,
+      adminssionfee: this.data.adminssionfee,
+      status: this.data.status,
     });
   }
 
@@ -79,15 +108,13 @@ export class StudentRegistrationComponent implements OnInit {
     }
   }
 
-  studentReg() {
-    let data = {
-      ...this.studentRegistration.value,
-      photo: this.photourl,
-      aadharcopy: this.aadharurl,
-      allotmentorder: this.AOurl,
-    };
-    this.officerApi.addStudents(data).subscribe((res: any) => {
-      alert("Student Added Successfully...")
-    });
+  updateStudent() {
+    this.officerApi
+      .editStudents(this.data._id, this.studentEditForm.value)
+      .subscribe((res: any) => {
+        console.log(res, 'edit');
+      });
+    this.dialogRef.close();
+    window.location.reload();
   }
 }
