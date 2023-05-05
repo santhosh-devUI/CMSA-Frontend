@@ -42,6 +42,9 @@ import { OfficerViewStudentsComponent } from './officer/officer-view-students/of
 import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
 import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
 import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
+import { OfficerEditStudentComponent } from './officer/officer-edit-student/officer-edit-student.component';
+import { OfficerDeleteStudentComponent } from './officer/officer-delete-student/officer-delete-student.component';
+import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 
 @NgModule({
   declarations: [
@@ -70,7 +73,10 @@ import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view
     OfficerViewStudentsComponent,
     OfficerStudentFeeStatusComponent,
     OfficerViewFeeComponent,
-    OfficerViewEmpComponent
+    OfficerViewEmpComponent,
+    OfficerEditStudentComponent,
+    OfficerDeleteStudentComponent,
+    OfficerProfileComponent
   ],
   imports: [
     BrowserModule,

@@ -1,19 +1,43 @@
-input{
+input {
     border: 2px solid rgb(38, 158, 179);
 }
-.btn{
-    width: 90%;
+
+.btn {
+    width: 100%;
 }
-.bi{
+
+.bi {
     font-size: 20px;
     color: blue;
 }
-.bi-telephone-outbound{
+
+.bi-telephone-outbound {
     color: green;
 }
-.htn{
+
+.htn {
     padding: 3px;
     text-align: center;
     background-color: lavender;
     box-shadow: 3px 5px 2px 1px rgb(154, 154, 132);
+}
+
+.edit {
+    font-size: 20px;
+    color: blue;
+    cursor: pointer;
+}
+
+.delete {
+    font-size: 20px;
+    color: red;
+    cursor: pointer;
+}
+
+.branch {
+    font-size: 30px;
+}
+
+td {
+    vertical-align: middle;
 }

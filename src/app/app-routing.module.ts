@@ -17,6 +17,7 @@ import { OfficerAddStudentComponent } from './officer/officer-add-student/office
 import { OfficerViewStudentsComponent } from './officer/officer-view-students/officer-view-students.component';
 import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
 import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
+import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
@@ -35,6 +36,7 @@ const routes: Routes = [
     children: [
       { path: '', redirectTo: 'officer-home', pathMatch: 'full' },
       { path: 'officer-home', component: OfficerHomeComponent },
+      { path: 'officer-profile', component: OfficerProfileComponent },
       { path: 'officer-add-emp', component: OfficerAddEmployeeComponent },
       { path: 'officer-add-student', component: OfficerAddStudentComponent },
       { path: 'officer-add-fee', component: OfficerAddFeeComponent },

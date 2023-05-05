@@ -12,8 +12,8 @@
       <a mat-list-item class="links" routerLink="officer-view-fee" routerLinkActive="active">View Students Fee</a>
     </mat-nav-list>
   </mat-sidenav>
-  <mat-sidenav-content>
-    <mat-toolbar color="red">
+  <mat-sidenav-content >
+    <mat-toolbar color="red" class="sticky-top">
       <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()"
         *ngIf="isHandset$ | async">
         <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
@@ -21,7 +21,17 @@
       <span class="title">BITS</span>
       <span class="space"></span>
       <div>
-        <button class="btn">Logout</button>
+        <div class="dropdown">
+          <button class="btn dropdown-toggle" type="button" id="dropdownMenu2" data-bs-toggle="dropdown"
+            aria-expanded="false">
+            <i class="bi bi-person-circle"></i>
+          </button>
+          <ul class="dropdown-menu" aria-labelledby="dropdownMenu2">
+            <li><button class="dropdown-item" routerLink="officer-profile" type="button">Profile</button></li>
+            <li><button class="dropdown-item" (click)="logout()" type="submit">Logout</button></li>
+          </ul>
+        </div>
+
       </div>
     </mat-toolbar>
     <ng-container>

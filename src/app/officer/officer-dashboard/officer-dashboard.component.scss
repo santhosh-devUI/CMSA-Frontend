@@ -28,12 +28,13 @@
 
 }
 
-.links {
-  color: white;
+.mat-list-item:hover {
+  background-color: rgb(80, 168, 203);
+  color: white !important;
 }
 
-.links:hover {
-  background-color: gray;
+.links {
+  color: white;
 }
 
 .logo {

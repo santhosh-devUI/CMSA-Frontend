@@ -1,6 +1,5 @@
-<div class="container">
+<div class="card p-3 mt-1">
     <div class="row">
-        <h1 class="p-2 text-center">Search Students By Hallticket Number</h1>
         <div class="col-sm-3">
             <h2> Enter Hallticket Number : </h2>
         </div>
@@ -8,61 +7,71 @@
             <input type="text" class="form-control form-control-sm">
         </div>
         <div class="col-sm-2">
-            <button class="btn btn-info btn-sm fw-bold">Search</button>
+            <button class="btn btn-info btn-sm ">Search</button>
         </div>
 
     </div>
     <div class="table-responsive">
 
         <table class="table table-bordered">
-            <thead class="bg-dark text-white">
+            <thead class="bg-dark text-white sticky-top">
                 <tr>
                     <th>Name Of The Student</th>
                     <th>Hallticket No.</th>
-                    <th>Email Id</th>
-                    <th>Mobile Number</th>
-                    <th>Parent Name</th>
-                    <th>Parent Mobile</th>
+                    <th>Email Id & Number</th>
+                    <th>Date of Birth</th>
+                    <th>Parent Name & Number</th>
                     <th>Branch</th>
-                    <th>Type</th>
+                    <th>Type Of Student</th>
                     <th>Address</th>
+                    <th>Action</th>
                 </tr>
             </thead>
             <tbody>
                 <tr *ngFor="let s of allStudents">
-
                     <td>
                         <div class="d-flex align-items-center">
-                            <img src="{{s.photo}}" alt="" width="50px" height="50px" class="rounded-circle" />
+                            <img src="{{s.photo}}" alt="" width="60px" height="60px" class="rounded-circle" />
                             <div class="ms-3">
-                                <h4 class="fw-bold">{{s.firstname}} <br> {{s.lastname}}</h4>
+                                <p class="">{{s.firstname}} <br> {{s.lastname}}</p>
                             </div>
                         </div>
                     </td>
                     <td>
-                        <h4 class="fw-bold mt-2 htn">{{s.hallticket}}</h4>
+                        <p class=" mt-2 htn">{{s.hallticket}}</p>
                     </td>
                     <td>
-                        <h4 class="fw-bold mt-2"><i class="bi bi-envelope-at-fill"></i> {{s.emailid}}</h4>
+                        <p class=" mt-2"><i class="bi bi-envelope-at"></i>&nbsp; {{s.emailid}} </p>
+
+                        <p><i class="bi bi-telephone-outbound"></i>&nbsp; {{s.mobileno}}</p>
                     </td>
                     <td>
-                        <h4 class="fw-bold mt-2"> <i class="bi bi-telephone-outbound"></i> {{s.mobileno}}</h4>
+                        <p>{{s.dob | date }}</p>
                     </td>
                     <td>
-                        <h4 class="fw-bold mt-2">{{s.parentname}}</h4>
+                        <p class=" mt-2"> {{s.parentname}}</p>
+                        <p><i class="bi bi-telephone-outbound"></i>&nbsp;
+                            {{s.parentsmobileno}}</p>
                     </td>
-                   
+
+
                     <td>
-                        <h4 class="fw-bold mt-2"> <i class="bi bi-telephone-outbound"></i> {{s.parentsmobileno}}</h4>
-                    </td>
-                    <td>
-                        <h4 class="fw-bold mt-2"><i class="bi bi-mortarboard-fill"></i> {{s.branch}}</h4>
-                    </td>
-                    <td>
-                        <h4 class="fw-bold mt-2">{{s.typeofStudent}}</h4>
+                        <p class="text-center mt-2"><i class="bi bi-mortarboard branch"></i> <br> {{s.branch}}</p>
                     </td>
                     <td>
-                        <h4 class="fw-bold mt-2"><i class="bi bi-geo-alt"></i>{{s.address}}</h4>
+                        <p class=" mt-2">{{s.typeofStudent}}</p>
+                    </td>
+                    <td>
+                        <p class=" mt-2"><i class="bi bi-geo-alt"></i>&nbsp;{{s.address}}, <br> {{s.city}},<br>
+                            {{s.state}}
+                        </p>
+                    </td>
+                    <td>
+                        <div>
+                            <i class="bi bi-pencil-square m-2 edit" (click)="Edit(s)"></i>
+                            <hr>
+                            <i class="bi bi-trash3 m-2 delete" (click)="Delete(s)"></i>
+                        </div>
                     </td>
                 </tr>
             </tbody>
