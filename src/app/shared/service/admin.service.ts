@@ -56,5 +56,8 @@ export class AdminService {
   StdBooks(){
     return this.http.get('http://localhost:3000/admin/showstubooks')
   }
+  TotalStudents(){
+    return this.http.get('http://localhost:3000/admin/totalstudents')
+  }
 }
 

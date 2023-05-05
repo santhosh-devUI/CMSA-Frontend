@@ -9,10 +9,10 @@ import { SuperadminService } from 'src/app/shared/service/superadmin.service';
 export class SViewStudentslistComponent implements OnInit {
   EEEStudentsdata: any;
   ECEStudentsdata:any;
-  CIVILStudentsdata:any;
+  CSEStudentsdata:any;
   MECHStudentsdata:any;
   SearchMECHValue:any
-  SearchCIVILValue:any
+  SearchCSEValue:any
   SearchECEValue:any
   SearchEEEValue:any
 
@@ -31,9 +31,9 @@ export class SViewStudentslistComponent implements OnInit {
       this.ECEStudentsdata = res      
     })
   }
-  forCIVILstd(){
-    this.Api.getStudents("CIVIL").subscribe((res:any)=>{
-      this.CIVILStudentsdata = res      
+  forCSEstd(){
+    this.Api.getStudents("CSE").subscribe((res:any)=>{
+      this.CSEStudentsdata = res      
     })
   }
   forMECHstd(){
@@ -43,15 +43,23 @@ export class SViewStudentslistComponent implements OnInit {
   }
   
   searchEEEdata(){
-
+    this.Api.SearchStudents(this.SearchEEEValue).subscribe((res:any)=>{
+      this.EEEStudentsdata = res      
+    })
   }
   searchECEdata(){
-
+    this.Api.SearchStudents(this.SearchECEValue).subscribe((res:any)=>{
+      this.ECEStudentsdata = res      
+    })
   }
-  searchCIVILdata(){
-
+  searchCSEdata(){
+    this.Api.SearchStudents(this.SearchCSEValue).subscribe((res:any)=>{
+      this.CSEStudentsdata = res      
+    })
   }
   searchMECHdata(){
-
+    this.Api.SearchStudents(this.SearchMECHValue).subscribe((res:any)=>{
+      this.MECHStudentsdata = res     
+    })
   }
 }

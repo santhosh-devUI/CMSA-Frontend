@@ -1,37 +1,3 @@
-<!-- <div class="container">
-    <h2 class="head mt-4 mb-2">Faculty</h2>
-
-    <div class="table-responsive text-nowrap mt-4">
-        <table class="table mt-1">
-            <thead>
-                <tr class="heading">
-                    <th scope="col">S.NO</th>
-                    <th scope="col">ID</th>
-                    <th scope="col">Name</th>
-                    <th scope="col">Mobileno</th>
-                    <th scope="col">EmailId</th>
-                    <th scope="col">Type Of Officer</th>
-                    <th scope="col">JoiningDate</th>
-                    <th scope="col">Experience</th>
-                    <th scope="col">Qualification</th>
-                    <th scope="col">Department</th>
-                    <th scope="col">Salary</th>
-                    <th scope="col">Address</th>
-                    <th scope="col">BankDetails</th>
-                    <th scope="col">Photo</th>
-                    <th scope="col">AadharCopy</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row"></th>
-                    <td></td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
-</div> -->
-
 
 <div class="container">
     <h2 class="head mt-4 mb-2">Faculty</h2>
@@ -47,7 +13,7 @@
               <a class="nav-link" data-bs-toggle="pill" href="#ECE-Faculty" role="tab" aria-controls="pills-ECE-Faculty" aria-selected="false">ECE-FACULTY</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="pill" href="#CIVIL-Faculty" role="tab" aria-controls="pills-CIVIL-Faculty" aria-selected="false">CIVIL-FACULTY</a>
+              <a class="nav-link" data-bs-toggle="pill" href="#CSE-Faculty" role="tab" aria-controls="pills-CSE-Faculty" aria-selected="false">CSE-FACULTY</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="pill" href="#MECH-Faculty" role="tab" aria-controls="pills-MECH-Faculty" aria-selected="false">MECH-FACULTY</a>
@@ -169,7 +135,7 @@
 
 <!--CIVIL-Department Students Record-->
 
-          <div class="tab-pane fade" id="CIVIL-Faculty">
+          <div class="tab-pane fade" id="CSE-Faculty">
             <div class="table-responsive">
                 <table class="table mt-1">
                     <thead>
@@ -191,32 +157,32 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let CIVIL of CIVILfaculty; index as i">
+                        <tr *ngFor="let CSE of CSEfaculty; index as i">
                             <th scope="row">{{i+1}}</th>
-                            <td><b>{{CIVIL.empid}}</b></td>
-                            <td style="color:blue; font-weight: bold;">{{CIVIL.name}}</td>
-                            <td>{{CIVIL.department}}</td>
-                            <td>{{CIVIL.mobileno}}</td>
-                            <td>{{CIVIL.emailid}}</td>
-                            <td>{{CIVIL.joiningdate}}</td>
-                            <td>{{CIVIL.yearofexperience}}</td>
-                            <td>{{CIVIL.salary}}</td>
-                            <td>{{CIVIL.typeofemployee}}</td>
+                            <td><b>{{CSE.empid}}</b></td>
+                            <td style="color:blue; font-weight: bold;">{{CSE.name}}</td>
+                            <td>{{CSE.department}}</td>
+                            <td>{{CSE.mobileno}}</td>
+                            <td>{{CSE.emailid}}</td>
+                            <td>{{CSE.joiningdate}}</td>
+                            <td>{{CSE.yearofexperience}}</td>
+                            <td>{{CSE.salary}}</td>
+                            <td>{{CSE.typeofemployee}}</td>
                             <td>
-                                <span>{{CIVIL.address}}</span>,
-                                <span>{{CIVIL.city}}</span>,
-                                <span>{{CIVIL.state}}</span>,
-                                <span>{{CIVIL.pincode}}</span>
+                                <span>{{CSE.address}}</span>,
+                                <span>{{CSE.city}}</span>,
+                                <span>{{CSE.state}}</span>,
+                                <span>{{CSE.pincode}}</span>
                             </td>
                             <td>
-                                <span>{{CIVIL.bankname}}</span>,
-                                <span>{{CIVIL.bankaccountno}}</span>,
-                                <span>{{CIVIL.ifsccode}}</span>,
-                                <span>{{CIVIL.branchname}}</span>
-                                <span>{{CIVIL.pancardno}}</span>
+                                <span>{{CSE.bankname}}</span>,
+                                <span>{{CSE.bankaccountno}}</span>,
+                                <span>{{CSE.ifsccode}}</span>,
+                                <span>{{CSE.branchname}}</span>
+                                <span>{{CSE.pancardno}}</span>
                             </td>
-                            <td><img src="{{CIVIL.photo}}" width="100%" height="70%"></td>
-                            <td><img src="{{CIVIL.aadharcopy}}" width="50%" height="50%"></td>
+                            <td><img src="{{CSE.photo}}" width="100%" height="70%"></td>
+                            <td><img src="{{CSE.aadharcopy}}" width="50%" height="50%"></td>
                         </tr>
                     </tbody>
                 </table>

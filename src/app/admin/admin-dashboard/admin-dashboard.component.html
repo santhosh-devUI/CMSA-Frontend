@@ -11,7 +11,7 @@
   </button>
   <a routerLink="/home"><img class="logo" src="/assets/images/bitslogo.jpg" alt="logo"></a>
   <span style="font-size:2rem;color: #fff;font-family: initial;">BITS</span>
-  <button class="btn btn-primary" routerLink="/admin-login">Logout</button>
+  <button class="btn btn-primary" (click)="logout()">Logout</button>
   </nav>
 </div>
 <mat-sidenav-container class="sidenav-container">
@@ -20,20 +20,20 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-nav-list>
-          <a mat-list-item routerLinkActive="active"><span class="material-symbols-outlined">grid_view</span> &nbsp; Home</a>
-          <a mat-list-item [matMenuTriggerFor]="belowMenu">
+          <a mat-list-item class="links" routerLink="admin-home" routerLinkActive="active"><span class="material-symbols-outlined">grid_view</span> &nbsp; Home</a>
+          <a mat-list-item class="links" [matMenuTriggerFor]="belowMenu">
               <span class="material-symbols-outlined">person</span> &nbsp; Officers <span class="material-symbols-outlined">arrow_drop_down</span></a>
               <mat-menu #belowMenu="matMenu" yPosition="below">
-                <a mat-menu-item routerLink="admin-view-officer" routerLinkActive="active"> Officer List</a>
-                <a mat-menu-item routerLink="admin-add-officer" routerLinkActive="active"> Officer Add</a>
+                <a mat-menu-item class="links" routerLink="admin-view-officer" routerLinkActive="active"> Officer List</a>
+                <a mat-menu-item class="links" routerLink="admin-add-officer" routerLinkActive="active"> Officer Add</a>
               </mat-menu>
-          <a mat-list-item routerLink="admin-Students-Records" routerLinkActive="active">
+          <a mat-list-item class="links" routerLink="admin-Students-Records" routerLinkActive="active">
               <span class="material-symbols-outlined">school</span> &nbsp; Students </a>
-          <a mat-list-item routerLink="admin-Faculty" routerLinkActive="active">
+          <a mat-list-item class="links" routerLink="admin-Faculty" routerLinkActive="active">
             <span class="material-symbols-outlined">supervisor_account</span> &nbsp; Faculty</a>
-          <a mat-list-item routerLink="admin-Library" routerLinkActive="active">
+          <a mat-list-item class="links" routerLink="admin-Library" routerLinkActive="active">
             <span class="material-symbols-outlined">library_books</span> &nbsp; Library</a>
-          <a mat-list-item routerLink="admin-Fee" routerLinkActive="active">
+          <a mat-list-item class="links" routerLink="admin-Fee" routerLinkActive="active">
             <span class="material-symbols-outlined">currency_rupee</span> &nbsp; Fee</a>
     </mat-nav-list>
   </mat-sidenav>

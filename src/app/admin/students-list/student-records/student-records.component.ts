@@ -9,12 +9,12 @@ import { AdminService } from 'src/app/shared/service/admin.service';
 })
 export class StudentRecordsComponent implements OnInit {
   SearchMECHValue:any
-  SearchCIVILValue:any
+  SearchCSEValue:any
   SearchECEValue:any
   SearchEEEValue:any
   EEEList:any
   ECEList: any;
-  CIVILList:any;
+  CSEList:any;
   MECHList: any;
 
   constructor(private Api:AdminService) { }
@@ -35,9 +35,9 @@ export class StudentRecordsComponent implements OnInit {
       this.ECEList=res
     });
   }
-  forCIVILStudents(){
-    this.Api.getStudents("CIVIL").subscribe((res:any)=>{
-      this.CIVILList=res
+  forCSEStudents(){
+    this.Api.getStudents("CSE").subscribe((res:any)=>{
+      this.CSEList=res
     });
   }
   forMECHStudents(){
@@ -57,10 +57,10 @@ export class StudentRecordsComponent implements OnInit {
       this.ECEList = res;      
     })
   }
-  searchCIVILdata(){
-    this.Api.SearchStudents(this.SearchCIVILValue).subscribe((res:any)=>{
+  searchCSEdata(){
+    this.Api.SearchStudents(this.SearchCSEValue).subscribe((res:any)=>{
       console.log(res,"filtervalue");
-      this.CIVILList = res;      
+      this.CSEList = res;      
     })
   }
   searchMECHdata(){

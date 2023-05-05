@@ -1,3 +1,4 @@
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { SuperadminLoginComponent } from './superadmin/superadmin-login/superadmin-login.component';
 import { Component, NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -82,6 +83,7 @@ const routes: Routes = [
   { path: 'student-reg', component: StudentRegistrationComponent },
   
   {path:'superadmin-dashboard',component:SuperadminDashboardComponent, children:[
+    { path: '', redirectTo: 'superadmin-home', pathMatch: 'full' },
     {path:'superadmin-home',component:SuperadminHomeComponent},
     {path:'superadmin-viewOfficer',component:SViewOfficerComponent},
     {path:'superadmin-viewFaculty',component:SViewFacultyComponent},
@@ -92,7 +94,8 @@ const routes: Routes = [
   ]},
 
   { path: 'admin-dashboard', component: AdminDashboardComponent, children:[
-    {path:'admin-home',component:AdminDashboardComponent},
+    { path: '', redirectTo: 'admin-home', pathMatch: 'full' },
+    {path:'admin-home',component:AdminHomeComponent},
     {path:'admin-add-officer',component:AddOfficerComponent},
     {path:'admin-view-officer',component:ViewOfficerComponent},
     {path:'admin-Update-officer',component:EditOfficerComponent},
