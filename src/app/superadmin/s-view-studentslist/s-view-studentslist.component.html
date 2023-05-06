@@ -1,0 +1,242 @@
+
+<div class="container mt-2">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-12">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" data-bs-toggle="pill" href="#EEE-Students" role="tab" aria-controls="pills-EEE-Students" aria-selected="true" (click)="forEEEstd()">EEE-STUDENTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="pill" href="#ECE-Students" role="tab" aria-controls="pills-ECE-Students" aria-selected="false" (click)="forECEstd()">ECE-STUDENTS</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="pill" href="#CSE-Students" role="tab" aria-controls="pills-CSE-Students" aria-selected="false" (click)="forCSEstd()">CSE-STUDENTS</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#MECH-Students" role="tab" aria-controls="pills-MECH-Students" aria-selected="false" (click)="forMECHstd()">MECH-STUDENTS</a>
+              </li>
+          </ul>
+
+<!--EEE-Department Students Record-->
+
+          <div class="tab-content mt-3">
+          <div class="tab-pane fade show active" id="EEE-Students">
+            <div class="row mt-4">
+                <div class="col-lg-10">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchEEEValue">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="search-student-btn">
+                        <button type="btn" class="btn btn-primary" (click)="searchEEEdata()" >Search</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">HallTicketNo</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Branch</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">StudentType</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                            <th scope="col">AllotmentOrder</th>
+                            <th scope="col">AdmissionFee</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let EEE of EEEStudentsdata; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{EEE.hallticket}}</td>
+                            <td>{{EEE.firstname}}&nbsp;{{EEE.lastname}}</td>
+                            <td>{{EEE.branch}}</td>
+                            <td>{{EEE.mobileno}}</td>
+                            <td>{{EEE.emailid}}</td>
+                            <td>{{EEE.typeofStudent}}</td>
+                            <td><img src="{{EEE.photo}}" width="100%" height="70%"></td>
+                            <td><img src="{{EEE.aadharcopy}}" width="50%" height="50%"></td>
+                            <td>{{EEE.allotmentorder}}</td>
+                            <td>{{EEE.adminssionfee}}</td>
+                            <td>{{EEE.status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+<!--ECE-Department Students Record-->
+
+          <div class="tab-pane fade" id="ECE-Students">
+            <div class="row mt-4">
+                <div class="col-lg-10">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchECEValue">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="search-student-btn">
+                        <button type="btn" class="btn btn-primary" (click)="searchECEdata()">Search</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">HallTicketNo</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Branch</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">StudentType</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                            <th scope="col">AllotmentOrder</th>
+                            <th scope="col">AdmissionFee</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let ECE of ECEStudentsdata; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{ECE.hallticket}}</td>
+                            <td>{{ECE.firstname}}&nbsp;{{ECE.lastname}}</td>
+                            <td>{{ECE.branch}}</td>
+                            <td>{{ECE.mobileno}}</td>
+                            <td>{{ECE.emailid}}</td>
+                            <td>{{ECE.typeofStudent}}</td>
+                            <td><img src="{{ECE.photo}}" width="50%" height="50%"></td>
+                            <td><img src="{{ECE.aadharcopy}}" width="50%" height="50%"></td>
+                            <td>{{ECE.allotmentorder}}</td>
+                            <td>{{ECE.adminssionfee}}</td>
+                            <td>{{ECE.status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+<!--CIVIL-Department Students Record-->
+
+          <div class="tab-pane fade" id="CSE-Students">
+            <div class="row mt-4">
+                <div class="col-lg-10">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchCSEValue">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="search-student-btn">
+                        <button type="btn" class="btn btn-primary" (click)="searchCSEdata()">Search</button>
+                    </div>
+                </div>
+            </div>
+           
+
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">HallTicketNo</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Branch</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">StudentType</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                            <th scope="col">AllotmentOrder</th>
+                            <th scope="col">AdmissionFee</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let CSE of CSEStudentsdata; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{CSE.hallticket}}</td>
+                            <td>{{CSE.firstname}}&nbsp;{{CSE.lastname}}</td>
+                            <td>{{CSE.branch}}</td>
+                            <td>{{CSE.mobileno}}</td>
+                            <td>{{CSE.emailid}}</td>
+                            <td>{{CSE.typeofStudent}}</td>
+                            <td><img src="{{CSE.photo}}" width="50%" height="50%"></td>
+                            <td><img src="{{CSE.aadharcopy}}" width="50%" height="50%"></td>
+                            <td>{{CSE.allotmentorder}}</td>
+                            <td>{{CSE.adminssionfee}}</td>
+                            <td>{{CSE.status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+<!--MECH-Department Students Record-->
+
+          <div class="tab-pane fade" id="MECH-Students">
+            <div class="row mt-4">
+                <div class="col-lg-10">
+                    <div class="form-group">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchMECHValue">
+                    </div>
+                </div>
+                <div class="col-lg-2">
+                    <div class="search-student-btn">
+                        <button type="btn" class="btn btn-primary" (click)="searchMECHdata()">Search</button>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">HallTicketNo</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Branch</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">StudentType</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                            <th scope="col">AllotmentOrder</th>
+                            <th scope="col">AdmissionFee</th>
+                            <th scope="col">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let MECH of MECHStudentsdata; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td>{{MECH.hallticket}}</td>
+                            <td>{{MECH.firstname}}&nbsp;{{MECH.lastname}}</td>
+                            <td>{{MECH.branch}}</td>
+                            <td>{{MECH.mobileno}}</td>
+                            <td>{{MECH.emailid}}</td>
+                            <td>{{MECH.typeofStudent}}</td>
+                            <td><img src="{{MECH.photo}}" width="50%" height="50%"></td>
+                            <td><img src="{{MECH.aadharcopy}}" width="50%" height="50%"></td>
+                            <td>{{MECH.allotmentorder}}</td>
+                            <td>{{MECH.adminssionfee}}</td>
+                            <td>{{MECH.status}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+
+        </div>        
+        </div>
+    </div>
+  </div>

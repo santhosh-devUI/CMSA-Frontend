@@ -41,7 +41,6 @@ import { LibrarianEditbooksComponent } from './librarian/librarian-editbooks/lib
 import { StudentRegistrationComponent } from './student/student-registration/student-registration.component';
 import { HomeComponent } from './welcome-page/home/home.component';
 import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.component';
-import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
 import { OfficerDashboardComponent } from './officer/officer-dashboard/officer-dashboard.component';
 import { OfficerHomeComponent } from './officer/officer-home/officer-home.component';
 import { MatGridListModule } from '@angular/material/grid-list';
@@ -59,6 +58,8 @@ import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
 import { ViewProfileComponent } from './student/view-profile/view-profile.component';
 import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
+import { LibraryComponent } from './admin/library/library.component';
+import { StudentDashboardComponent } from './student/student-dashboard/student-dashboard.component';
 import { AddOfficerComponent } from './admin/officer/add-officer/add-officer.component';
 import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.component';
 import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
@@ -66,6 +67,22 @@ import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-of
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
 import { LibrarianEditprofileComponent } from './librarian/librarian-editprofile/librarian-editprofile.component';
 import { LibrarianSearchstudentbookComponent } from './librarian/librarian-searchstudentbook/librarian-searchstudentbook.component';
+import { SuperadminDashboardComponent } from './superadmin/superadmin-dashboard/superadmin-dashboard.component';
+import { SViewOfficerComponent } from './superadmin/s-view-officer/s-view-officer.component';
+import { SViewFacultyComponent } from './superadmin/s-view-faculty/s-view-faculty.component';
+import { SViewFeeComponent } from './superadmin/Fee/s-view-fee/s-view-fee.component';
+import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.component';
+import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-view-studentslist.component';
+import { SViewBooksComponent } from './superadmin/s-view-books/s-view-books.component';
+import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin-home.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
+import { OfficerViewStudentsComponent } from './officer/officer-view-students/officer-view-students.component';
+import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
+import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
+import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
+import { OfficerEditStudentComponent } from './officer/officer-edit-student/officer-edit-student.component';
+import { OfficerDeleteStudentComponent } from './officer/officer-delete-student/officer-delete-student.component';
+import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 
 @NgModule({
   declarations: [
@@ -98,6 +115,13 @@ import { LibrarianSearchstudentbookComponent } from './librarian/librarian-searc
     OfficerAddEmployeeComponent,
     OfficerAddFeeComponent,
     OfficerAddStudentComponent,
+    OfficerViewStudentsComponent,
+    OfficerStudentFeeStatusComponent,
+    OfficerViewFeeComponent,
+    OfficerViewEmpComponent,
+    OfficerEditStudentComponent,
+    OfficerDeleteStudentComponent,
+    OfficerProfileComponent,
     StudentRecordsComponent,
     FacultyListComponent,
     FeeDetailsComponent,
@@ -107,6 +131,8 @@ import { LibrarianSearchstudentbookComponent } from './librarian/librarian-searc
     ViewBooksComponent,
     ViewProfileComponent,
     UpdateProfileComponent,
+    LibraryComponent,
+    StudentDashboardComponent,
     LibrarianDashboardComponent,
     LibrarianHeaderComponent,
     LibrarianHomeComponent,
@@ -134,6 +160,17 @@ import { LibrarianSearchstudentbookComponent } from './librarian/librarian-searc
    UpdateProfileComponent,
    LibrarianEditprofileComponent,
    LibrarianSearchstudentbookComponent, 
+   SuperadminDashboardComponent,
+   SViewOfficerComponent,
+   SViewFacultyComponent,
+   SViewFeeComponent,
+   SEditFeeComponent,
+   SViewStudentslistComponent,
+   SViewBooksComponent,
+   SuperadminHomeComponent,
+   AdminHomeComponent,
+
+    
   ],
   imports: [
     BrowserModule,

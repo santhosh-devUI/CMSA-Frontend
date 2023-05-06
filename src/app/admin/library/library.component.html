@@ -1,0 +1,152 @@
+<div class="container">
+    <h2 class="head mt-1 mb-2">Library</h2>
+</div>
+<div class="container mt-4">
+    <div class="row">
+        <div class="col-12 col-md-8 col-lg-12">
+          <ul class="nav nav-pills">
+            <li class="nav-item">
+              <a class="nav-link active" data-bs-toggle="pill" href="#Librarian" role="tab" aria-controls="pills-Librarian" aria-selected="true">Librarians</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" data-bs-toggle="pill" href="#Books" role="tab" aria-controls="pills-Books" aria-selected="false">Books</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" data-bs-toggle="pill" href="#StudentsBooks" role="tab" aria-controls="pills-StudentsBooks" aria-selected="false">Students-Books</a>
+              </li>
+          </ul>
+
+<!--Librarian Record-->
+
+          <div class="tab-content mt-3">
+          <div class="tab-pane fade show active" id="Librarian">
+            
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">ID</th>
+                            <th scope="col">Name</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Mobileno</th>
+                            <th scope="col">EmailId</th>
+                            <th scope="col">Joining Date</th>
+                            <th scope="col">Experience</th>
+                            <th scope="col">Salary</th>
+                            <th scope="col">EmployeeType</th>
+                            <th scope="col">Address</th>
+                            <th scope="col">Bank-Details</th>
+                            <th scope="col">Photo</th>
+                            <th scope="col">AdharCopy</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let L of Libraryfaculty; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td><b>{{L.empid}}</b></td>
+                            <td style="color:blue; font-weight: bold;">{{L.name}}</td>
+                            <td>{{L.department}}</td>
+                            <td>{{L.mobileno}}</td>
+                            <td>{{L.emailid}}</td>
+                            <td>{{L.joiningdate}}</td>
+                            <td>{{L.yearofexperience}}</td>
+                            <td>{{L.salary}}</td>
+                            <td>{{L.typeofemployee}}</td>
+                            <td>
+                                <span>{{L.address}}</span>,
+                                <span>{{L.city}}</span>,
+                                <span>{{L.state}}</span>,
+                                <span>{{L.pincode}}</span>
+                            </td>
+                            <td>
+                                <span>{{L.bankname}}</span>,
+                                <span>{{L.bankaccountno}}</span>,
+                                <span>{{L.ifsccode}}</span>,
+                                <span>{{L.branchname}}</span>
+                                <span>{{L.pancardno}}</span>
+                            </td>
+                            <td><img src="{{L.photo}}" width="100%" height="70%"></td>
+                            <td><img src="{{L.aadharcopy}}" width="50%" height="50%"></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+<!--Books Record-->
+
+          <div class="tab-pane fade" id="Books">
+            
+            <div class="table-responsive">
+                <table class="table mt-1">
+                    <thead>
+                        <tr class="heading">
+                            <th scope="col">S.NO</th>
+                            <th scope="col">BookName</th>
+                            <th scope="col">Author</th>
+                            <th scope="col">Department</th>
+                            <th scope="col">Price</th>
+                            <th scope="col">Quantity</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let B of TotalBooks; index as i">
+                            <th scope="row">{{i+1}}</th>
+                            <td style="color:blue; font-weight: bold;">{{B.bookname}}</td>
+                            <td>{{B.author}}</td>
+                            <td>{{B.department}}</td>
+                            <td>{{B.price}}</td>
+                            <td>{{B.quantity}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+          </div>
+
+<!---Student-Books-->
+          
+<div class="tab-pane fade" id="StudentsBooks">
+            
+    <div class="table-responsive">
+        <table class="table mt-1">
+            <thead>
+                <tr class="heading">
+                    <th scope="col">S.NO</th>
+                    <th scope="col">Librarian</th>
+                    <th scope="col">HallTicketno</th>
+                    <th scope="col">StudentName</th>
+                    <th scope="col">Department</th>
+                    <th scope="col">BookName</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Date of Taken</th>
+                    <th scope="col">Total Fine</th>
+                    <th scope="col">ClearedBy</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let SB of StdBooks; index as i">
+                    <th scope="row">{{i+1}}</th>
+                    <td>{{SB.librarian}}</td>
+                    <td style="color:blue; font-weight: bold;">{{SB.hallticket}}</td>
+                    <td>{{SB.studentname}}</td>
+                    <td>{{SB.branchname}}</td>
+                    <td>{{SB.bookname}}</td>
+                    <td>{{SB.author}}</td>
+                    <td>{{SB.price}}</td>
+                    <td>{{SB.date}}</td>
+                    <td>{{SB.fine}}</td>
+                    <td>{{SB.clearedBy}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+
+        </div>        
+        </div>
+    </div>
+  </div>
+

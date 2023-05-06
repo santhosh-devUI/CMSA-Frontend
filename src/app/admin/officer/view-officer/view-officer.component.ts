@@ -17,9 +17,7 @@ export class ViewOfficerComponent implements OnInit {
 
   ngOnInit(): void {
     this.Api.getOfficer().subscribe((res:any)=>{
-      this.OfficerList = res;
-      console.log(this.OfficerList,"officer");
-      
+      this.OfficerList = res; 
     })
   }
   editOfficer(e:any){

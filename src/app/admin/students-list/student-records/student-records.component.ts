@@ -8,49 +8,63 @@ import { AdminService } from 'src/app/shared/service/admin.service';
   styleUrls: ['./student-records.component.scss']
 })
 export class StudentRecordsComponent implements OnInit {
-  SearchValue:any
+  SearchMECHValue:any
+  SearchCSEValue:any
+  SearchECEValue:any
+  SearchEEEValue:any
   EEEList:any
   ECEList: any;
-  CIVILList:any;
+  CSEList:any;
   MECHList: any;
 
   constructor(private Api:AdminService) { }
 
   ngOnInit(): void {
+  
+    this.forEEEStudents()
+    
+    
+  }
+  forEEEStudents(){
     this.Api.getStudents("EEE").subscribe((res:any)=>{
-      this.EEEList=res
-      console.log(this.EEEList,"EEE stu");  
-    });
-    this.Api.getStudents("ECE").subscribe((res:any)=>{
-      this.ECEList=res
-      console.log(this.ECEList,"ECE stu");  
-    });
-    this.Api.getStudents("CIVIL").subscribe((res:any)=>{
-      this.CIVILList=res
-      console.log(this.CIVILList,"CIVIL stu");  
-    });
-    this.Api.getStudents("MECH").subscribe((res:any)=>{
-      this.MECHList=res
-      console.log(this.MECHList,"MECH stu");  
+      this.EEEList=res 
     });
   }
-
-  searchdata(){
-    let FilteredValue = this.SearchValue
-
-    this.Api.SearchStudents(FilteredValue).subscribe((res:any)=>{
+  forECEStudents(){
+    this.Api.getStudents("ECE").subscribe((res:any)=>{
+      this.ECEList=res
+    });
+  }
+  forCSEStudents(){
+    this.Api.getStudents("CSE").subscribe((res:any)=>{
+      this.CSEList=res
+    });
+  }
+  forMECHStudents(){
+    this.Api.getStudents("MECH").subscribe((res:any)=>{
+      this.MECHList=res
+    });
+  }
+  searchEEEdata(){
+    this.Api.SearchStudents(this.SearchEEEValue).subscribe((res:any)=>{
       console.log(res,"filtervalue");
       this.EEEList = res;      
     })
-    this.Api.SearchStudents(FilteredValue).subscribe((res:any)=>{
+  }
+  searchECEdata(){
+    this.Api.SearchStudents(this.SearchECEValue).subscribe((res:any)=>{
       console.log(res,"filtervalue");
       this.ECEList = res;      
     })
-    this.Api.SearchStudents(FilteredValue).subscribe((res:any)=>{
+  }
+  searchCSEdata(){
+    this.Api.SearchStudents(this.SearchCSEValue).subscribe((res:any)=>{
       console.log(res,"filtervalue");
-      this.CIVILList = res;      
+      this.CSEList = res;      
     })
-    this.Api.SearchStudents(FilteredValue).subscribe((res:any)=>{
+  }
+  searchMECHdata(){
+    this.Api.SearchStudents(this.SearchMECHValue).subscribe((res:any)=>{
       console.log(res,"filtervalue");
       this.MECHList = res;      
     })

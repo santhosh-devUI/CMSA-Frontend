@@ -33,16 +33,31 @@ export class AdminService {
     return this.http.get('http://localhost:3000/admin/showFaculty?department=' + department)
   }
   ShowFee(){
-    return this.http.get('http://localhost:3000/admin/viewstudents')
+    return this.http.get('http://localhost:3000/admin/fees')
   }
-  Branchwisefee(branch:any){
-    return this.http.get('http://localhost:3000/admin/studentfees?branch=' + branch)
+  StudentFee(){
+    return this.http.get('http://localhost:3000/admin/studentfees')
   }
   Studentfee(hallticket:any){
     return this.http.get('http://localhost:3000/admin/searchstudentfee?hallticket=' + hallticket)
   }
   SearchStudentsFee(hallticket:any){
     return this.http.get('http://localhost:3000/admin/searchstudentfee?hallticket=' + hallticket)
+  }
+  StudentTotalfee(){
+    return this.http.get('http://localhost:3000/admin/stutotalfee')
+  }
+  Searchtotalstudfee(hallticket:any){
+    return this.http.get('http://localhost:3000/admin/showstutotalfee?hallticket=' + hallticket)
+  }
+  TotalBooks(){
+    return this.http.get('http://localhost:3000/admin/viewbooks')
+  }
+  StdBooks(){
+    return this.http.get('http://localhost:3000/admin/showstubooks')
+  }
+  TotalStudents(){
+    return this.http.get('http://localhost:3000/admin/totalstudents')
   }
 }
 
