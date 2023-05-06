@@ -1,6 +1,6 @@
 import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { SuperadminLoginComponent } from './superadmin/superadmin-login/superadmin-login.component';
-import { Component, NgModule } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './welcome-page/home/home.component';
 import { LoginsPageComponent } from './welcome-page/logins-page/logins-page.component';
@@ -21,7 +21,6 @@ import { ViewProfileComponent } from './student/view-profile/view-profile.compon
 import { ViewMarksComponent } from './student/view-marks/view-marks.component';
 import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
-import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
 import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
 import { FacultyListComponent } from './admin/faculty-list/faculty-list.component';
 import { FeeDetailsComponent } from './admin/fee-details/fee-details.component';
@@ -54,23 +53,19 @@ import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.compon
 import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-view-studentslist.component';
 import { SViewBooksComponent } from './superadmin/s-view-books/s-view-books.component';
 import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin-home.component';
+import { OfficerViewStudentsComponent } from './officer/officer-view-students/officer-view-students.component';
+import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
+import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
+import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 
 const routes: Routes = [
-  {path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
+{path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
 {path:'faculty-profile',component:FacultyProfileComponent},
 {path:'faculty-addtt',component:FacultyAddTimetableComponent},
 {path:'faculty-viewtt',component:FacultyViewTimetableComponent},
 {path:'faculty-addmarks',component:FacultyAddMarksComponent},
 {path:'faculty-viewmarks',component:FacultyViewMarksComponent},
-{path:'faculty-viewstudents',component:FacultyViewStudentsComponent},
-
-
-
-
-
-
-
-  ]},
+{path:'faculty-viewstudents',component:FacultyViewStudentsComponent},]},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'logins-page', component: LoginsPageComponent },
@@ -106,16 +101,19 @@ const routes: Routes = [
     {path:'admin-Library',component:LibraryComponent}
   ]},
 
-  {
-    path: 'officer-dashboard',
-    component: OfficerDashboardComponent,
-    children: [
+  {path: 'officer-dashboard', component: OfficerDashboardComponent, children: [
       { path: '', redirectTo: 'officer-home', pathMatch: 'full' },
       { path: 'officer-home', component: OfficerHomeComponent },
+      { path: 'officer-profile', component: OfficerProfileComponent },
       { path: 'officer-add-emp', component: OfficerAddEmployeeComponent },
       { path: 'officer-add-student', component: OfficerAddStudentComponent },
-      { path: 'officer-add-fee', component: OfficerAddFeeComponent },]},
-  { path:'student-dashboard',component:StudentDashboardComponent, children:[
+      { path: 'officer-add-fee', component: OfficerAddFeeComponent },
+      { path: 'officer-view-emp', component: OfficerViewEmpComponent },
+      { path: 'officer-view-std', component: OfficerViewStudentsComponent },
+      { path: 'officer-view-fee', component: OfficerViewFeeComponent },
+    ]},
+
+  {path:'student-dashboard',component:StudentDashboardComponent, children:[
     {path:'',redirectTo:'view-timetable',pathMatch:'full'},
     { path:'view-profile',component:ViewProfileComponent},
     { path:'view-marks',component:ViewMarksComponent},
@@ -123,6 +121,7 @@ const routes: Routes = [
     { path:'view-books',component:ViewBooksComponent},
     { path:'view-timetable',component:ViewTimetableComponent}
   ]},
+
   {path:'librarian-dashboard' , component:LibrarianNavbarComponent,
     children:[
       {path:'' , redirectTo:'librarian-profile',pathMatch:'full'},
@@ -134,9 +133,7 @@ const routes: Routes = [
       {path:'librarian-viewstudentbooks' , component:LibrarianStudentviewbooksComponent},
       {path:'librarian-changepassword' , component:LibrarianChangepasswordComponent}
     ]
-  },
-
-];
+  }]
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
