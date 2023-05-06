@@ -64,7 +64,8 @@ import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.
 import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
-import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
+import { LibrarianEditprofileComponent } from './librarian/librarian-editprofile/librarian-editprofile.component';
+import { LibrarianSearchstudentbookComponent } from './librarian/librarian-searchstudentbook/librarian-searchstudentbook.component';
 
 @NgModule({
   declarations: [
@@ -118,7 +119,6 @@ import { LibrarianChangepasswordComponent } from './librarian/librarian-changepa
     LibrarianEditstudentbooksComponent,
     LibrarianEditbooksComponent,
     LibrarianViewstudentsComponent,
-    LibrarianChangepasswordComponent,
     OfficerAddEmployeeComponent,
     OfficerHomeComponent,
     OfficerAddFeeComponent ,
@@ -131,7 +131,9 @@ import { LibrarianChangepasswordComponent } from './librarian/librarian-changepa
   ViewFeeComponent,
     ViewBooksComponent,
  ViewProfileComponent ,
-   UpdateProfileComponent, 
+   UpdateProfileComponent,
+   LibrarianEditprofileComponent,
+   LibrarianSearchstudentbookComponent, 
   ],
   imports: [
     BrowserModule,
@@ -149,7 +151,9 @@ import { LibrarianChangepasswordComponent } from './librarian/librarian-changepa
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

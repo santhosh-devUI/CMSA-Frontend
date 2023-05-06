@@ -16,7 +16,7 @@ export class LibrarianAddstudentbooksComponent implements OnInit {
 
   ngOnInit(): void {
     this.addStudentform = this.fb.group({
-      librarian : new FormControl('Sudhakar',[Validators.required]),
+      librarian : JSON.parse(localStorage.getItem('librarian')!).name,
       hallticket : new FormControl('',[Validators.required]),
       studentname : new FormControl('',[Validators.required]),
       bookname : new FormControl('',[Validators.required]),
@@ -25,7 +25,7 @@ export class LibrarianAddstudentbooksComponent implements OnInit {
       price : new FormControl('',[Validators.required]),
       date : new FormControl('',[Validators.required]),
       fine : new FormControl('',[Validators.required]),
-      clearedBy : new FormControl('Sudhakar',[Validators.required]),
+      clearedBy : JSON.parse(localStorage.getItem('librarian')!).name,
     });
   }
   
