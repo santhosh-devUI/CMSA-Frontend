@@ -65,7 +65,8 @@ import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.
 import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
-import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
+import { LibrarianEditprofileComponent } from './librarian/librarian-editprofile/librarian-editprofile.component';
+import { LibrarianSearchstudentbookComponent } from './librarian/librarian-searchstudentbook/librarian-searchstudentbook.component';
 import { SuperadminDashboardComponent } from './superadmin/superadmin-dashboard/superadmin-dashboard.component';
 import { SViewOfficerComponent } from './superadmin/s-view-officer/s-view-officer.component';
 import { SViewFacultyComponent } from './superadmin/s-view-faculty/s-view-faculty.component';
@@ -144,7 +145,6 @@ import { OfficerProfileComponent } from './officer/officer-profile/officer-profi
     LibrarianEditstudentbooksComponent,
     LibrarianEditbooksComponent,
     LibrarianViewstudentsComponent,
-    LibrarianChangepasswordComponent,
     OfficerAddEmployeeComponent,
     OfficerHomeComponent,
     OfficerAddFeeComponent ,
@@ -158,6 +158,8 @@ import { OfficerProfileComponent } from './officer/officer-profile/officer-profi
     ViewBooksComponent,
  ViewProfileComponent ,
    UpdateProfileComponent,
+   LibrarianEditprofileComponent,
+   LibrarianSearchstudentbookComponent, 
    SuperadminDashboardComponent,
    SViewOfficerComponent,
    SViewFacultyComponent,
@@ -186,7 +188,9 @@ import { OfficerProfileComponent } from './officer/officer-profile/officer-profi
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

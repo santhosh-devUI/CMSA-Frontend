@@ -44,7 +44,6 @@ import { LibrarianViewbooksComponent } from './librarian/librarian-viewbooks/lib
 import { LibrarianAddstudentbooksComponent } from './librarian/librarian-addstudentbooks/librarian-addstudentbooks.component';
 import { LibrarianStudentviewbooksComponent } from './librarian/librarian-studentviewbooks/librarian-studentviewbooks.component';
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
-import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
 import { SuperadminDashboardComponent } from './superadmin/superadmin-dashboard/superadmin-dashboard.component';
 import { SViewOfficerComponent } from './superadmin/s-view-officer/s-view-officer.component';
 import { SViewFacultyComponent } from './superadmin/s-view-faculty/s-view-faculty.component';
@@ -131,9 +130,11 @@ const routes: Routes = [
       {path:'librarian-viewbooks' , component:LibrarianViewbooksComponent},
       {path:'librarian-addstudentbooks' , component:LibrarianAddstudentbooksComponent},
       {path:'librarian-viewstudentbooks' , component:LibrarianStudentviewbooksComponent},
-      {path:'librarian-changepassword' , component:LibrarianChangepasswordComponent}
+      {path:'librarian-viewstudentbooks/:hallticket' , component:LibrarianStudentviewbooksComponent},
+      ]}
     ]
-  }]
+ 
+
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

@@ -8,16 +8,18 @@
     margin: 0 -1rem;
     font-size: 25px;
   }
-    &__content {
-      min-height: calc(100vh - 178px);
-      border-radius: 10px;
-      margin-top: -1rem;
-      background: white;
-      color: black;
-      &-data {
-        top: 50%;
-        left: 50%;
-        transform: translate(-50%, -50%);
-      }
-    }
+
   }
+.card{
+  background-color: rgba(248, 205, 237, 0.768);
+  margin-top: -5%;
+}
+.icons{
+  font-size: 25px;
+  margin: 10px;
+}
+mat-card{
+  width: 93%;
+  margin: auto;
+  margin-top: -2%;
+}
