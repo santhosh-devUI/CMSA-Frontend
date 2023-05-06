@@ -32,6 +32,11 @@ export class AdminService {
   ShowFaculty(department:any){
     return this.http.get('http://localhost:3000/admin/showFaculty?department=' + department)
   }
+  viewEmployees(t: any) {
+    return this.http.get(
+      'http://localhost:3000/officer/emps?typeofemployee=' + t
+    );
+  }
   ShowFee(){
     return this.http.get('http://localhost:3000/admin/fees')
   }

@@ -1,67 +1,22 @@
 <div class="container">
-    <div class="text-end">
-        <span class="close" mat-dialog-close>X</span>
-    </div>
     <div class="row">
+        <div class="text-end">
+            <span class="material-symbols-outlined close" mat-dialog-close>close</span>
+        </div>
         <h3 class="head">Status-Report</h3>
     </div>
-    <div class="row">
-        <div class="col-sm-6">
-            <h4 class="name">{{data.studentname}}</h4>
-            <h6 class="details"><b>{{data.hallticket}}</b>,<br>
-                                <span style="color:blue">{{data.branch}}</span>&nbsp;-Dept
-                            
-            </h6>
+    <div class="row px-4 mt-2">
+        <div class="col-sm-3">
+            <h4 class="name"><span style="color:black">Name:-</span>{{data.studentname}}</h4>
+        </div>
+        <div class="col-sm-5">
 
         </div>
+        <div class="col-sm-4 right">
+            <span class="details"><b>{{data.hallticket}}</b>,<br><span style="color: blueviolet;">{{data.branch}}</span>&nbsp;-Dept</span>
+        </div>
     </div>
-    <!-- <div class="row">
-        <table class="table table-striped table-bordered" style="margin-bottom: 0">
-            <thead>
-                <tr class="heading1">
-                    <th scope="col">S.NO</th>
-                    <th scope="col">HallTicketNo</th>
-                    <th scope="col">StudentName</th>
-                    <th scope="col">Branch</th>
-                    <th scope="col">AdmissionFee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">college Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">library Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">JNTU Fee</th>
-                    <th scope="col">library Fee</th>
-                    <th scope="col">Bus Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Hostel Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">CleredBy</th>
-                    <th scope="col">Action</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <th scope="row">1</th>
-                    <td style="color: blue;"><b>{{data.hallticket}}</b></td>
-                    <td style="color:brown"><b>{{data.studentname}}</b></td>
-                    <td style="color: rgb(26, 129, 214);"><b>{{data.branch}}</b></td>
-                    <td>{{data.admissionfee}}</td>
-                    <td>{{data.adminssionfeestatus}}</td>
-                    <td>{{data.collegefee}}</td>
-                    <td>{{data.collegefeestatus}}</td>
-                    <td>{{data.libraryfee}}</td>
-                    <td>{{data.libraryfeestatus}}</td>
-                    <td>{{data.jntufee}}</td>
-                    <td>{{data.libraryfee}}</td>
-                    <td>{{data.busfee}}</td>
-                    <td>{{data.busfeestatus}}</td>
-                    <td>{{data.hostelfee}}</td>
-                    <td>{{data.hostelfeestatus}}</td>
-                    <td>{{data.clearedby}}</td>
-                </tr>
-            </tbody>
-          </table>
-    </div> -->
+
     <div class="card title1 mt-3">
     <div class="table-responsive px-5">
         <table class="table mt-1">
@@ -78,54 +33,54 @@
                 <tr>
                     <td>1</td>
                     <td class="feename">Admission Fee</td>
-                    <td>{{data.admissionfee}}/-</td>
+                    <td class="text-center">{{data.admissionfee}}/-</td>
                     <td>{{data.adminssionfeestatus}}</td>
-                    <td>
+                    <td class="text-center">
                         <button class="btn btn-success" (click)="clearFee('admissionfee')">clear</button>
                     </td>
                 </tr>
                 <tr>
                     <td>2</td>
                     <td class="feename">College Fee</td>
-                    <td>{{data.collegefee}}/-</td>
+                    <td class="text-center">{{data.collegefee}}/-</td>
                     <td>{{data.collegefeestatus}}</td>
-                    <td>
+                    <td class="text-center">
                         <button class="btn btn-success" (click)="clearFee('collegefee')">clear</button>
                     </td>
                 </tr>
                 <tr>
                     <td>3</td>
                     <td class="feename">Library Fee</td>
-                    <td>{{data.libraryfee}}/-</td>
+                    <td class="text-center">{{data.libraryfee}}/-</td>
                     <td>{{data.libraryfeestatus}}</td>
-                    <td>
+                    <td class="text-center">
                         <button class="btn btn-success" (click)="clearFee('libraryfee')">clear</button>
                     </td>
                 </tr>
                 <tr>
                     <td>4</td>
                     <td class="feename">JNTU Fee</td>
-                    <td>{{data.jntufee}}/-</td>
+                    <td class="text-center">{{data.jntufee}}/-</td>
                     <td>{{data.jntufeestatus}}</td>
-                    <td>
+                    <td class="text-center">
                         <button class="btn btn-success" (click)="clearFee('jntufee')">clear</button>
                     </td>
                 </tr>
                 <tr>
                     <td>5</td>
                     <td class="feename">BUS Fee</td>
-                    <td>{{data.busfee}}/-</td>
+                    <td class="text-center">{{data.busfee}}/-</td>
                     <td>{{data.busfeestatus}}</td>
-                    <td>
+                    <td class="text-center">
                         <button class="btn btn-success" (click)="clearFee('busfee')">clear</button>
                     </td>
                 </tr>
                 <tr>
                     <td>6</td>
                     <td class="feename">Hostel Fee</td>
-                    <td>{{data.hostelfee}}/-</td>
+                    <td class="text-center">{{data.hostelfee}}/-</td>
                     <td>{{data.hostelfeestatus}}</td>
-                    <td>
+                    <td class="text-center">
                         <button class="btn btn-success" (click)="clearFee('hostelfee')">clear</button>
                     </td>
                 </tr>

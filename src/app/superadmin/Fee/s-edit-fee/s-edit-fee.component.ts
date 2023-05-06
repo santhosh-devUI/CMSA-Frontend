@@ -23,48 +23,41 @@ user:any
       let Data = {
         admissionfeestatus:'paid',
         clearedby:this.user
-      }
-      console.log(Data);    
+      }  
      this.Api.updateStdFee(this.data._id,Data).subscribe((res:any)=>{
-    
+      window.location.reload();
      }) 
     }else if(e=="busfee"){
       let Data = {
         busfeestatus:'paid',
         clearedby:this.user
       }
-      console.log(Data);
      this.Api.updateStdFee(this.data._id,Data).subscribe((res:any)=>{
-      console.log(res);
-      
+      window.location.reload();
      }) 
     }else if(e=="jntufee"){
       let Data = {
         jntufeestatus:'paid',
         clearedby:this.user
       }
-      console.log(Data);
      this.Api.updateStdFee(this.data._id,Data).subscribe((res:any)=>{
-      console.log(res);
-      
+      window.location.reload();
      }) 
     }else if(e=='hostelfee'){
       let Data = {
         hostelfeestatus:'paid',
         clearedby:this.user
       }
-      console.log(Data);
      this.Api.updateStdFee(this.data._id,Data).subscribe((res:any)=>{
-      console.log(res);
+      window.location.reload();
      }) 
     }else if(e=='libraryfee'){
       let Data = {
         libraryfeestatus:'paid',
         clearedby:this.user
       }
-      console.log(Data);
      this.Api.updateStdFee(this.data._id,Data).subscribe((res:any)=>{
-      console.log(res);
+      window.location.reload();
      }) 
     }else if(e=='collegefee'){
       let Data = {
@@ -72,9 +65,8 @@ user:any
         clearedby:this.user
 
       }
-      console.log(Data);
      this.Api.updateStdFee(this.data._id,Data).subscribe((res:any)=>{
-      console.log(res);
+      window.location.reload();
      })
     }
     
