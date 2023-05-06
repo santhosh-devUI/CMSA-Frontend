@@ -57,9 +57,10 @@ export class LibrarianEditprofileComponent implements OnInit {
       city : this.editprofileform.get('city')?.value,
       state : this.editprofileform.get('state')?.value,
       pincode : this.editprofileform.get('pincode')?.value,
-      photo : this.editprofileform.get('photo')?.value,
+      photo : this.photourl,
     }
     if(this.editprofileform.valid){
+
       this.librarianService.EditProfile(id,c).subscribe((res)=>{
         alert("Changes Saved");
         window.location.reload();
