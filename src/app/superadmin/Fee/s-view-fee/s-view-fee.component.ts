@@ -42,8 +42,8 @@ export class SViewFeeComponent implements OnInit {
   }
   edit(e:any){
     this.dialog.open(SEditFeeComponent,{
-      width:"100%",
-      height:"75%",
+      width:"58%",
+      height:"95%",
       data:e
     })
   }
