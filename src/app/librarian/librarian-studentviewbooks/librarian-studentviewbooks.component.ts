@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { LibrarianEditstudentbooksComponent } from '../librarian-editstudentbooks/librarian-editstudentbooks.component';
 import { LibrarianService } from 'src/app/shared/service/librarian.service';
+import { ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { log } from 'console';
 
 @Component({
   selector: 'app-librarian-studentviewbooks',
@@ -9,12 +12,16 @@ import { LibrarianService } from 'src/app/shared/service/librarian.service';
   styleUrls: ['./librarian-studentviewbooks.component.scss']
 })
 export class LibrarianStudentviewbooksComponent implements OnInit {
-  
-  studentBooks: any;
-  
-  constructor(private dialog:MatDialog , private librarianService:LibrarianService) { }
+  searchStudents:any;
+  StudentForm!:FormGroup;
+  studentBooks: any=[];
+  constructor(private dialog:MatDialog , private fb:FormBuilder,
+     private librarianService:LibrarianService , private route:ActivatedRoute) { }
 
   ngOnInit(): void {
+    this.StudentForm=this.fb.group({
+      hallticket:['',[Validators.required]]
+    });
     this.getStudentBooks();
   }
 
@@ -24,10 +31,28 @@ export class LibrarianStudentviewbooksComponent implements OnInit {
     })
   }
 
-  editstudentbooks(){
+  editstudentbooks(e:any){
     this.dialog.open(LibrarianEditstudentbooksComponent,{
       width:'60%',
-      height:'80%'
+      height:'80%',
+      data:e
     })
+  }
+  deleteStudentbooks(BK:any){ 
+    this.librarianService.DeleteStudentBooks(BK._id).subscribe((res)=>{
+      alert("Deleted Successfully");
+      window.location.reload();
+    })
+  }
+  search(){
+    if(this.StudentForm.valid){
+    this.librarianService.SearchStudentBooks(this.StudentForm.value.hallticket).subscribe((res:any)=>{
+      this.searchStudents=res;
+      console.log(this.searchStudents);
+      
+    })
+  }else{
+    alert('please enter hallticket number')
+  }
   }
 }
