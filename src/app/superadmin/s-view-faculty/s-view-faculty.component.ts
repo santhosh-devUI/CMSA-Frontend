@@ -9,7 +9,7 @@ import { SuperadminService } from 'src/app/shared/service/superadmin.service';
 export class SViewFacultyComponent implements OnInit {
   EEEfaculty: any;
   ECEfaculty: any;
-  CIVILfaculty: any;
+  CSEfaculty: any;
   MECHfaculty: any;
 
   constructor(private Api:SuperadminService) { }
@@ -21,8 +21,8 @@ export class SViewFacultyComponent implements OnInit {
     this.Api.getFaculty("ECE").subscribe((res:any)=>{
       this.ECEfaculty = res;
     })
-    this.Api.getFaculty("CIVIL").subscribe((res:any)=>{
-      this.CIVILfaculty = res;
+    this.Api.getFaculty("CSE").subscribe((res:any)=>{
+      this.CSEfaculty = res;
     })
     this.Api.getFaculty("MECH").subscribe((res:any)=>{
       this.MECHfaculty = res;

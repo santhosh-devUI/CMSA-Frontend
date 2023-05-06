@@ -74,6 +74,7 @@ import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.compon
 import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-view-studentslist.component';
 import { SViewBooksComponent } from './superadmin/s-view-books/s-view-books.component';
 import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin-home.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OfficerViewStudentsComponent } from './officer/officer-view-students/officer-view-students.component';
 import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
 import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
@@ -165,6 +166,8 @@ import { OfficerProfileComponent } from './officer/officer-profile/officer-profi
    SViewStudentslistComponent,
    SViewBooksComponent,
    SuperadminHomeComponent,
+   AdminHomeComponent,
+
     
   ],
   imports: [

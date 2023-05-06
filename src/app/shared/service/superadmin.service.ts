@@ -17,28 +17,37 @@ export class SuperadminService {
   getStudents(branch:any){
     return this.http.get('http://localhost:3000/superadmin/students?branch=' + branch)
   }
-  Searchtotalstudfee(hallticket:any){
-    return this.http.get('http://localhost:3000/superadmin/searchstufee?hallticket=' + hallticket)
+  SearchStudents(hallticket:any){
+    return this.http.get('http://localhost:3000/superadmin/searchstudent?hallticket=' + hallticket)
   }
   getFaculty(department:any){
-    return this.http.get('http://localhost:3000/superadmin/faculty?department=' + department)
+    return this.http.get('http://localhost:3000/superadmin/viewfaculty?department=' + department)
   }
   viewFee(){
     return this.http.get('http://localhost:3000/superadmin/fee')
   }
-  StudentTotalfee(branch:any){
-    return this.http.get('http://localhost:3000/superadmin/studentfee?branch=' + branch)
+  STotalFee(){
+    return this.http.get('http://localhost:3000/superadmin/stutotalfee')
   }
-  searchStudentsfee(hallticket:any){
-    return this.http.get('http://localhost:3000/admin/searchstudent?hallticket=' + hallticket)
+  StudentTotalfee(){
+    return this.http.get('http://localhost:3000/superadmin/studentfee')
+  }
+  Searchtotalstudfee(hallticket:any){
+    return this.http.get('http://localhost:3000/superadmin/searchstufee?hallticket=' + hallticket)
+  }
+  searchStdtotalFee(hallticket:any){
+    return this.http.get('http://localhost:3000/superadmin/searchstutotalfee?hallticket=' + hallticket)
   }
   updateStdFee(id:any,data:any){
-    return this.http.put('http://localhost:3000/superadmin/updatestfee/'+ id,data)
+    return this.http.put('http://localhost:3000/superadmin/clearfee/'+ id,data)
   }
   viewBooks(){
     return this.http.get('http://localhost:3000/superadmin/totalbooks')
   }
   viewStdBooks(){
     return this.http.get('http://localhost:3000/superadmin/showstubooks')
+  }
+  TotalStudents(){
+    return this.http.get('http://localhost:3000/superadmin/totalstudents')
   }
 }

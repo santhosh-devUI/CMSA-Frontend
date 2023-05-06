@@ -1,16 +1,18 @@
 import { Component, OnInit } from '@angular/core';
+import { AdminService } from 'src/app/shared/service/admin.service';
 import { SuperadminService } from 'src/app/shared/service/superadmin.service';
 
 @Component({
-  selector: 'app-superadmin-home',
-  templateUrl: './superadmin-home.component.html',
-  styleUrls: ['./superadmin-home.component.scss']
+  selector: 'app-admin-home',
+  templateUrl: './admin-home.component.html',
+  styleUrls: ['./admin-home.component.scss']
 })
-export class SuperadminHomeComponent implements OnInit {
+export class AdminHomeComponent implements OnInit {
+
   OfficerList: any;
   Students: any;
   FacultyList:any
-  constructor(private Api:SuperadminService) { }
+  constructor(private Api:AdminService) { }
 
   ngOnInit(): void {
     this.Api.getOfficer().subscribe((res:any)=>{
