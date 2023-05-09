@@ -83,6 +83,7 @@ import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view
 import { OfficerEditStudentComponent } from './officer/officer-edit-student/officer-edit-student.component';
 import { OfficerDeleteStudentComponent } from './officer/officer-delete-student/officer-delete-student.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
+import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
 
 @NgModule({
   declarations: [
@@ -169,6 +170,7 @@ import { OfficerProfileComponent } from './officer/officer-profile/officer-profi
    SViewBooksComponent,
    SuperadminHomeComponent,
    AdminHomeComponent,
+   AdminViewLibrarianComponent,
 
     
   ],

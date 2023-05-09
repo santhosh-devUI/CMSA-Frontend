@@ -56,6 +56,7 @@ import { OfficerViewStudentsComponent } from './officer/officer-view-students/of
 import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
 import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
+import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
 
 const routes: Routes = [
 {path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
@@ -97,7 +98,8 @@ const routes: Routes = [
     {path:'admin-Faculty',component:FacultyListComponent},
     {path:'admin-Fee',component:FeeDetailsComponent},
     {path:'admin-Students-Records',component:StudentRecordsComponent},
-    {path:'admin-Library',component:LibraryComponent}
+    {path:'admin-Library',component:LibraryComponent},
+    {path:'admin-ViewLibrarian',component:AdminViewLibrarianComponent}
   ]},
 
   {path: 'officer-dashboard', component: OfficerDashboardComponent, children: [
