@@ -14,7 +14,7 @@ export class LibraryComponent implements OnInit {
   constructor(private Api:AdminService) { }
 
   ngOnInit(): void {
-    this.Api.ShowFaculty("Librarian").subscribe((res:any)=>{
+    this.Api.ShowFaculty("Library").subscribe((res:any)=>{
       this.Libraryfaculty = res;
     })
     this.Api.TotalBooks().subscribe((res:any)=>{
