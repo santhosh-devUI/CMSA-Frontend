@@ -21,53 +21,38 @@
           <div class="tab-content mt-3">
           <div class="tab-pane fade show active" id="Librarian">
             
-            <div class="table-responsive">
+            <div class="table-responsive table-hover text-nowrap">
                 <table class="table mt-1">
                     <thead>
                         <tr class="heading">
                             <th scope="col">S.NO</th>
                             <th scope="col">ID</th>
+                            <th scope="col">Photo</th>
                             <th scope="col">Name</th>
                             <th scope="col">Department</th>
                             <th scope="col">Mobileno</th>
                             <th scope="col">EmailId</th>
                             <th scope="col">Joining Date</th>
-                            <th scope="col">Experience</th>
                             <th scope="col">Salary</th>
-                            <th scope="col">EmployeeType</th>
-                            <th scope="col">Address</th>
-                            <th scope="col">Bank-Details</th>
-                            <th scope="col">Photo</th>
                             <th scope="col">AdharCopy</th>
+                            <th scope="col">Details</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr *ngFor="let L of Libraryfaculty; index as i">
                             <th scope="row">{{i+1}}</th>
-                            <td><b>{{L.empid}}</b></td>
+                            <td style="width: 10%;"><b>{{L.empid}}</b></td>
+                            <td style="width: 10%;"><img src="{{L.photo}}" width="60%" height="5%"></td>
                             <td style="color:blue; font-weight: bold;">{{L.name}}</td>
-                            <td>{{L.department}}</td>
-                            <td>{{L.mobileno}}</td>
-                            <td>{{L.emailid}}</td>
-                            <td>{{L.joiningdate}}</td>
-                            <td>{{L.yearofexperience}}</td>
-                            <td>{{L.salary}}</td>
-                            <td>{{L.typeofemployee}}</td>
-                            <td>
-                                <span>{{L.address}}</span>,
-                                <span>{{L.city}}</span>,
-                                <span>{{L.state}}</span>,
-                                <span>{{L.pincode}}</span>
+                            <td style="width: 10%;">{{L.department}}</td>
+                            <td style="width: 10%;">{{L.mobileno}}</td>
+                            <td style="width: 10%;">{{L.emailid}}</td>
+                            <td style="width: 10%;">{{L.joiningdate  | date}}</td>
+                            <td style="width: 10%;">{{L.salary}}</td>
+                            <td style="width: 10%;"><img src="{{L.aadharcopy}}" width="100%" height="100%"></td>
+                            <td style="width: 10%; margin-left: 10px;">
+                                <div class="btn" (click)="viewBankDetails(L)"><span class="material-symbols-outlined">pan_zoom</span></div>
                             </td>
-                            <td>
-                                <span>{{L.bankname}}</span>,
-                                <span>{{L.bankaccountno}}</span>,
-                                <span>{{L.ifsccode}}</span>,
-                                <span>{{L.branchname}}</span>
-                                <span>{{L.pancardno}}</span>
-                            </td>
-                            <td><img src="{{L.photo}}" width="100%" height="70%"></td>
-                            <td><img src="{{L.aadharcopy}}" width="50%" height="50%"></td>
                         </tr>
                     </tbody>
                 </table>
