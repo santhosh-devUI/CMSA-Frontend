@@ -84,6 +84,8 @@ import { OfficerEditStudentComponent } from './officer/officer-edit-student/offi
 import { OfficerDeleteStudentComponent } from './officer/officer-delete-student/officer-delete-student.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
+import { AdminPlacementcellComponent } from './admin/admin-placementcell/admin-placementcell.component';
+import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-std-apply-jobs/admin-std-apply-jobs.component';
 
 @NgModule({
   declarations: [
@@ -171,6 +173,8 @@ import { AdminViewLibrarianComponent } from './admin/library/admin-view-libraria
    SuperadminHomeComponent,
    AdminHomeComponent,
    AdminViewLibrarianComponent,
+   AdminPlacementcellComponent,
+   AdminStdApplyJobsComponent,
 
     
   ],

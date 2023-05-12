@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AdminService } from 'src/app/shared/service/admin.service';
 import { SuperadminService } from 'src/app/shared/service/superadmin.service';
 
@@ -12,7 +13,7 @@ export class AdminHomeComponent implements OnInit {
   OfficerList: any;
   Students: any;
   FacultyList:any
-  constructor(private Api:AdminService) { }
+  constructor(private Api:AdminService,private Routes:Router) { }
 
   ngOnInit(): void {
     this.Api.getOfficer().subscribe((res:any)=>{
@@ -26,6 +27,9 @@ export class AdminHomeComponent implements OnInit {
     this.Api.TotalStudents().subscribe((res:any)=>{
       this.Students = res.length; 
     })
+  }
+  open(){
+    this.Routes.navigate(['/admin-dashboard/admin-PlacementCell'])
   }
 
 }

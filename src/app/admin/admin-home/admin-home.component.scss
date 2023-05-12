@@ -66,7 +66,10 @@
 .text1{
     color: #fff;
 }
-
+.quote{
+    border-radius: 10px;
+    border-color: #ffff;
+}
 .quotes{
     text-align: center;
     text-align: center;
@@ -74,4 +77,30 @@
     font-size: 1.3rem;
     font-family: 'monospace';
     font-weight: 700;
+}
+.placement{
+    color: #b81eff;
+    font-family: math;
+    letter-spacing: 1px;
+}
+.Pinformation{
+    color: black;
+    line-height: 25px;
+    letter-spacing: 0.8px;
+}
+.Pbtn{
+    border-radius: 10px;
+    background-color: midnightblue;
+    color: #fff;
+    border-color: #e8f0fe;
+    align-items: center;
+    font-size: 14px;
+    height: 36px;
+    max-width: 100%;
+    padding: 7px 15px;
+}
+.Pbtn:hover{
+    background-color: orange;
+    color: blue;
+    transform: scale(1.1);
 }
