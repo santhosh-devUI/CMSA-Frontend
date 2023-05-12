@@ -57,6 +57,8 @@ import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view
 import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
+import { AdminPlacementcellComponent } from './admin/admin-placementcell/admin-placementcell.component';
+import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-std-apply-jobs/admin-std-apply-jobs.component';
 
 const routes: Routes = [
 {path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
@@ -99,7 +101,9 @@ const routes: Routes = [
     {path:'admin-Fee',component:FeeDetailsComponent},
     {path:'admin-Students-Records',component:StudentRecordsComponent},
     {path:'admin-Library',component:LibraryComponent},
-    {path:'admin-ViewLibrarian',component:AdminViewLibrarianComponent}
+    {path:'admin-ViewLibrarian',component:AdminViewLibrarianComponent},
+    {path:'admin-PlacementCell',component:AdminPlacementcellComponent},
+    {path:'admin-StudentApplyJobs',component:AdminStdApplyJobsComponent}
   ]},
 
   {path: 'officer-dashboard', component: OfficerDashboardComponent, children: [

@@ -64,5 +64,14 @@ export class AdminService {
   TotalStudents(){
     return this.http.get('http://localhost:3000/admin/totalstudents')
   }
+  viewJobs(){
+    return this.http.get('http://localhost:3000/admin/viewplacements')
+  }
+  viewApplyJobs(){
+    return this.http.get('http://localhost:3000/admin/studentjobs')
+  }
+  SearchApplyCandidate(hallticket:any){
+    return this.http.get('http:localhost:3000/admin/searchstujob?hallticket=' + hallticket)
+  }
 }
 
