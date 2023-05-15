@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
 import { FacultyService } from 'src/app/shared/service/faculty.service';
+import { FacultyEditmarksComponent } from '../faculty-editmarks/faculty-editmarks.component';
 
 @Component({
   selector: 'app-faculty-view-marks',
@@ -13,7 +15,7 @@ export class FacultyViewMarksComponent implements OnInit {
   StudentForm!:FormGroup
   Viewmarks!:FormGroup
   mmid: any;
-    constructor(private facultyservice:FacultyService,private fb :FormBuilder) { }
+    constructor(private facultyservice:FacultyService,private fb :FormBuilder,private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.facultyservice.ViewMarks().subscribe((res:any)=>{
@@ -62,33 +64,10 @@ export class FacultyViewMarksComponent implements OnInit {
     })
   }
 Edit(mm:any){
-  this.mmid==mm._id
-  this.Viewmarks.patchValue({
-    hallticket:mm.hallticket,
-    studentname:mm.studentname,
-    branch:mm.branch,
-    sem:mm.sem,
-    subject1:mm.subject1,
-    subject1totalmarks:mm.subject1totalmarks,
-    subject1marks:mm.subject1marks,
-    subject2:mm.subject2,
-    subject2totalmarks:mm.subject2totalmarks,
-    subject2marks:mm.subject2marks,
-    subject3:mm.subject3,
-    subject3totalmarks:mm.subject3totalmarks,
-    subject3marks:mm.subject3marks,
-    totalMarks:mm.totalMarks,
-    totalscoredmarks:mm.totalscoredmarks,
-    percentage:mm.percentage,
-    status:mm.status,
-  })
-}
-Updatemarks(){
-  this.facultyservice.EditMarks(this.mmid,this.Viewmarks.value).subscribe((res:any)=>{
-    alert('updated succesfully')
-    window.location.reload()
-    console.log(res);
-    
-  })
-}
-}
+  this.dialog.open(FacultyEditmarksComponent,{
+    width:'80%',
+    height:'100%',
+    data:mm,
+})
+
+}}
