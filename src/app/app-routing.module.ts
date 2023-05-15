@@ -30,7 +30,6 @@ import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.
 import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.component';
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 import { LibraryComponent } from './admin/library/library.component';
-import { FacultyDashboardComponent } from './faculty/faculty-dashboard/faculty-dashboard.component';
 import { FacultyProfileComponent } from './faculty/faculty-profile/faculty-profile.component';
 import { FacultyAddTimetableComponent } from './faculty/faculty-add-timetable/faculty-add-timetable.component';
 import { FacultyViewTimetableComponent } from './faculty/faculty-view-timetable/faculty-view-timetable.component';
@@ -53,7 +52,6 @@ import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-v
 import { SViewBooksComponent } from './superadmin/s-view-books/s-view-books.component';
 import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin-home.component';
 import { OfficerViewStudentsComponent } from './officer/officer-view-students/officer-view-students.component';
-import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
 import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 import { PlacementLoginComponent } from './placement-cell/placement-login/placement-login.component';
@@ -66,18 +64,26 @@ import { OfficerPlacementComponent } from './officer/officer-placement/officer-p
 import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
 import { AdminPlacementcellComponent } from './admin/admin-placementcell/admin-placementcell.component';
 import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-std-apply-jobs/admin-std-apply-jobs.component';
+import { DashboardFacultyComponent } from './faculty/dashboard-faculty/dashboard-faculty.component';
+import { FacultyEditprofileComponent } from './faculty/faculty-editprofile/faculty-editprofile.component';
+import { FacultyEditmarksComponent } from './faculty/faculty-editmarks/faculty-editmarks.component';
+import { FacultyEdittimetableComponent } from './faculty/faculty-edittimetable/faculty-edittimetable.component';
 
 const routes: Routes = [
   {
     path: 'faculty-dashboard',
-    component: FacultyDashboardComponent,
+    component: DashboardFacultyComponent,
     children: [
+      
       { path: 'faculty-profile', component: FacultyProfileComponent },
       { path: 'faculty-addtt', component: FacultyAddTimetableComponent },
       { path: 'faculty-viewtt', component: FacultyViewTimetableComponent },
       { path: 'faculty-addmarks', component: FacultyAddMarksComponent },
       { path: 'faculty-viewmarks', component: FacultyViewMarksComponent },
-      { path: 'faculty-viewstudents', component: FacultyViewStudentsComponent },
+      { path: 'faculty-viewstudents', component: FacultyViewStudentsComponent }, 
+      { path: 'faculty-editprofile', component: FacultyEditprofileComponent },
+      { path: 'faculty-editmarks', component: FacultyEditmarksComponent},
+      { path: 'faculty-edittimetable', component: FacultyEdittimetableComponent },
     ],
   },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
