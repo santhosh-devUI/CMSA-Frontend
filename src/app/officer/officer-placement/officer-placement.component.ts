@@ -8,8 +8,13 @@ import { OfficerService } from 'src/app/shared/service/officer.service';
   styleUrls: ['./officer-placement.component.scss'],
 })
 export class OfficerPlacementComponent implements OnInit {
+  searchStudent() {
+    throw new Error('Method not implemented.');
+  }
   addPlacementForm!: FormGroup;
   placements: any;
+  studentJobs: any;
+  SearchValue: any;
   constructor(private fb: FormBuilder, private officerApi: OfficerService) {}
 
   ngOnInit(): void {
@@ -30,6 +35,21 @@ export class OfficerPlacementComponent implements OnInit {
     this.officerApi.viewPlacement().subscribe((res: any) => {
       this.placements = res;
       console.log(res);
+    });
+
+    this.officerApi.viewStudentJobs().subscribe((res: any) => {
+      this.studentJobs = res;
+      console.log(res);
+    });
+  }
+  searchStudentJobs() {
+    let studentht = this.SearchValue;
+    console.log(studentht);
+    
+    this.officerApi.searchJobs(studentht).subscribe((res: any) => {
+      console.log(res);
+      
+      this.placements = res;
     });
   }
 
