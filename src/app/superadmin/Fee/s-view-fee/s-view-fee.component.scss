@@ -23,9 +23,10 @@ body {
     vertical-align: middle;
 }
 .heading1{
-    background-color: #eeeeee;
-    height: 30px;
-    vertical-align: middle;
+  background-color: grey;
+  height: 50px;
+  line-height: 2;
+  color: greenyellow;
 }
 .title{
   text-align: center;
@@ -68,5 +69,11 @@ body {
     border-color: rgb(228, 136, 16);
     color: black;
     font-weight: 500;
+}
+.nav-pills .nav-link.active{
+  background-color: midnightblue;
+}
+.btn-primary{
+  background-color: royalblue;
 }
 

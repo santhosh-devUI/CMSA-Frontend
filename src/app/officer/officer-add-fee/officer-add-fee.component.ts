@@ -41,12 +41,15 @@ export class OfficerAddFeeComponent implements OnInit {
   }
 
   addFee() {
+    console.log('sfbgjhkxfl');
+
     let d = {
       empid: this.Oid.empid,
       ...this.feeForm.value,
     };
-    this.officerApi.addFees(d).subscribe((res: any) => {});
-    this.feeForm.reset();
+    this.officerApi.addFees(d).subscribe((res: any) => {
+      console.log(res, 'add');
+    });
     window.location.reload();
   }
   editFee() {
@@ -68,5 +71,6 @@ export class OfficerAddFeeComponent implements OnInit {
       .subscribe((res: any) => {
         console.log(res, 'updated');
       });
+    window.location.reload();
   }
 }

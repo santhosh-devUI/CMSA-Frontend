@@ -89,6 +89,15 @@ import { PlacementJobsComponent } from './placement-cell/placement-jobs/placemen
 import { PlacementChangeStatusComponent } from './placement-cell/placement-change-status/placement-change-status.component';
 import { StudentJobsComponent } from './student/student-jobs/student-jobs.component';
 import { StudentApplyJobComponent } from './student/student-apply-job/student-apply-job.component';
+import { OfficerProfileEditComponent } from './officer/officer-profile-edit/officer-profile-edit.component';
+import { OfficerAddStudentFeeComponent } from './officer/officer-add-student-fee/officer-add-student-fee.component';
+import { OfficerViewStudentDetailsComponent } from './officer/officer-view-student-details/officer-view-student-details.component';
+import { OfficerEditEmployeeComponent } from './officer/officer-edit-employee/officer-edit-employee.component';
+import { OfficerDeleteEmployeeComponent } from './officer/officer-delete-employee/officer-delete-employee.component';
+import { OfficerPlacementComponent } from './officer/officer-placement/officer-placement.component';
+import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
+import { AdminPlacementcellComponent } from './admin/admin-placementcell/admin-placementcell.component';
+import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-std-apply-jobs/admin-std-apply-jobs.component';
 
 @NgModule({
   declarations: [
@@ -174,6 +183,12 @@ import { StudentApplyJobComponent } from './student/student-apply-job/student-ap
    SViewStudentslistComponent,
    SViewBooksComponent,
    SuperadminHomeComponent,
+   OfficerProfileEditComponent,
+   OfficerAddStudentFeeComponent,
+   OfficerViewStudentDetailsComponent,
+   OfficerEditEmployeeComponent,
+   OfficerDeleteEmployeeComponent,
+   OfficerPlacementComponent,
    AdminHomeComponent,
    PlacementCellDashboardComponent,
    PlacementProfileComponent,
@@ -181,6 +196,11 @@ import { StudentApplyJobComponent } from './student/student-apply-job/student-ap
    PlacementChangeStatusComponent,
    StudentJobsComponent,
    StudentApplyJobComponent,
+   AdminViewLibrarianComponent,
+   AdminPlacementcellComponent,
+   AdminStdApplyJobsComponent,
+
+    
   ],
   imports: [
     BrowserModule,

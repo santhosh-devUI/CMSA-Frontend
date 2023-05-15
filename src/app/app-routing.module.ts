@@ -61,19 +61,29 @@ import { PlacementCellDashboardComponent } from './placement-cell/placement-cell
 import { PlacementProfileComponent } from './placement-cell/placement-profile/placement-profile.component';
 import { PlacementJobsComponent } from './placement-cell/placement-jobs/placement-jobs.component';
 import { StudentJobsComponent } from './student/student-jobs/student-jobs.component';
+import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
+import { OfficerPlacementComponent } from './officer/officer-placement/officer-placement.component';
+import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
+import { AdminPlacementcellComponent } from './admin/admin-placementcell/admin-placementcell.component';
+import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-std-apply-jobs/admin-std-apply-jobs.component';
 
 const routes: Routes = [
-{path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
-{path:'faculty-profile',component:FacultyProfileComponent},
-{path:'faculty-addtt',component:FacultyAddTimetableComponent},
-{path:'faculty-viewtt',component:FacultyViewTimetableComponent},
-{path:'faculty-addmarks',component:FacultyAddMarksComponent},
-{path:'faculty-viewmarks',component:FacultyViewMarksComponent},
-{path:'faculty-viewstudents',component:FacultyViewStudentsComponent},]},
+  {
+    path: 'faculty-dashboard',
+    component: FacultyDashboardComponent,
+    children: [
+      { path: 'faculty-profile', component: FacultyProfileComponent },
+      { path: 'faculty-addtt', component: FacultyAddTimetableComponent },
+      { path: 'faculty-viewtt', component: FacultyViewTimetableComponent },
+      { path: 'faculty-addmarks', component: FacultyAddMarksComponent },
+      { path: 'faculty-viewmarks', component: FacultyViewMarksComponent },
+      { path: 'faculty-viewstudents', component: FacultyViewStudentsComponent },
+    ],
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'logins-page', component: LoginsPageComponent },
-  {path:'superadmin-login',component:SuperadminLoginComponent},
+  { path: 'superadmin-login', component: SuperadminLoginComponent },
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'officer-login', component: OfficerLoginComponent },
   { path: 'faculty-login', component: FacultyLoginComponent },
@@ -103,10 +113,16 @@ const routes: Routes = [
     {path:'admin-Faculty',component:FacultyListComponent},
     {path:'admin-Fee',component:FeeDetailsComponent},
     {path:'admin-Students-Records',component:StudentRecordsComponent},
-    {path:'admin-Library',component:LibraryComponent}
+    {path:'admin-Library',component:LibraryComponent},
+    {path:'admin-ViewLibrarian',component:AdminViewLibrarianComponent},
+    {path:'admin-PlacementCell',component:AdminPlacementcellComponent},
+    {path:'admin-StudentApplyJobs',component:AdminStdApplyJobsComponent}
   ]},
 
-  {path: 'officer-dashboard', component: OfficerDashboardComponent, children: [
+{
+    path: 'officer-dashboard',
+    component: OfficerDashboardComponent,
+    children: [
       { path: '', redirectTo: 'officer-home', pathMatch: 'full' },
       { path: 'officer-home', component: OfficerHomeComponent },
       { path: 'officer-profile', component: OfficerProfileComponent },
@@ -115,8 +131,10 @@ const routes: Routes = [
       { path: 'officer-add-fee', component: OfficerAddFeeComponent },
       { path: 'officer-view-emp', component: OfficerViewEmpComponent },
       { path: 'officer-view-std', component: OfficerViewStudentsComponent },
-      { path: 'officer-view-fee', component: OfficerViewFeeComponent },
-    ]},
+      { path: 'officer-view-fee-status', component: OfficerStudentFeeStatusComponent, },
+      { path: 'officer-placement', component: OfficerPlacementComponent },
+    ],
+  },
 
   {path:'student-dashboard',component:StudentDashboardComponent, children:[
     {path:'',redirectTo:'view-timetable',pathMatch:'full'},

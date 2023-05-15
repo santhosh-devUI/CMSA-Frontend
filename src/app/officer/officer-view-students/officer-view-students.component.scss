@@ -2,6 +2,13 @@ input {
     border: 2px solid rgb(38, 158, 179);
 }
 
+.t {
+    color: rgb(10, 104, 121);
+    border-bottom: 1px solid;
+    text-align: center;
+}
+
+
 .btn {
     width: 100%;
 }
@@ -23,14 +30,22 @@ input {
 }
 
 .edit {
-    font-size: 20px;
+    font-size: 25px;
     color: blue;
     cursor: pointer;
 }
 
 .delete {
-    font-size: 20px;
+    font-size: 25px;
     color: red;
+    cursor: pointer;
+
+
+}
+
+.view {
+    font-size: 25px;
+    color: green;
     cursor: pointer;
 }
 
