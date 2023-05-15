@@ -16,7 +16,7 @@ export class LibraryComponent implements OnInit {
   constructor(private Api:AdminService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
-    this.Api.viewEmployees("librarian").subscribe((res:any)=>{
+    this.Api.ShowFaculty("Library").subscribe((res:any)=>{
       this.Libraryfaculty = res;
     })
     this.Api.TotalBooks().subscribe((res:any)=>{

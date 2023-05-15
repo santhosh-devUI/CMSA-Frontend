@@ -56,6 +56,11 @@ import { OfficerViewStudentsComponent } from './officer/officer-view-students/of
 import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
 import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
+import { PlacementLoginComponent } from './placement-cell/placement-login/placement-login.component';
+import { PlacementCellDashboardComponent } from './placement-cell/placement-cell-dashboard/placement-cell-dashboard.component';
+import { PlacementProfileComponent } from './placement-cell/placement-profile/placement-profile.component';
+import { PlacementJobsComponent } from './placement-cell/placement-jobs/placement-jobs.component';
+import { StudentJobsComponent } from './student/student-jobs/student-jobs.component';
 import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
 import { OfficerPlacementComponent } from './officer/officer-placement/officer-placement.component';
 import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
@@ -84,6 +89,7 @@ const routes: Routes = [
   { path: 'faculty-login', component: FacultyLoginComponent },
   { path: 'library-login', component: LibrarianLoginComponent },
   { path: 'student-login', component: StudentLoginComponent },
+  {path:'placement-login',component:PlacementLoginComponent},
   { path: 'student-reg', component: StudentRegistrationComponent },
   
   {path:'superadmin-dashboard',component:SuperadminDashboardComponent, children:[
@@ -130,18 +136,15 @@ const routes: Routes = [
     ],
   },
 
-  {
-    path: 'student-dashboard',
-    component: StudentDashboardComponent,
-    children: [
-      { path: '', redirectTo: 'view-timetable', pathMatch: 'full' },
-      { path: 'view-profile', component: ViewProfileComponent },
-      { path: 'view-marks', component: ViewMarksComponent },
-      { path: 'view-fee', component: ViewFeeComponent },
-      { path: 'view-books', component: ViewBooksComponent },
-      { path: 'view-timetable', component: ViewTimetableComponent },
-    ],
-  },
+  {path:'student-dashboard',component:StudentDashboardComponent, children:[
+    {path:'',redirectTo:'view-timetable',pathMatch:'full'},
+    { path:'view-profile',component:ViewProfileComponent},
+    { path:'view-marks',component:ViewMarksComponent},
+    { path:'view-fee',component:ViewFeeComponent},
+    { path:'view-books',component:ViewBooksComponent},
+    { path:'view-timetable',component:ViewTimetableComponent},
+    {path:'student-placement', component:StudentJobsComponent}
+  ]},
 
   {path:'librarian-dashboard' , component:LibrarianNavbarComponent,
     children:[
@@ -153,7 +156,14 @@ const routes: Routes = [
       {path:'librarian-addstudentbooks' , component:LibrarianAddstudentbooksComponent},
       {path:'librarian-viewstudentbooks' , component:LibrarianStudentviewbooksComponent},
       {path:'librarian-viewstudentbooks/:hallticket' , component:LibrarianStudentviewbooksComponent},
-      ]}
+      ]},
+
+    {path:'placement-dashboard', component:PlacementCellDashboardComponent,children:[
+      {path:'',redirectTo:'placement-jobs',pathMatch:'full'},
+      {path:'placement-jobs',component:PlacementJobsComponent},
+      {path:'placement-profile', component:PlacementProfileComponent}
+    ]}
+
     ]
  
 
