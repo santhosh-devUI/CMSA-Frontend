@@ -144,7 +144,62 @@
 
 
         <div class="tab-pane fade" id="view-jobs">
-list of jobs applied
+            <div class="row mt-2">
+                <div class="col-sm-1"></div>
+                <div class="col-sm-4">
+                    <h3>Search Job Details By Student Hallticket Number</h3>
+                </div>
+                <div class="col-sm-4">
+                    <input type="text" class="form-control-sm form-control search"  [(ngModel)]="this.SearchValue">
+                </div>
+                <div class="col-sm-2">
+                    <button type="button" class="btn btn-success btn-sm w-100" (click)="searchStudentJobs()">Search</button>
+                </div>
+                <div class="col-sm-1"></div>
+            </div>
+            <div class="row mt-2">
+                <div class="col-sm-12 m-auto">
+                    <div class="table-wrapper-scroll-y my-custom-scrollbar">
+
+                        <table class="table table-bordered table-striped mb-0">
+                            <thead class="sticky-top bg-dark text-white">
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th>Name</th>
+                                    <th>Hallticket</th>
+                                    <th>Branch</th>
+                                    <th>Mobile</th>
+                                    <th>Email Id</th>
+                                    <th>Company Name</th>
+                                    <th>Job Role</th>
+                                    <th>Skills</th>
+                                    <th>status</th>
+                                    <th>interview</th>
+                                    <th>Remarks</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let j of studentJobs index as i">
+                                    <th scope="row">{{i+1}}</th>
+                                    <td>{{j.name}}</td>
+                                    <td>{{j.hallticket}}</td>
+                                    <td>{{j.branch}}</td>
+                                    <td>{{j.mobilenumber}}</td>
+                                    <td>{{j.emailid}}</td>
+                                    <td>{{j.companyname}}</td>
+                                    <td>{{j.jobrole}}</td>
+                                    <td>{{j.skills}}</td>
+                                    <td>{{j.status}}</td>
+                                    <td>{{j.interview}}</td>
+                                    <td>{{j.remarks}}</td>
+                                </tr>
+
+                            </tbody>
+                        </table>
+
+                    </div>
+                </div>
+            </div>
         </div>
 
 
