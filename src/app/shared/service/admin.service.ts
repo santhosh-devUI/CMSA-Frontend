@@ -71,7 +71,7 @@ export class AdminService {
     return this.http.get('http://localhost:3000/admin/studentjobs')
   }
   SearchApplyCandidate(hallticket:any){
-    return this.http.get('http:localhost:3000/admin/searchstujob?hallticket=' + hallticket)
+    return this.http.get('http://localhost:3000/admin/searchstujob?hallticket=' + hallticket)
   }
 }
 
