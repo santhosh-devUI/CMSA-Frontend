@@ -18,4 +18,12 @@ export class PlacementService {
   statusUpdate(id:any,data:any){
     return this.http.put(`http://localhost:3000/placement/status/${id}`,data)
   }
+
+  viewProfile(email:any){
+    return this.http.get(`http://localhost:3000/placement/profile?emailid=${email}`)
+  }
+
+  updateProfile(id:any,data:any){
+    return this.http.put(`http://localhost:3000/placement/updateProfile/${id}`,data)
+  }
 }
