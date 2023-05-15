@@ -1,5 +1,5 @@
 <div class="row g-0 mt-4">
-    <form [formGroup]="feeForm" (ngSubmit)="addFee()">
+    <form [formGroup]="feeForm">
         <div class="row g-0">
             <h1 class="title">Add Fees For Students</h1>
         </div>
@@ -43,7 +43,7 @@
                 </div>
             </div>
             <div class="text-center mb-4">
-                <button type="submit" class="btn1 btn" *ngIf="addBtn">Add Fee For Students</button>
+                <button type="submit" class="btn1 btn" *ngIf="addBtn" (click)="addFee()" >Add Fee For Students</button>
                 <button type="submit" class="btn1 btn" *ngIf="updateBtn" (click)="updateFee()">Update Fee For Students</button>
             </div>
         </div>

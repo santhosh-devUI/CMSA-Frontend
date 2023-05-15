@@ -14,6 +14,7 @@ export class OfficerAddStudentComponent implements OnInit {
   photourl: any;
   aadharurl: any;
   AOurl: any;
+  fees: any;
   constructor(
     private fb: FormBuilder,
     private officerApi: OfficerService,
@@ -21,6 +22,14 @@ export class OfficerAddStudentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.officerApi.viewFees().subscribe((res: any) => {
+      res.map((f:any)=>{
+        this.fees =f;
+      })
+     
+      console.log(this.fees);
+      
+    });
     this.studentRegForm = this.fb.group({
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
@@ -79,13 +88,36 @@ export class OfficerAddStudentComponent implements OnInit {
   }
 
   studentReg() {
+let o = JSON.parse(localStorage.getItem('officer')!).empid
+
     let data = {
       ...this.studentRegForm.value,
       photo: this.photourl,
       aadharcopy: this.aadharurl,
       allotmentorder: this.AOurl,
     };
+    let feedata = {
+      hallticket: this.studentRegForm.value.hallticket,
+      studentname: this.studentRegForm.value.firstname,
+      branch: this.studentRegForm.value.branch,
+      admissionfee: this.fees.admissionfee,
+      admissionfeestatus: 'paid',
+      collegefee: this.fees.collegefee,
+      collegefeestatus:'due' ,
+      libraryfee: this.fees.libraryfee,
+      libraryfeestatus: 'due',
+      jntufee:this.fees.jntufee,
+      jntufeestatus: 'due',
+      busfee:this.fees.busfee,
+      busfeestatus: 'due',
+      hostelfee: this.fees.hostelfee,
+      hostelfeestatus:'due' ,
+      clearedby: o,
+    };
     this.officerApi.addStudents(data).subscribe((res: any) => {
+      this.officerApi.addstudentFee(feedata).subscribe((result:any)=>{
+
+      })
       alert('Student Added Successfully...');
     });
   }
