@@ -56,49 +56,70 @@ import { OfficerViewStudentsComponent } from './officer/officer-view-students/of
 import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
 import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
+import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
+import { OfficerPlacementComponent } from './officer/officer-placement/officer-placement.component';
 
 const routes: Routes = [
-{path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
-{path:'faculty-profile',component:FacultyProfileComponent},
-{path:'faculty-addtt',component:FacultyAddTimetableComponent},
-{path:'faculty-viewtt',component:FacultyViewTimetableComponent},
-{path:'faculty-addmarks',component:FacultyAddMarksComponent},
-{path:'faculty-viewmarks',component:FacultyViewMarksComponent},
-{path:'faculty-viewstudents',component:FacultyViewStudentsComponent},]},
+  {
+    path: 'faculty-dashboard',
+    component: FacultyDashboardComponent,
+    children: [
+      { path: 'faculty-profile', component: FacultyProfileComponent },
+      { path: 'faculty-addtt', component: FacultyAddTimetableComponent },
+      { path: 'faculty-viewtt', component: FacultyViewTimetableComponent },
+      { path: 'faculty-addmarks', component: FacultyAddMarksComponent },
+      { path: 'faculty-viewmarks', component: FacultyViewMarksComponent },
+      { path: 'faculty-viewstudents', component: FacultyViewStudentsComponent },
+    ],
+  },
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },
   { path: 'logins-page', component: LoginsPageComponent },
-  {path:'superadmin-login',component:SuperadminLoginComponent},
+  { path: 'superadmin-login', component: SuperadminLoginComponent },
   { path: 'admin-login', component: AdminLoginComponent },
   { path: 'officer-login', component: OfficerLoginComponent },
   { path: 'faculty-login', component: FacultyLoginComponent },
   { path: 'library-login', component: LibrarianLoginComponent },
   { path: 'student-login', component: StudentLoginComponent },
   { path: 'student-reg', component: StudentRegistrationComponent },
-  
-  {path:'superadmin-dashboard',component:SuperadminDashboardComponent, children:[
-    {path:'superadmin-home',component:SuperadminHomeComponent},
-    {path:'superadmin-viewOfficer',component:SViewOfficerComponent},
-    {path:'superadmin-viewFaculty',component:SViewFacultyComponent},
-    {path:'superadmin-viewFee',component:SViewFeeComponent},
-    {path:'superadmin-EditFee',component:SEditFeeComponent},
-    {path:'superadmin-viewStudents',component:SViewStudentslistComponent},
-    {path:'superadmin-viewBooks',component:SViewBooksComponent}
-  ]},
 
-  {path: 'admin-dashboard', component: AdminDashboardComponent, children:[
-    {path:'admin-home',component:AdminDashboardComponent},
-    {path:'admin-add-officer',component:AddOfficerComponent},
-    {path:'admin-view-officer',component:ViewOfficerComponent},
-    {path:'admin-Update-officer',component:EditOfficerComponent},
-    {path:'admin-delete-officer',component:DeleteOfficerComponent},
-    {path:'admin-Faculty',component:FacultyListComponent},
-    {path:'admin-Fee',component:FeeDetailsComponent},
-    {path:'admin-Students-Records',component:StudentRecordsComponent},
-    {path:'admin-Library',component:LibraryComponent}
-  ]},
+  {
+    path: 'superadmin-dashboard',
+    component: SuperadminDashboardComponent,
+    children: [
+      { path: 'superadmin-home', component: SuperadminHomeComponent },
+      { path: 'superadmin-viewOfficer', component: SViewOfficerComponent },
+      { path: 'superadmin-viewFaculty', component: SViewFacultyComponent },
+      { path: 'superadmin-viewFee', component: SViewFeeComponent },
+      { path: 'superadmin-EditFee', component: SEditFeeComponent },
+      {
+        path: 'superadmin-viewStudents',
+        component: SViewStudentslistComponent,
+      },
+      { path: 'superadmin-viewBooks', component: SViewBooksComponent },
+    ],
+  },
 
-  {path: 'officer-dashboard', component: OfficerDashboardComponent, children: [
+  {
+    path: 'admin-dashboard',
+    component: AdminDashboardComponent,
+    children: [
+      { path: 'admin-home', component: AdminDashboardComponent },
+      { path: 'admin-add-officer', component: AddOfficerComponent },
+      { path: 'admin-view-officer', component: ViewOfficerComponent },
+      { path: 'admin-Update-officer', component: EditOfficerComponent },
+      { path: 'admin-delete-officer', component: DeleteOfficerComponent },
+      { path: 'admin-Faculty', component: FacultyListComponent },
+      { path: 'admin-Fee', component: FeeDetailsComponent },
+      { path: 'admin-Students-Records', component: StudentRecordsComponent },
+      { path: 'admin-Library', component: LibraryComponent },
+    ],
+  },
+
+  {
+    path: 'officer-dashboard',
+    component: OfficerDashboardComponent,
+    children: [
       { path: '', redirectTo: 'officer-home', pathMatch: 'full' },
       { path: 'officer-home', component: OfficerHomeComponent },
       { path: 'officer-profile', component: OfficerProfileComponent },
@@ -107,30 +128,51 @@ const routes: Routes = [
       { path: 'officer-add-fee', component: OfficerAddFeeComponent },
       { path: 'officer-view-emp', component: OfficerViewEmpComponent },
       { path: 'officer-view-std', component: OfficerViewStudentsComponent },
-      { path: 'officer-view-fee', component: OfficerViewFeeComponent },
-    ]},
+      { path: 'officer-view-fee-status', component: OfficerStudentFeeStatusComponent, },
+      { path: 'officer-placement', component: OfficerPlacementComponent },
+    ],
+  },
 
-  {path:'student-dashboard',component:StudentDashboardComponent, children:[
-    {path:'',redirectTo:'view-timetable',pathMatch:'full'},
-    { path:'view-profile',component:ViewProfileComponent},
-    { path:'view-marks',component:ViewMarksComponent},
-    { path:'view-fee',component:ViewFeeComponent},
-    { path:'view-books',component:ViewBooksComponent},
-    { path:'view-timetable',component:ViewTimetableComponent}
-  ]},
+  {
+    path: 'student-dashboard',
+    component: StudentDashboardComponent,
+    children: [
+      { path: '', redirectTo: 'view-timetable', pathMatch: 'full' },
+      { path: 'view-profile', component: ViewProfileComponent },
+      { path: 'view-marks', component: ViewMarksComponent },
+      { path: 'view-fee', component: ViewFeeComponent },
+      { path: 'view-books', component: ViewBooksComponent },
+      { path: 'view-timetable', component: ViewTimetableComponent },
+    ],
+  },
 
-  {path:'librarian-dashboard' , component:LibrarianNavbarComponent,
-    children:[
-      {path:'' , redirectTo:'librarian-profile',pathMatch:'full'},
-      {path:'librarian-profile' , component:LibrarianHomeComponent},
-      {path:'librarian-viewstudents' , component:LibrarianViewstudentsComponent},
-      {path:'librarian-addbooks' , component:LibrarianAddbooksComponent},
-      {path:'librarian-viewbooks' , component:LibrarianViewbooksComponent},
-      {path:'librarian-addstudentbooks' , component:LibrarianAddstudentbooksComponent},
-      {path:'librarian-viewstudentbooks' , component:LibrarianStudentviewbooksComponent},
-      {path:'librarian-changepassword' , component:LibrarianChangepasswordComponent}
-    ]
-  }]
+  {
+    path: 'librarian-dashboard',
+    component: LibrarianNavbarComponent,
+    children: [
+      { path: '', redirectTo: 'librarian-profile', pathMatch: 'full' },
+      { path: 'librarian-profile', component: LibrarianHomeComponent },
+      {
+        path: 'librarian-viewstudents',
+        component: LibrarianViewstudentsComponent,
+      },
+      { path: 'librarian-addbooks', component: LibrarianAddbooksComponent },
+      { path: 'librarian-viewbooks', component: LibrarianViewbooksComponent },
+      {
+        path: 'librarian-addstudentbooks',
+        component: LibrarianAddstudentbooksComponent,
+      },
+      {
+        path: 'librarian-viewstudentbooks',
+        component: LibrarianStudentviewbooksComponent,
+      },
+      {
+        path: 'librarian-changepassword',
+        component: LibrarianChangepasswordComponent,
+      },
+    ],
+  },
+];
 
 @NgModule({
   imports: [RouterModule.forRoot(routes)],

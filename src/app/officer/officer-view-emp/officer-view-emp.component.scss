@@ -6,6 +6,22 @@
     color: whitesmoke;
     margin: 0;
 }
-.yoe{
-    border-top:2px solid rgb(4, 4, 4) ;
+
+.yoe {
+    border-top: 2px solid rgb(4, 4, 4);
+}
+
+.btn {
+    width: 90%;
+}
+.edit {
+    font-size: 35px;
+    color: blue;
+    cursor: pointer;
+}
+
+.delete {
+    font-size: 35px;
+    color: red;
+    cursor: pointer;
 }

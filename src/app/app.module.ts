@@ -81,6 +81,12 @@ import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view
 import { OfficerEditStudentComponent } from './officer/officer-edit-student/officer-edit-student.component';
 import { OfficerDeleteStudentComponent } from './officer/officer-delete-student/officer-delete-student.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
+import { OfficerProfileEditComponent } from './officer/officer-profile-edit/officer-profile-edit.component';
+import { OfficerAddStudentFeeComponent } from './officer/officer-add-student-fee/officer-add-student-fee.component';
+import { OfficerViewStudentDetailsComponent } from './officer/officer-view-student-details/officer-view-student-details.component';
+import { OfficerEditEmployeeComponent } from './officer/officer-edit-employee/officer-edit-employee.component';
+import { OfficerDeleteEmployeeComponent } from './officer/officer-delete-employee/officer-delete-employee.component';
+import { OfficerPlacementComponent } from './officer/officer-placement/officer-placement.component';
 
 @NgModule({
   declarations: [
@@ -165,6 +171,12 @@ import { OfficerProfileComponent } from './officer/officer-profile/officer-profi
    SViewStudentslistComponent,
    SViewBooksComponent,
    SuperadminHomeComponent,
+   OfficerProfileEditComponent,
+   OfficerAddStudentFeeComponent,
+   OfficerViewStudentDetailsComponent,
+   OfficerEditEmployeeComponent,
+   OfficerDeleteEmployeeComponent,
+   OfficerPlacementComponent,
     
   ],
   imports: [
