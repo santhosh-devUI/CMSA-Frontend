@@ -28,4 +28,14 @@ export class StudentService {
   updateProfile(id:any,data:any){
     return this.http.put('http://localhost:3000/student/updateprofile/'+id,data)
   }
+applyForJob(data:any){
+  return this.http.post('http://localhost:3000/student/applyjob',data) 
+}
+
+  showAllJobs(){
+    return this.http.get('http://localhost:3000/student/alljobs')
+  }
+  viewJobStatus(h:any){
+    return this.http.get('http://localhost:3000/student/viewjob?hallticket='+h)
+  }
 }

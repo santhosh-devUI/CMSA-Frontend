@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { LibrarianService } from 'src/app/shared/service/librarian.service';
 
 @Component({
   selector: 'app-librarian-viewstudents',
@@ -6,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./librarian-viewstudents.component.scss']
 })
 export class LibrarianViewstudentsComponent implements OnInit {
-
-  constructor() { }
+  students:any;
+  constructor(private librarianService:LibrarianService) { }
 
   ngOnInit(): void {
+    this.getStudents();
   }
-
+getStudents(){
+  this.librarianService.GetStudents().subscribe((res)=>{
+    this.students = res
+  })
+}
 }

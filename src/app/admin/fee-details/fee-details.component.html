@@ -5,53 +5,26 @@
     <div class="row">
         <div class="col-12 col-md-8 col-lg-12">
           <ul class="nav nav-pills">
+
             <li class="nav-item">
-                <a class="nav-link active" data-bs-toggle="pill" href="#Collegefee" role="tab" aria-controls="pills-Collegefee" aria-selected="true">College-FEE</a>
+              <a class="nav-link active" data-bs-toggle="pill" href="#Studentsfee" role="tab" aria-controls="pills-Studentsfee" aria-selected="false">STUDENTS-FEE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="pill" href="#EEE-Studentsfee" role="tab" aria-controls="pills-EEE-Studentsfee" aria-selected="false">EEE- STUDENTS-FEE</a>
+              <a class="nav-link" data-bs-toggle="pill" href="#Transactionfee" role="tab" aria-controls="pills-Transactionfee" aria-selected="false">TRANSACTION-FEE</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="pill" href="#ECE-Studentsfee" role="tab" aria-controls="pills-ECE-Studentsfee" aria-selected="false">ECE- STUDENTS-FEE</a>
+                <a class="nav-link" data-bs-toggle="pill" href="#Collegefee" role="tab" aria-controls="pills-Collegefee" aria-selected="true">College-FEE</a>
             </li>
-            <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="pill" href="#CIVIL-Studentsfee" role="tab" aria-controls="pills-CIVIL-Studentsfee" aria-selected="false">CIVIL- STUDENTS-FEE</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" data-bs-toggle="pill" href="#MECH-Studentsfee" role="tab" aria-controls="pills-MECH-Studentsfee" aria-selected="false">MECH- STUDENTS-FEE</a>
-              </li>
           </ul>
 
 <!--College-Fees Record-->
 
           <div class="tab-content mt-3">
-          <div class="tab-pane fade show active" id="Collegefee">
-            <div class="table-responsive">
-                <table class="table mt-1">
-                    <thead>
-                        <tr class="heading">
-                            <th scope="col">S.NO</th>
-                            <th scope="col">Employee ID</th>
-                            <th scope="col">Admission Fee</th>
-                            <th scope="col">College Fee</th>
-                            <th scope="col">Library Fee</th>
-                            <th scope="col">JNTU Fee</th>
-                            <th scope="col">BUS Fee</th>
-                            <th scope="col">Hostel Fee</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-          </div>
+         
 
-<!--EEE-Department Students Record-->
+<!-- Students Fee Record-->
 
-<div class="tab-pane fade" id="EEE-Studentsfee">
+<div class="tab-pane fade show active" id="Studentsfee">
     <div class="row mt-4">
         <div class="col-lg-10">
             <div class="form-group">
@@ -60,46 +33,66 @@
         </div>
         <div class="col-lg-2">
             <div class="search-student-btn">
-                <button type="btn" class="btn btn-primary" (click)="searchdata()">Search</button>
+                <button type="btn" class="btn btn-primary" (click)="searchstdfeedata()">Search</button>
             </div>
         </div>
     </div>
     
-    <div class="table-responsive">
+    <div class="table-responsive text-nowrap">
         <table class="table mt-1">
             <thead>
                 <tr class="heading1">
                     <th scope="col">S.NO</th>
                     <th scope="col">HallTicketNo</th>
-                    <th scope="col">Type of Fee</th>
-                    <th scope="col">Total Fee</th>
-                    <th scope="col">Paying Fee</th>
-                    <th scope="col">Remaining Fee</th>
+                    <th scope="col">StudentName</th>
+                    <th scope="col">Branch</th>
+                    <th scope="col">AdmissionFee</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">college Fee</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">library Fee</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">JNTU Fee</th>
+                    <th scope="col">library Fee</th>
+                    <th scope="col">Bus Fee</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Hostel Fee</th>
+                    <th scope="col">Status</th>
                     <th scope="col">CleredBy</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let EEE of EEEfee; index as i">
+                <tr *ngFor="let S of Totalfee; index as i">
                     <th scope="row">{{i+1}}</th>
-                    <td>{{EEE.hallticket}}</td>
-                    <td>{{EEE.typeoffee}}</td>
-                    <td>{{EEE.totalfee}}</td>
-                    <td>{{EEE.payingfee}}</td>
-                    <td>{{EEE.remainingfee}}</td>
-                    <td>{{EEE.clearedby}}</td>
+                    <td style="color: blue;"><b>{{S.hallticket}}</b></td>
+                    <td style="color:brown"><b>{{S.studentname}}</b></td>
+                    <td style="color: rgb(26, 129, 214);"><b>{{S.branch}}</b></td>
+                    <td>{{S.admissionfee}}</td>
+                    <td>{{S.adminssionfeestatus}}</td>
+                    <td>{{S.collegefee}}</td>
+                    <td>{{S.collegefeestatus}}</td>
+                    <td>{{S.libraryfee}}</td>
+                    <td>{{S.libraryfeestatus}}</td>
+                    <td>{{S.jntufee}}</td>
+                    <td>{{S.libraryfee}}</td>
+                    <td>{{S.busfee}}</td>
+                    <td>{{S.busfeestatus}}</td>
+                    <td>{{S.hostelfee}}</td>
+                    <td>{{S.hostelfeestatus}}</td>
+                    <td>{{S.clearedby}}</td>
                 </tr>
             </tbody>
         </table>
     </div>
   </div>
 
-<!--ECE-Department Students Record-->
+<!-- Students Transactionfee Record-->
 
-          <div class="tab-pane fade" id="ECE-Studentsfee">
+          <div class="tab-pane fade" id="Transactionfee">
             <div class="row mt-4">
                 <div class="col-lg-10">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchValue">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.searchvalue">
                     </div>
                 </div>
                 <div class="col-lg-2">
@@ -118,115 +111,72 @@
                             <th scope="col">Type of Fee</th>
                             <th scope="col">Total Fee</th>
                             <th scope="col">Paying Fee</th>
-                            <th scope="col">Remaining Fee</th>
                             <th scope="col">CleredBy</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let ECE of ECEfee; index as i">
+                        <tr *ngFor="let S of Studentfee; index as i">
                             <th scope="row">{{i+1}}</th>
-                            <td>{{ECE.hallticket}}</td>
-                            <td>{{ECE.typeoffee}}</td>
-                            <td>{{ECE.totalfee}}</td>
-                            <td>{{ECE.payingfee}}</td>
-                            <td>{{ECE.remainingfee}}</td>
-                            <td>{{ECE.clearedby}}</td>
+                            <td>{{S.hallticket}}</td>
+                            <td>{{S.typeoffee}}</td>
+                            <td>{{S.totalfee}}</td>
+                            <td>{{S.payingfee}}</td>
+                            <td>{{S.clearedby}}</td>
                         </tr>
                     </tbody>
                 </table>
             </div>
           </div>
-
-<!--CIVIL-Department Students Record-->
-
-          <div class="tab-pane fade" id="CIVIL-Studentsfee">
-            <div class="row mt-4">
-                <div class="col-lg-10">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchValue">
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="search-student-btn">
-                        <button type="btn" class="btn btn-primary" (click)="searchdata()">Search</button>
-                    </div>
-                </div>
+          <div class="tab-pane fade " id="Collegefee">
+            <div class="card title mt-2">
+                <h2 class="Cname">BRIGHT INSTITUTE OF TECHNOLOGY AND SCIENCE</h2>
             </div>
-           
-
-            <div class="table-responsive">
-                <table class="table mt-1">
-                    <thead>
-                        <tr class="heading1">
-                            <th scope="col">S.NO</th>
-                            <th scope="col">HallTicketNo</th>
-                            <th scope="col">Type of Fee</th>
-                            <th scope="col">Total Fee</th>
-                            <th scope="col">Paying Fee</th>
-                            <th scope="col">Remaining Fee</th>
-                            <th scope="col">CleredBy</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let CIVIL of CIVILfee; index as i">
-                            <th scope="row">{{i+1}}</th>
-                            <td>{{CIVIL.hallticket}}</td>
-                            <td>{{CIVIL.typeoffee}}</td>
-                            <td>{{CIVIL.totalfee}}</td>
-                            <td>{{CIVIL.payingfee}}</td>
-                            <td>{{CIVIL.remainingfee}}</td>
-                            <td>{{CIVIL.clearedby}}</td>
-                        </tr>
-                    </tbody>
-                </table>
+            <div class="card title1 mt-3">
+                <div class="table-responsive px-5">
+                    <table class="table mt-1">
+                        <thead>
+                            <tr class="tablehead">
+                                <th scope="col" class="tablehead1">S.NO</th>
+                                <th scope="col" class="tablehead2">Head of Fees</th>
+                                <th scope="col" class="tablehead3">Grant of Money(Rupees)</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let c of collegeFee">
+                                <td>1</td>
+                                <td class="feename">Admission Fee</td>
+                                <td>{{c.admissionfee}}/-</td>
+                            </tr>
+                            <tr *ngFor="let c of collegeFee">
+                                <td>2</td>
+                                <td class="feename">College Fee</td>
+                                <td>{{c.collegefee}}/-</td>
+                            </tr>
+                            <tr *ngFor="let c of collegeFee">
+                                <td>3</td>
+                                <td class="feename">Library Fee</td>
+                                <td>{{c.libraryfee}}/-</td>
+                            </tr>
+                            <tr *ngFor="let c of collegeFee">
+                                <td>4</td>
+                                <td class="feename">JNTU Fee</td>
+                                <td>{{c.jntufee}}/-</td>
+                            </tr>
+                            <tr *ngFor="let c of collegeFee">
+                                <td>5</td>
+                                <td class="feename">BUS Fee</td>
+                                <td>{{c.busfee}}/-</td>
+                            </tr>
+                            <tr *ngFor="let c of collegeFee">
+                                <td>6</td>
+                                <td class="feename">Hostel Fee</td>
+                                <td>{{c.hostelfee}}/-</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
           </div>
-
-<!--MECH-Department Students Record-->
-
-          <div class="tab-pane fade" id="MECH-Studentsfee">
-            <div class="row mt-4">
-                <div class="col-lg-10">
-                    <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchValue">
-                    </div>
-                </div>
-                <div class="col-lg-2">
-                    <div class="search-student-btn">
-                        <button type="btn" class="btn btn-primary" (click)="searchdata()">Search</button>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="table-responsive">
-                <table class="table mt-1">
-                    <thead>
-                        <tr class="heading1">
-                            <th scope="col">S.NO</th>
-                            <th scope="col">HallTicketNo</th>
-                            <th scope="col">Type of Fee</th>
-                            <th scope="col">Total Fee</th>
-                            <th scope="col">Paying Fee</th>
-                            <th scope="col">Remaining Fee</th>
-                            <th scope="col">CleredBy</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr *ngFor="let MECH of MECHfee; index as i">
-                            <th scope="row">{{i+1}}</th>
-                            <td>{{MECH.hallticket}}</td>
-                            <td>{{MECH.typeoffee}}</td>
-                            <td>{{MECH.totalfee}}</td>
-                            <td>{{MECH.payingfee}}</td>
-                            <td>{{MECH.remainingfee}}</td>
-                            <td>{{MECH.clearedby}}</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-          </div>
-
-
         </div>        
         </div>
     </div>
