@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { FacultyService } from 'src/app/shared/service/faculty.service';
 
 @Component({
@@ -9,7 +10,7 @@ import { FacultyService } from 'src/app/shared/service/faculty.service';
 export class FacultyDashboardComponent implements OnInit {
   faculty: any;
 
-  constructor( private facultyservice:FacultyService) { }
+  constructor( private facultyservice:FacultyService, private router:Router) { }
 
   ngOnInit(): void {
     this.empid = JSON.parse(localStorage.getItem('faculty')!).empid
@@ -23,6 +24,8 @@ export class FacultyDashboardComponent implements OnInit {
   }
 logout(){
     localStorage.removeItem('faculty')
+    this.router.navigate(['/faculty-login'])
+
   }
 
 }

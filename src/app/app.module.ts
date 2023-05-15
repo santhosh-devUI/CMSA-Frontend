@@ -83,6 +83,12 @@ import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view
 import { OfficerEditStudentComponent } from './officer/officer-edit-student/officer-edit-student.component';
 import { OfficerDeleteStudentComponent } from './officer/officer-delete-student/officer-delete-student.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
+import { PlacementCellDashboardComponent } from './placement-cell/placement-cell-dashboard/placement-cell-dashboard.component';
+import { PlacementProfileComponent } from './placement-cell/placement-profile/placement-profile.component';
+import { PlacementJobsComponent } from './placement-cell/placement-jobs/placement-jobs.component';
+import { PlacementChangeStatusComponent } from './placement-cell/placement-change-status/placement-change-status.component';
+import { StudentJobsComponent } from './student/student-jobs/student-jobs.component';
+import { StudentApplyJobComponent } from './student/student-apply-job/student-apply-job.component';
 import { OfficerProfileEditComponent } from './officer/officer-profile-edit/officer-profile-edit.component';
 import { OfficerAddStudentFeeComponent } from './officer/officer-add-student-fee/officer-add-student-fee.component';
 import { OfficerViewStudentDetailsComponent } from './officer/officer-view-student-details/officer-view-student-details.component';
@@ -184,6 +190,12 @@ import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-st
    OfficerDeleteEmployeeComponent,
    OfficerPlacementComponent,
    AdminHomeComponent,
+   PlacementCellDashboardComponent,
+   PlacementProfileComponent,
+   PlacementJobsComponent,
+   PlacementChangeStatusComponent,
+   StudentJobsComponent,
+   StudentApplyJobComponent,
    AdminViewLibrarianComponent,
    AdminPlacementcellComponent,
    AdminStdApplyJobsComponent,
