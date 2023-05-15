@@ -19,7 +19,6 @@ import { ViewProfileComponent } from './student/view-profile/view-profile.compon
 import { ViewMarksComponent } from './student/view-marks/view-marks.component';
 import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
-import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
 import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
 import { FacultyDashboardComponent } from './faculty/faculty-dashboard/faculty-dashboard.component';
 import { FacultyProfileComponent } from './faculty/faculty-profile/faculty-profile.component';

@@ -39,8 +39,9 @@ export class UpdateProfileComponent implements OnInit {
   }
   update(){
     this.studentservice.updateProfile(this.data._id,this.editProfile.value).subscribe((res:any)=>{
-    window.location.reload()
-     alert('Update sucessfully')
+      alert('Update sucessfully')
+      window.location.reload()
+     
     })
    }
 }

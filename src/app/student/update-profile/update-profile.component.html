@@ -1,5 +1,7 @@
+<div class="card  "> 
 <form [formGroup]="editProfile" (ngSubmit)="update()">
-    <div class="card mb-5 ">
+  <div class="header text-center fs-3 mb-4 mt-4">Edit Student Profile</div>
+
       <div class="card-body">
         <div class="row">
           <div class="col-sm-6">
@@ -55,7 +57,12 @@
                 <label class="mb-0">Type of Student</label>
               </div>
               <div class="col-sm-9">
-                <input type="text" class="form-control" formControlName="typeofStudent">
+                <select class="form-select" aria-label="Default select example" formControlName="typeofStudent">
+                  <option selected>---</option>
+                  <option value="dayscholar">dayscholar</option>
+                  <option value="hosteller">hosteller</option>
+                  
+                </select>
               </div>
             </div>
 
@@ -63,8 +70,10 @@
         </div>
        
       </div>
-    </div>
-    <div class="mt-1 mb-5  text-center">
-      <button type="submit" class="btn btn-primary " data-bs-dismiss="modal">Update</button>
+    
+    <div class="mt-1 mb-3  text-center">
+      <button type="button" class="btn btn-secondary " mat-dialog-close>Cancel</button> &nbsp;
+      <button type="submit" class="btn btn-primary" >Update</button>
     </div>
 </form>
+</div>
