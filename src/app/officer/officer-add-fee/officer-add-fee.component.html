@@ -1,1 +1,97 @@
-<p>officer-add-fee works!</p>
+<div class="row g-0 mt-4">
+    <form [formGroup]="feeForm">
+        <div class="row g-0">
+            <h1 class="title">Add Fees For Students</h1>
+        </div>
+        <div class="card mb-4">
+            <div class="row m-4">
+                <div class="col-sm-2">
+                    <div class="mb-3">
+                        <label class="form-label">Admission Fee</label>
+                        <input type="number" class="form-control" formControlName="admissionfee">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="mb-3">
+                        <label class="form-label">College Fee</label>
+                        <input type="number" class="form-control" formControlName="collegefee">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="mb-3">
+                        <label class="form-label">Library Fee</label>
+                        <input type="number" class="form-control" formControlName="libraryfee">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="mb-3">
+                        <label class="form-label">JNTU Fee</label>
+                        <input type="number" class="form-control" formControlName="jntufee">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="mb-3">
+                        <label class="form-label">Bus Fee</label>
+                        <input type="number" class="form-control" formControlName="busfee">
+                    </div>
+                </div>
+                <div class="col-sm-2">
+                    <div class="mb-3">
+                        <label class="form-label">Hostel Fee</label>
+                        <input type="number" class="form-control" formControlName="hostelfee">
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mb-4">
+                <button type="submit" class="btn1 btn" *ngIf="addBtn" (click)="addFee()" >Add Fee For Students</button>
+                <button type="submit" class="btn1 btn" *ngIf="updateBtn" (click)="updateFee()">Update Fee For Students</button>
+            </div>
+        </div>
+
+    </form>
+    <hr>
+
+    <div class="row  fw-bold">
+        <div>
+            <h1 class="title">Total Fee Details of The Students</h1>
+        </div>
+        <hr>
+        <div class="col-sm-6">
+            <div class="responsive-table">
+                <li class="table-row">
+                    <div class="col-sm-6">Admission Fee</div>
+                    <div class="col-sm-6">{{fees.admissionfee | currency : 'INR'}}</div>
+                </li>
+                <li class="table-row">
+                    <div class="col-sm-6">College Fee</div>
+                    <div class="col-sm-6">{{fees.collegefee | currency : 'INR'}}</div>
+                </li>
+                <li class="table-row">
+                    <div class="col-sm-6">Library Fee</div>
+                    <div class="col-sm-6">{{fees.libraryfee | currency : 'INR'}}</div>
+                </li>
+            </div>
+        </div>
+
+        <div class="col-sm-6">
+            <div class="responsive-table">
+                <li class="table-row">
+                    <div class="col-sm-6">JNTU Fee</div>
+                    <div class="col-sm-6">{{fees.jntufee | currency : 'INR'}}</div>
+                </li>
+                <li class="table-row">
+                    <div class="col-sm-6">Bus Fee</div>
+                    <div class="col-sm-6">{{fees.busfee | currency : 'INR'}}</div>
+                </li>
+                <li class="table-row">
+                    <div class="col-sm-6">Hostel Fee</div>
+                    <div class="col-sm-6">{{fees.hostelfee | currency : 'INR'}}</div>
+                </li>
+
+            </div>
+        </div>
+        <div class="text-center mb-4">
+            <button type="submit" class="btn btn-primary" (click)="editFee()">Edit Fee of Students</button>
+        </div>
+    </div>
+</div>

@@ -23,9 +23,16 @@ getBooks(){
   })
 } 
 
-editbooks(){
+editbooks(e:any){
   this.dialog.open(LibrarianEditbooksComponent,{
-    width:'50%'
+    width:'50%',
+    data:e
+  })
+}
+deletebook(B:any){
+  this.libraraianService.DeleteBooks(B._id).subscribe((res)=>{
+    alert("Book Deleted");
+    window.location.reload();
   })
 }
 }

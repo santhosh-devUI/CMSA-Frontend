@@ -2,15 +2,16 @@
   <nav class="navbar">
     <button
     type="button"
+    color="primary"
     aria-label="Toggle sidenav"
     mat-icon-button
     (click)="drawer.toggle()"
     *ngIf="isHandset$ | async">
     <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
   </button>
-  <a class="navbar-brand" href="#">LOGO</a>
-  <span style="font-size:1rem;">Bright Institute Of Technology & Science</span>
-  <span>logout</span>
+  <a routerLink="/home"><img class="logo" src="/assets/images/bitslogo.jpg" alt="logo"></a>
+  <span style="font-size:2rem;color: #fff;font-family: initial;">BITS</span>
+  <button class="btn btn-primary" (click)="logout()">Logout</button>
   </nav>
 </div>
 <mat-sidenav-container class="sidenav-container">
@@ -19,39 +20,26 @@
       [mode]="(isHandset$ | async) ? 'over' : 'side'"
       [opened]="(isHandset$ | async) === false">
     <mat-nav-list>
-      <a mat-list-item routerLinkActive="active"><span class="material-symbols-outlined">grid_view</span> &nbsp; Home</a>
-      <a mat-list-item [matMenuTriggerFor]="belowMenu">
-        <span class="material-symbols-outlined">person</span>
-        &nbsp; Officers 
-       <span class="material-symbols-outlined">arrow_drop_down</span></a>
-        <mat-menu #belowMenu="matMenu" yPosition="below">
-          <a mat-menu-item> Officer List</a>
-          <a mat-menu-item> Officer Add</a>
-        </mat-menu>
-        <a mat-list-item href="">
-          <span class="material-symbols-outlined">school</span>
-          &nbsp; Students </a>
-          <a mat-list-item href="#">
+          <a mat-list-item class="links" routerLink="admin-home" routerLinkActive="active"><span class="material-symbols-outlined">grid_view</span> &nbsp; Home</a>
+          <a mat-list-item class="links" [matMenuTriggerFor]="belowMenu">
+              <span class="material-symbols-outlined">person</span>&nbsp; Officers <span class="material-symbols-outlined">arrow_drop_down</span></a>
+              <mat-menu #belowMenu="matMenu" yPosition="below">
+                <a mat-menu-item class="links" routerLink="admin-view-officer" routerLinkActive="active"> Officer List</a>
+                <a mat-menu-item class="links" routerLink="admin-add-officer" routerLinkActive="active"> Officer Add</a>
+              </mat-menu>
+          <a mat-list-item class="links" routerLink="admin-Students-Records" routerLinkActive="active">
+              <span class="material-symbols-outlined">school</span> &nbsp; Students </a>
+          <a mat-list-item class="links" routerLink="admin-Faculty" routerLinkActive="active">
             <span class="material-symbols-outlined">supervisor_account</span> &nbsp; Faculty</a>
-          <!-- <a mat-list-item href="#">
-            <span class="material-symbols-outlined">local_library</span>&nbsp; Courses</a> -->
-          <a mat-list-item href="#">
+          <a mat-list-item class="links" routerLink="admin-Library" routerLinkActive="active">
             <span class="material-symbols-outlined">library_books</span> &nbsp; Library</a>
-          <!-- <a mat-list-item href="#">
-            <span class="material-symbols-outlined">departure_board</span> &nbsp; Transport</a> -->
-          <a mat-list-item href="#">
+          <a mat-list-item class="links" routerLink="admin-Fee" routerLinkActive="active">
             <span class="material-symbols-outlined">currency_rupee</span> &nbsp; Fee</a>
-          <a mat-list-item href="#">
-            <span class="material-symbols-outlined">note_alt</span> &nbsp; Marks List</a>
-          <!-- <a mat-list-item href="#">
-            <span class="material-symbols-outlined">event_note</span> &nbsp; Placements</a> -->
+            <a mat-list-item class="links" routerLink="admin-PlacementCell" routerLinkActive="active">
+              <span class="material-symbols-outlined">webhook</span> &nbsp; Placements</a>
     </mat-nav-list>
   </mat-sidenav>
   <mat-sidenav-content>
-
-
-<h1>Content</h1>
-
-    <!-- Add Content Here -->
+    <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>

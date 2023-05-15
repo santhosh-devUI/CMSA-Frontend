@@ -17,4 +17,5 @@ export class LibrarianHeaderComponent implements OnInit {
   toggleSidebar() {
     this.toggleSidebarForMe.emit();
   }
+  public photo = JSON.parse(localStorage.getItem('librarian')!).photo
 }

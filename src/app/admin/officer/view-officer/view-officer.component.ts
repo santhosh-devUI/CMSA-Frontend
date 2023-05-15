@@ -17,15 +17,13 @@ export class ViewOfficerComponent implements OnInit {
 
   ngOnInit(): void {
     this.Api.getOfficer().subscribe((res:any)=>{
-      this.OfficerList = res;
-      console.log(this.OfficerList,"officer");
-      
+      this.OfficerList = res; 
     })
   }
   editOfficer(e:any){
     this.dialog.open(EditOfficerComponent,{
       width:"70%",
-      height:"70%",
+      height:"80%",
       data:e
     })
   }
