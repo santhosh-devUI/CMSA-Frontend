@@ -14,11 +14,13 @@ export class OfficerViewEmpComponent implements OnInit {
   employees: any;
   SearchValue: any;
   searchvalue: any;
+  officerId: any;
   constructor(private officerApi: OfficerService, private dialog: MatDialog) {}
 
   ngOnInit(): void {
+    this.officerId=JSON.parse(localStorage.getItem('officer')!).empid
     this.officerApi.viewEmployees().subscribe((res: any) => {
-      this.employees = res;
+      this.employees = res.filter((x:any)=>x.empid!=this.officerId);
       console.log(res, 'f');
     });
   }
