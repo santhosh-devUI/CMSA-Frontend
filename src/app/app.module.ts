@@ -98,6 +98,10 @@ import { OfficerPlacementComponent } from './officer/officer-placement/officer-p
 import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
 import { AdminPlacementcellComponent } from './admin/admin-placementcell/admin-placementcell.component';
 import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-std-apply-jobs/admin-std-apply-jobs.component';
+import { DashboardFacultyComponent } from './faculty/dashboard-faculty/dashboard-faculty.component';
+import { FacultyEditprofileComponent } from './faculty/faculty-editprofile/faculty-editprofile.component';
+import { FacultyEditmarksComponent } from './faculty/faculty-editmarks/faculty-editmarks.component';
+import { FacultyEdittimetableComponent } from './faculty/faculty-edittimetable/faculty-edittimetable.component';
 
 @NgModule({
   declarations: [
@@ -199,6 +203,10 @@ import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-st
    AdminViewLibrarianComponent,
    AdminPlacementcellComponent,
    AdminStdApplyJobsComponent,
+   DashboardFacultyComponent,
+   FacultyEditprofileComponent,
+   FacultyEditmarksComponent,
+   FacultyEdittimetableComponent,
 
     
   ],
