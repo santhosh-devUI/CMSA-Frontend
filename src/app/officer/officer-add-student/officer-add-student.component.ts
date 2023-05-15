@@ -22,14 +22,7 @@ export class OfficerAddStudentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    this.officerApi.viewFees().subscribe((res: any) => {
-      res.map((f:any)=>{
-        this.fees =f;
-      })
-     
-      console.log(this.fees);
-      
-    });
+    
     this.studentRegForm = this.fb.group({
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
@@ -56,6 +49,14 @@ export class OfficerAddStudentComponent implements OnInit {
       adminssionfee: ['', [Validators.required]],
       status: ['Paid', [Validators.required]],
     });
+    this.officerApi.viewFees().subscribe((res: any) => {
+      res.map((f:any)=>{
+        this.fees =f;
+        this.studentRegForm.patchValue({
+          adminssionfee:f.admissionfee
+        })      
+      })
+      });
   }
 
   onSelectPhotoFile(event: any) {

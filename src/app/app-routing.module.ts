@@ -53,7 +53,6 @@ import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-v
 import { SViewBooksComponent } from './superadmin/s-view-books/s-view-books.component';
 import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin-home.component';
 import { OfficerViewStudentsComponent } from './officer/officer-view-students/officer-view-students.component';
-import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
 import { OfficerViewEmpComponent } from './officer/officer-view-emp/officer-view-emp.component';
 import { OfficerProfileComponent } from './officer/officer-profile/officer-profile.component';
 import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
