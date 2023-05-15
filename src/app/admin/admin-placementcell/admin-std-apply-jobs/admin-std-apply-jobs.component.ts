@@ -1,4 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, Inject, OnInit } from '@angular/core';
+import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material/dialog';
+import { AdminService } from 'src/app/shared/service/admin.service';
 
 @Component({
   selector: 'app-admin-std-apply-jobs',
@@ -7,9 +9,14 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AdminStdApplyJobsComponent implements OnInit {
 
-  constructor() { }
+  constructor(@Inject(MAT_DIALOG_DATA) public data:any,public dialogRef:MatDialogRef<AdminStdApplyJobsComponent>) { }
 
   ngOnInit(): void {
+    console.log(this.data,"check");
+    
+  }
+  close(){
+    this.dialogRef.close()
   }
 
 }
