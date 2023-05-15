@@ -11,6 +11,7 @@ import { StudentApplyJobComponent } from '../student-apply-job/student-apply-job
 export class StudentJobsComponent implements OnInit {
 showJobStatus:any
 student:any
+date=new Date('yyyy-mm-dd')
   allJobs: any;
   constructor(
     private studentService:StudentService,
