@@ -33,7 +33,7 @@ export class AdminPlacementcellComponent implements OnInit {
   }
   details(D:any){
     this.dialog.open(AdminStdApplyJobsComponent,{
-      width:"50%",
+      width:"45%",
       height:"50%",
       data:D
     })

@@ -31,21 +31,19 @@
                     <table class="table-responsive text-nowrap table-bordered">
                       <thead>
                           <tr class="headings">
-                              <th style="width: 10%;">S.No</th>
                               <th style="width:15%">CompanyName</th>
                               <th style="width:5%">Mobleno</th>
-                              <th style="width:10%">Email-Id</th>
+                              <th style="width:15%">Email-Id</th>
                               <th style="width:15%">Joblocation</th>
                               <th style="width:10%">Jobrole</th>
                               <th style="width:20%">Required Skills</th>
-                              <th style="width:8%">Apply LastDate</th>
-                              <th style="width:7%"> &nbsp;website</th>
+                              <th style="width:10%">Apply LastDate</th>
+                              <th style="width:10%"> &nbsp;website</th>
                           </tr>
                       </thead>
                       <tbody>
                           <tr class="body">
-                              <td>{{i+1}}</td>
-                              <td style="color:blue;font-weight: 500;">{{C.companyname}}</td>
+                              <td style="color:rgb(30, 30, 81);font-weight: 600;font-size: 12px;">{{C.companyname}}</td>
                               <td>{{C.mobileno}}</td>
                               <td>{{C.emailid}}</td>
                               <td>{{C.joblocation}}</td>
@@ -73,12 +71,12 @@
             </div>
             <div class="col-lg-2">
                 <div class="search-student-btn">
-                    <button type="btn" class="btn btn-primary" (click)="searchCandidate()">Search</button>
+                    <button type="btn" class="btn btn-primary" (click)="searchCandidate()">Search Candidate</button>
                 </div>
             </div>
           </div> 
           
-          <div class="table-responsive">
+          <div class="table-responsive table-hover">
             <table class="table mt-1">
                 <thead>
                     <tr class="headings">
@@ -88,28 +86,28 @@
                         <th scope="col">Branch</th>
                         <th scope="col">CompanyName</th>
                         <th scope="col">Job Role</th>
-                        <th scope="col">Resume</th>
-                        <th scope="col">Details</th>
+                        <th scope="col">Interview</th>
                         <th scope="col">Status</th>
                         <th scope="col">Remarks</th>
-                        <th scope="col">Interview</th>
+                        <th scope="col">Resume</th>
+                        <th scope="col">Details</th>
                     </tr>
                 </thead>
                 <tbody>
                     <tr class="body" *ngFor="let S of ApplyJobs; index as i">
-                        <th scope="row">{{i+1}}</th>
-                        <td>{{S.hallticket}}</td>
+                        <td scope="row">{{i+1}}</td>
+                        <td><b>{{S.hallticket}}</b></td>
                         <td>{{S.name}}</td>
                         <td>{{S.branch}}</td>
-                        <td>{{S.companyname}}</td>
+                        <td style="color: blue;">{{S.companyname}}</td>
                         <td>{{S.jobrole}}</td>
+                        <td>{{S.interview}}<sup style="color: red;; font-size: 16px;">*</sup></td>
+                        <td [ngClass]="S.status=='accept'?'success':'pending'">{{S.status}}</td>
+                        <td>{{S.remarks}}</td>
                         <td>{{S.resume}}</td>
                         <td>
-                          <button (click)="details(S)">view</button>
+                          <a class="Expand" (click)="details(S)"><span class="material-symbols-outlined">pan_zoom</span></a>
                         </td>
-                        <td>{{S.status}}</td>
-                        <td>{{S.remarks}}</td>
-                        <td>{{S.interview}}</td>
                     </tr>
                 </tbody>
             </table>
