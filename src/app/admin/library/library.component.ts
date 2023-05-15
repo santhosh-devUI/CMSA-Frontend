@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AdminService } from 'src/app/shared/service/admin.service';
+import { AdminViewLibrarianComponent } from './admin-view-librarian/admin-view-librarian.component';
 
 @Component({
   selector: 'app-library',
@@ -11,10 +13,10 @@ export class LibraryComponent implements OnInit {
   TotalBooks:any;
   StdBooks:any;
 
-  constructor(private Api:AdminService) { }
+  constructor(private Api:AdminService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
-    this.Api.ShowFaculty("Librarian").subscribe((res:any)=>{
+    this.Api.viewEmployees("librarian").subscribe((res:any)=>{
       this.Libraryfaculty = res;
     })
     this.Api.TotalBooks().subscribe((res:any)=>{
@@ -25,6 +27,14 @@ export class LibraryComponent implements OnInit {
       console.log(res,"res");
       
     })
+  }
+  viewBankDetails(L:any){
+    this.dialog.open(AdminViewLibrarianComponent,{
+      width:"65%",
+      height:"60%",
+      data:L
+    })
+
   }
 
 }

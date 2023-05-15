@@ -80,6 +80,7 @@ export class AddOfficerComponent implements OnInit {
       this.Api.addOfficer(data).subscribe((res: any) => {
         if (res) {
           alert('officer Register Successfull');
+          window.location.reload()
         } else {
           alert('something went wrong');
         }

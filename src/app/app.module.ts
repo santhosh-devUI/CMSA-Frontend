@@ -65,7 +65,8 @@ import { EditOfficerComponent } from './admin/officer/edit-officer/edit-officer.
 import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.component';
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
-import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
+import { LibrarianEditprofileComponent } from './librarian/librarian-editprofile/librarian-editprofile.component';
+import { LibrarianSearchstudentbookComponent } from './librarian/librarian-searchstudentbook/librarian-searchstudentbook.component';
 import { SuperadminDashboardComponent } from './superadmin/superadmin-dashboard/superadmin-dashboard.component';
 import { SViewOfficerComponent } from './superadmin/s-view-officer/s-view-officer.component';
 import { SViewFacultyComponent } from './superadmin/s-view-faculty/s-view-faculty.component';
@@ -74,6 +75,7 @@ import { SEditFeeComponent } from './superadmin/Fee/s-edit-fee/s-edit-fee.compon
 import { SViewStudentslistComponent } from './superadmin/s-view-studentslist/s-view-studentslist.component';
 import { SViewBooksComponent } from './superadmin/s-view-books/s-view-books.component';
 import { SuperadminHomeComponent } from './superadmin/superadmin-home/superadmin-home.component';
+import { AdminHomeComponent } from './admin/admin-home/admin-home.component';
 import { OfficerViewStudentsComponent } from './officer/officer-view-students/officer-view-students.component';
 import { OfficerStudentFeeStatusComponent } from './officer/officer-student-fee-status/officer-student-fee-status.component';
 import { OfficerViewFeeComponent } from './officer/officer-view-fee/officer-view-fee.component';
@@ -87,6 +89,9 @@ import { OfficerViewStudentDetailsComponent } from './officer/officer-view-stude
 import { OfficerEditEmployeeComponent } from './officer/officer-edit-employee/officer-edit-employee.component';
 import { OfficerDeleteEmployeeComponent } from './officer/officer-delete-employee/officer-delete-employee.component';
 import { OfficerPlacementComponent } from './officer/officer-placement/officer-placement.component';
+import { AdminViewLibrarianComponent } from './admin/library/admin-view-librarian/admin-view-librarian.component';
+import { AdminPlacementcellComponent } from './admin/admin-placementcell/admin-placementcell.component';
+import { AdminStdApplyJobsComponent } from './admin/admin-placementcell/admin-std-apply-jobs/admin-std-apply-jobs.component';
 
 @NgModule({
   declarations: [
@@ -149,7 +154,6 @@ import { OfficerPlacementComponent } from './officer/officer-placement/officer-p
     LibrarianEditstudentbooksComponent,
     LibrarianEditbooksComponent,
     LibrarianViewstudentsComponent,
-    LibrarianChangepasswordComponent,
     OfficerAddEmployeeComponent,
     OfficerHomeComponent,
     OfficerAddFeeComponent ,
@@ -163,6 +167,8 @@ import { OfficerPlacementComponent } from './officer/officer-placement/officer-p
     ViewBooksComponent,
  ViewProfileComponent ,
    UpdateProfileComponent,
+   LibrarianEditprofileComponent,
+   LibrarianSearchstudentbookComponent, 
    SuperadminDashboardComponent,
    SViewOfficerComponent,
    SViewFacultyComponent,
@@ -177,6 +183,11 @@ import { OfficerPlacementComponent } from './officer/officer-placement/officer-p
    OfficerEditEmployeeComponent,
    OfficerDeleteEmployeeComponent,
    OfficerPlacementComponent,
+   AdminHomeComponent,
+   AdminViewLibrarianComponent,
+   AdminPlacementcellComponent,
+   AdminStdApplyJobsComponent,
+
     
   ],
   imports: [
@@ -195,7 +206,9 @@ import { OfficerPlacementComponent } from './officer/officer-placement/officer-p
     MatListModule,
     MatGridListModule,
     MatCardModule,
-    MatMenuModule
+    MatMenuModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

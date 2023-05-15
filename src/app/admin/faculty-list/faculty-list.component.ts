@@ -9,7 +9,7 @@ import { AdminService } from 'src/app/shared/service/admin.service';
 export class FacultyListComponent implements OnInit {
   EEEfaculty: any;
   ECEfaculty: any;
-  CIVILfaculty: any;
+  CSEfaculty: any;
   MECHfaculty: any;
 
 
@@ -22,8 +22,8 @@ export class FacultyListComponent implements OnInit {
     this.Api.ShowFaculty("ECE").subscribe((res:any)=>{
       this.ECEfaculty = res;
     })
-    this.Api.ShowFaculty("CIVIL").subscribe((res:any)=>{
-      this.CIVILfaculty = res;
+    this.Api.ShowFaculty("CSE").subscribe((res:any)=>{
+      this.CSEfaculty = res;
     })
     this.Api.ShowFaculty("MECH").subscribe((res:any)=>{
       this.MECHfaculty = res;

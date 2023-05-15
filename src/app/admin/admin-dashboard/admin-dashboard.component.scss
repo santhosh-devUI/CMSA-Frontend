@@ -20,14 +20,10 @@
 }
 .navbar{
   
-  background-color: #13171d;
+  background-color: cornflowerblue;
 }
 .btn{
-  background-color: black;
-}
-mat-nav-list{
-  margin-left: 1rem;
-  margin-right: 1rem;
+  background-color: cornflowerblue;
 }
 .material-symbols-outlined {
   color: blue;
@@ -42,12 +38,28 @@ img{
   width: 10%;
 }
 .logo {
-  width: 90%;
+  width: 65%;
   border-radius: 50%;
   height: 50px;
+  margin-left: 15px;
 }
-.active{
-  background-color: rgb(199, 199, 198);
-  border-radius: 8px;
-  height: 35px;
+.links {
+  color: rgb(37, 37, 93);
 }
+
+.links:hover {
+  font-size: 16px;
+  border-radius: 5px;
+  background-color: gray;
+  color: #fff;
+}
+.active {
+  border-left: 8px solid rgb(118, 156, 211);
+  border-bottom: 1px solid rgb(118, 156, 211);
+  border-top: 1px solid rgb(118, 156, 211);
+  font-family: 'Times New Roman';
+  font-weight: bold;
+  font-size: 20px;
+
+}
+

@@ -32,6 +32,11 @@ export class AdminService {
   ShowFaculty(department:any){
     return this.http.get('http://localhost:3000/admin/showFaculty?department=' + department)
   }
+  viewEmployees(t: any) {
+    return this.http.get(
+      'http://localhost:3000/officer/emps?typeofemployee=' + t
+    );
+  }
   ShowFee(){
     return this.http.get('http://localhost:3000/admin/fees')
   }
@@ -55,6 +60,18 @@ export class AdminService {
   }
   StdBooks(){
     return this.http.get('http://localhost:3000/admin/showstubooks')
+  }
+  TotalStudents(){
+    return this.http.get('http://localhost:3000/admin/totalstudents')
+  }
+  viewJobs(){
+    return this.http.get('http://localhost:3000/admin/viewplacements')
+  }
+  viewApplyJobs(){
+    return this.http.get('http://localhost:3000/admin/studentjobs')
+  }
+  SearchApplyCandidate(hallticket:any){
+    return this.http.get('http:localhost:3000/admin/searchstujob?hallticket=' + hallticket)
   }
 }
 

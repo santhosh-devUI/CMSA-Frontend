@@ -16,16 +16,16 @@ export class LibrarianAddstudentbooksComponent implements OnInit {
 
   ngOnInit(): void {
     this.addStudentform = this.fb.group({
-      librarian : new FormControl('Sudhakar',[Validators.required]),
+      librarian : JSON.parse(localStorage.getItem('librarian')!).name,
       hallticket : new FormControl('',[Validators.required]),
       studentname : new FormControl('',[Validators.required]),
       bookname : new FormControl('',[Validators.required]),
-      autho : new FormControl('',[Validators.required]),
+      author : new FormControl('',[Validators.required]),
       branchname : new FormControl('',[Validators.required]),
       price : new FormControl('',[Validators.required]),
       date : new FormControl('',[Validators.required]),
       fine : new FormControl('',[Validators.required]),
-      clearedBy : new FormControl('Sudhakar',[Validators.required]),
+      clearedBy : JSON.parse(localStorage.getItem('librarian')!).name,
     });
   }
   
@@ -40,5 +40,4 @@ export class LibrarianAddstudentbooksComponent implements OnInit {
       alert("Something Went Wrong")
     }
   }
-
 }

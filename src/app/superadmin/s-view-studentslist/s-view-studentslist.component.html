@@ -10,7 +10,7 @@
               <a class="nav-link" data-bs-toggle="pill" href="#ECE-Students" role="tab" aria-controls="pills-ECE-Students" aria-selected="false" (click)="forECEstd()">ECE-STUDENTS</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link" data-bs-toggle="pill" href="#CIVIL-Students" role="tab" aria-controls="pills-CIVIL-Students" aria-selected="false" (click)="forCIVILstd()">CIVIL-STUDENTS</a>
+              <a class="nav-link" data-bs-toggle="pill" href="#CSE-Students" role="tab" aria-controls="pills-CSE-Students" aria-selected="false" (click)="forCSEstd()">CSE-STUDENTS</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" data-bs-toggle="pill" href="#MECH-Students" role="tab" aria-controls="pills-MECH-Students" aria-selected="false" (click)="forMECHstd()">MECH-STUDENTS</a>
@@ -55,15 +55,15 @@
                     <tbody>
                         <tr *ngFor="let EEE of EEEStudentsdata; index as i">
                             <th scope="row">{{i+1}}</th>
-                            <td>{{EEE.hallticket}}</td>
-                            <td>{{EEE.firstname}}&nbsp;{{EEE.lastname}}</td>
+                            <td style="color: black;font-weight:bold;">{{EEE.hallticket}}</td>
+                            <td style="color: blue;font-weight:bold;">{{EEE.firstname}}&nbsp;{{EEE.lastname}}</td>
                             <td>{{EEE.branch}}</td>
                             <td>{{EEE.mobileno}}</td>
                             <td>{{EEE.emailid}}</td>
                             <td>{{EEE.typeofStudent}}</td>
                             <td><img src="{{EEE.photo}}" width="100%" height="70%"></td>
                             <td><img src="{{EEE.aadharcopy}}" width="50%" height="50%"></td>
-                            <td>{{EEE.allotmentorder}}</td>
+                            <td><img src="{{EEE.allotmentorder}}" width="50%" height="50%"></td>
                             <td>{{EEE.adminssionfee}}</td>
                             <td>{{EEE.status}}</td>
                         </tr>
@@ -109,15 +109,15 @@
                     <tbody>
                         <tr *ngFor="let ECE of ECEStudentsdata; index as i">
                             <th scope="row">{{i+1}}</th>
-                            <td>{{ECE.hallticket}}</td>
-                            <td>{{ECE.firstname}}&nbsp;{{ECE.lastname}}</td>
+                            <td style="color: black;font-weight:bold;">{{ECE.hallticket}}</td>
+                            <td style="color: blue;font-weight:bold;">{{ECE.firstname}}&nbsp;{{ECE.lastname}}</td>
                             <td>{{ECE.branch}}</td>
                             <td>{{ECE.mobileno}}</td>
                             <td>{{ECE.emailid}}</td>
                             <td>{{ECE.typeofStudent}}</td>
                             <td><img src="{{ECE.photo}}" width="50%" height="50%"></td>
                             <td><img src="{{ECE.aadharcopy}}" width="50%" height="50%"></td>
-                            <td>{{ECE.allotmentorder}}</td>
+                            <td><img src="{{ECE.allotmentorder}}" width="50%" height="50%"></td>
                             <td>{{ECE.adminssionfee}}</td>
                             <td>{{ECE.status}}</td>
                         </tr>
@@ -128,16 +128,16 @@
 
 <!--CIVIL-Department Students Record-->
 
-          <div class="tab-pane fade" id="CIVIL-Students">
+          <div class="tab-pane fade" id="CSE-Students">
             <div class="row mt-4">
                 <div class="col-lg-10">
                     <div class="form-group">
-                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchCIVILValue">
+                        <input type="text" class="form-control" placeholder="Search By HallTicketno ...." [(ngModel)]="this.SearchCSEValue">
                     </div>
                 </div>
                 <div class="col-lg-2">
                     <div class="search-student-btn">
-                        <button type="btn" class="btn btn-primary" (click)="searchCIVILdata()">Search</button>
+                        <button type="btn" class="btn btn-primary" (click)="searchCSEdata()">Search</button>
                     </div>
                 </div>
             </div>
@@ -162,19 +162,19 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let CIVIL of CIVILStudentsdata; index as i">
+                        <tr *ngFor="let CSE of CSEStudentsdata; index as i">
                             <th scope="row">{{i+1}}</th>
-                            <td>{{CIVIL.hallticket}}</td>
-                            <td>{{CIVIL.firstname}}&nbsp;{{CIVIL.lastname}}</td>
-                            <td>{{CIVIL.branch}}</td>
-                            <td>{{CIVIL.mobileno}}</td>
-                            <td>{{CIVIL.emailid}}</td>
-                            <td>{{CIVIL.typeofStudent}}</td>
-                            <td><img src="{{CIVIL.photo}}" width="50%" height="50%"></td>
-                            <td><img src="{{CIVIL.aadharcopy}}" width="50%" height="50%"></td>
-                            <td>{{CIVIL.allotmentorder}}</td>
-                            <td>{{CIVIL.adminssionfee}}</td>
-                            <td>{{CIVIL.status}}</td>
+                            <td style="color: black;font-weight:bold;">{{CSE.hallticket}}</td>
+                            <td style="color: blue;">{{CSE.firstname}}&nbsp;{{CSE.lastname}}</td>
+                            <td>{{CSE.branch}}</td>
+                            <td>{{CSE.mobileno}}</td>
+                            <td>{{CSE.emailid}}</td>
+                            <td>{{CSE.typeofStudent}}</td>
+                            <td><img src="{{CSE.photo}}" width="50%" height="50%"></td>
+                            <td><img src="{{CSE.aadharcopy}}" width="50%" height="50%"></td>
+                            <td><img src="{{CSE.allotmentorder}}" width="50%" height="50%"></td>
+                            <td>{{CSE.adminssionfee}}</td>
+                            <td>{{CSE.status}}</td>
                         </tr>
                     </tbody>
                 </table>
@@ -218,15 +218,15 @@
                     <tbody>
                         <tr *ngFor="let MECH of MECHStudentsdata; index as i">
                             <th scope="row">{{i+1}}</th>
-                            <td>{{MECH.hallticket}}</td>
-                            <td>{{MECH.firstname}}&nbsp;{{MECH.lastname}}</td>
+                            <td style="color: black;font-weight:bold;">{{MECH.hallticket}}</td>
+                            <td style="color: blue;font-weight:bold;">{{MECH.firstname}}&nbsp;{{MECH.lastname}}</td>
                             <td>{{MECH.branch}}</td>
                             <td>{{MECH.mobileno}}</td>
                             <td>{{MECH.emailid}}</td>
                             <td>{{MECH.typeofStudent}}</td>
                             <td><img src="{{MECH.photo}}" width="50%" height="50%"></td>
                             <td><img src="{{MECH.aadharcopy}}" width="50%" height="50%"></td>
-                            <td>{{MECH.allotmentorder}}</td>
+                            <td><img src="{{MECH.allotmentorder}}" width="50%" height="50%"></td>
                             <td>{{MECH.adminssionfee}}</td>
                             <td>{{MECH.status}}</td>
                         </tr>
