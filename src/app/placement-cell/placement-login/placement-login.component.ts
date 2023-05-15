@@ -25,8 +25,13 @@ this.placementLoginForm=this.fb.group({
   placementLogin(){
     if(this.placementLoginForm.valid){
       this.placementService.placementLogin(this.placementLoginForm.value).subscribe(res=>{
-        localStorage.setItem('placement',JSON.stringify(res))
-        this.router.navigate(['/placement-dashboard'])
+        if(res){
+          localStorage.setItem('placement',JSON.stringify(res))
+          this.router.navigate(['/placement-dashboard'])
+        }else{
+          alert('invalid credential')
+        }
+        
       })
     }else{
       alert('please fill all required field')
