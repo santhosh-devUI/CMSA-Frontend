@@ -21,7 +21,6 @@ import { MatListModule } from '@angular/material/list';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FacultyAddMarksComponent } from './faculty/faculty-add-marks/faculty-add-marks.component';
-import { FacultyDashboardComponent } from './faculty/faculty-dashboard/faculty-dashboard.component';
 import { FacultyProfileComponent } from './faculty/faculty-profile/faculty-profile.component';
 import { FacultyViewStudentsComponent } from './faculty/faculty-view-students/faculty-view-students.component';
 import { FacultyViewMarksComponent } from './faculty/faculty-view-marks/faculty-view-marks.component';
@@ -65,6 +64,11 @@ import { ViewOfficerComponent } from './admin/officer/view-officer/view-officer.
 import { DeleteOfficerComponent } from './admin/officer/delete-officer/delete-officer.component';
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
 import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
+import { FacultyDashboardComponent } from './faculty-dashboard/faculty-dashboard.component';
+import { FacultyEditprofileComponent } from './faculty-editprofile/faculty-editprofile.component';
+import { FacultyEditmarksComponent } from './faculty-editmarks/faculty-editmarks.component';
+import { FacultyEdittimetableComponent } from './faculty-edittimetable/faculty-edittimetable.component';
+import { FacultyHomeComponent } from './faculty-home/faculty-home.component';
 
 @NgModule({
   declarations: [
@@ -85,7 +89,6 @@ import { LibrarianChangepasswordComponent } from './librarian/librarian-changepa
     HomeComponent,
     LoginsPageComponent,
     FacultyAddMarksComponent,
-    FacultyDashboardComponent,
     FacultyProfileComponent,
     FacultyViewStudentsComponent,
     FacultyViewMarksComponent,
@@ -131,7 +134,12 @@ import { LibrarianChangepasswordComponent } from './librarian/librarian-changepa
   ViewFeeComponent,
     ViewBooksComponent,
  ViewProfileComponent ,
-   UpdateProfileComponent, 
+   UpdateProfileComponent,
+   FacultyDashboardComponent,
+   FacultyEditprofileComponent,
+   FacultyEditmarksComponent,
+   FacultyEdittimetableComponent,
+   FacultyHomeComponent, 
   ],
   imports: [
     BrowserModule,

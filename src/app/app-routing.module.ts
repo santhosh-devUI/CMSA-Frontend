@@ -21,7 +21,6 @@ import { ViewFeeComponent } from './student/view-fee/view-fee.component';
 import { ViewBooksComponent } from './student/view-books/view-books.component';
 import { UpdateProfileComponent } from './student/update-profile/update-profile.component';
 import { ViewTimetableComponent } from './student/view-timetable/view-timetable.component';
-import { FacultyDashboardComponent } from './faculty/faculty-dashboard/faculty-dashboard.component';
 import { FacultyProfileComponent } from './faculty/faculty-profile/faculty-profile.component';
 import { FacultyAddTimetableComponent } from './faculty/faculty-add-timetable/faculty-add-timetable.component';
 import { FacultyViewTimetableComponent } from './faculty/faculty-view-timetable/faculty-view-timetable.component';
@@ -36,22 +35,19 @@ import { LibrarianAddstudentbooksComponent } from './librarian/librarian-addstud
 import { LibrarianStudentviewbooksComponent } from './librarian/librarian-studentviewbooks/librarian-studentviewbooks.component';
 import { LibrarianViewstudentsComponent } from './librarian/librarian-viewstudents/librarian-viewstudents.component';
 import { LibrarianChangepasswordComponent } from './librarian/librarian-changepassword/librarian-changepassword.component';
+import { FacultyDashboardComponent } from './faculty-dashboard/faculty-dashboard.component';
+import { FacultyHomeComponent } from './faculty-home/faculty-home.component';
 
 const routes: Routes = [
+  { path: '', redirectTo: 'faculty-home', pathMatch: 'full' },
   {path:'faculty-dashboard',component:FacultyDashboardComponent,children:[
+    {path:'faculty-home',component:FacultyHomeComponent},
 {path:'faculty-profile',component:FacultyProfileComponent},
 {path:'faculty-addtt',component:FacultyAddTimetableComponent},
 {path:'faculty-viewtt',component:FacultyViewTimetableComponent},
 {path:'faculty-addmarks',component:FacultyAddMarksComponent},
 {path:'faculty-viewmarks',component:FacultyViewMarksComponent},
 {path:'faculty-viewstudents',component:FacultyViewStudentsComponent},
-
-
-
-
-
-
-
   ]},
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', component: HomeComponent },

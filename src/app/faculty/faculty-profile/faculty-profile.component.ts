@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { MatDialog } from '@angular/material/dialog';
+import { FacultyEditprofileComponent } from 'src/app/faculty-editprofile/faculty-editprofile.component';
 import { FacultyService } from 'src/app/shared/service/faculty.service';
 
 @Component({
@@ -13,7 +15,7 @@ empid:any
 AddEmpForm!: FormGroup;
 photourl: any;
 x: any;
-  constructor( private facultyservice:FacultyService,private fb : FormBuilder) { }
+  constructor( private facultyservice:FacultyService,private fb : FormBuilder , private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.empid = JSON.parse(localStorage.getItem('faculty')!).empid
@@ -47,33 +49,12 @@ x: any;
         };
       }
     }
-Edit(){
-  console.log(this.faculty);
-  
-  this.AddEmpForm.patchValue({
-     empid : this.faculty.empid,
-     name : this.faculty.name,
-     gender : this.faculty.gender,
-    emailid : this.faculty.emailid,
-    mobileno : this.faculty.mobileno,
-    dob : this.faculty.dob,
-    designation:this.faculty.designation,
-    department:this.faculty.department,
-    yearofexperience:this.faculty.yearofexperience,
-    joiningdate:this.faculty.joiningdate,
-    address:this.faculty.address,
-
-  })
+Edit(faculty:any){
+  this.dialog.open(FacultyEditprofileComponent,{
+    width:'50%',
+    height:'92%',data:faculty
+   })
 }
-    UpdateProfile(){
-      let id=JSON.parse(localStorage.getItem('faculty')!)._id
-this.facultyservice.EditProfile(id,this.AddEmpForm.value).subscribe((res:any)=>{
-  alert('updated succesfully')
-  window.location.reload()
-
-  console.log(res);
-  
-})
-    }
+   
   }
 
