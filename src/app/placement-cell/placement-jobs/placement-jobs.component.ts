@@ -22,6 +22,10 @@ students:any
       this.students=res      
     })
   }
+  downloadResume(resume:any){
+  
+    window.open(resume)
+  }
   changeStatus(a:any){
     this.dialog.open(PlacementChangeStatusComponent,{
       width:"50%",
