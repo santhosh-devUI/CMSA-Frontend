@@ -23,9 +23,11 @@ export class StudentLoginComponent implements OnInit {
 
 submit(){
   this.studentService.studentLogin(this.studentLogin.value.hallticket,this.studentLogin.value.mobileno).subscribe((res:any)=>{
+    console.log(res);
+    
     if(res){
       alert('Login suceess'),
-      localStorage.setItem('student',JSON.stringify(res))
+      localStorage.setItem('student', JSON.stringify(res))
       this.router.navigate(['/student-dashboard'])
     }else{
       alert('Login failed')

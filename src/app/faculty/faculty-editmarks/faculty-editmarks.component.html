@@ -1,21 +1,24 @@
-<section style="background-color: #eee;">
 <div class="container py-2">
-        <div class=" mb-4 text-center ">
-                <h1 style="font-weight: bold;">STUDENTS ADD MARKS</h1><hr>
+    <div class="row">
+        <div class="col">
+            <nav class="bg-light rounded-3  mb-4 text-center">
+                <h1>STUDENTS EDIT MARKS</h1>
+            </nav>
         </div>
+    </div>
     <div class="col-sm-12 m-auto">
         <div class="card mb-4 bg-light rounded-3 p-3">
             <div class="card-body">
-                <form [formGroup]="AddMarksForm" (ngSubmit)="AddMarks()">
-                    <div class="col-sm-12">
+                <form [formGroup]="Viewmarks">
+                  <div class="col-sm-12">
                     <div class="row mb-3" >
                         <div class="col-sm-3 ">
                             <label class="form-label">Student id</label>
-                            <input type="text" class="form-control" formControlName="hallticket">
+                            <input type="text" readonly class="form-control" formControlName="hallticket">
                         </div>
                         <div class="col-sm-3">
                             <label class="form-label">Student Name</label>
-                            <input type="text" class="form-control"  formControlName="studentname">
+                            <input type="text" readonly class="form-control"  formControlName="studentname">
                         </div>
                         <div class="col-sm-3">
                             <label class="form-label ">Semister</label>
@@ -30,7 +33,7 @@
                         </div>
                         <div class="col-sm-3">
                             <label class="form-label">Branch</label>
-                            <input type="text" class="form-control"  formControlName="branch">
+                            <input type="text" readonly class="form-control"  formControlName="branch">
                         </div>
                     </div>
                     <div class="row  mb-3">
@@ -72,9 +75,9 @@
                         </div>
                         <div class="col-sm-4">
                             <label class="form-label ">Marks Scored</label>
-                            <input type="text" class="form-control" formControlName="subject3marks" (change)="calculateMarks()">
+                            <input type="text" class="form-control" formControlName="subject3marks">
                         </div>
-                    </div><hr>
+                    </div>
                     <div class="row  mb-3">
                         <div class="col-sm-4">
                            
@@ -103,12 +106,13 @@
                     </div>
                  
                 </div>
-                <div class="text-end">
-                <button type="submit" class="btn btn-primary me-3">Add Marks</button>
-            </div>
+              
                 </form>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary me-2" matDialogClose data-bs-dismiss="modal">Close</button>
+                    <button type="button" (click)="Updatemarks()" class="btn btn-primary">Save changes</button>
+                  </div>
             </div>
         </div>
     </div>
 </div>
-</section>

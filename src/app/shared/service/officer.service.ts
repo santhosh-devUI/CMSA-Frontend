@@ -104,4 +104,24 @@ export class OfficerService {
       'http://localhost:3000/officer/showstutotalfee?hallticket=' + h
     );
   }
+
+
+
+  addPlacemnet(data: any) {
+    return this.http.post('http://localhost:3000/officer/addplacement', data);
+  }
+
+  viewPlacement() {
+    return this.http.get('http://localhost:3000/officer/viewplacement');
+  }
+
+  viewStudentJobs() {
+    return this.http.get('http://localhost:3000/officer/studentjobs');
+  }
+
+  searchJobs(h: any) {
+    return this.http.get(
+      'http://localhost:3000/officer/searchstujobs?hallticket=' + h
+    );
+  }
 }
