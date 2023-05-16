@@ -137,7 +137,7 @@ const routes: Routes = [
   },
 
   {path:'student-dashboard',component:StudentDashboardComponent, children:[
-    {path:'',redirectTo:'view-timetable',pathMatch:'full'},
+    {path:'',redirectTo:'view-profile',pathMatch:'full'},
     { path:'view-profile',component:ViewProfileComponent},
     { path:'view-marks',component:ViewMarksComponent},
     { path:'view-fee',component:ViewFeeComponent},
