@@ -42,30 +42,34 @@
                             <th scope="col">HallTicketNo</th>
                             <th scope="col">Name</th>
                             <th scope="col">Branch</th>
-                            <th scope="col">Mobileno</th>
-                            <th scope="col">EmailId</th>
                             <th scope="col">StudentType</th>
-                            <th scope="col">Photo</th>
-                            <th scope="col">AdharCopy</th>
-                            <th scope="col">AllotmentOrder</th>
                             <th scope="col">AdmissionFee</th>
                             <th scope="col">Status</th>
+                            <th scope="col">AllotmentOrder</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let EEE of EEEStudentsdata; index as i">
+                        <tr *ngFor="let EEE of EEEStudentsdata; index as i" class="tBody">
                             <th scope="row">{{i+1}}</th>
                             <td style="color: black;font-weight:bold;">{{EEE.hallticket}}</td>
-                            <td style="color: blue;font-weight:bold;">{{EEE.firstname}}&nbsp;{{EEE.lastname}}</td>
+                            <td style="color: rgb(14, 178, 207);font-weight:bold;">{{EEE.firstname}}&nbsp;{{EEE.lastname}}</td>
                             <td>{{EEE.branch}}</td>
-                            <td>{{EEE.mobileno}}</td>
-                            <td>{{EEE.emailid}}</td>
                             <td>{{EEE.typeofStudent}}</td>
-                            <td><img src="{{EEE.photo}}" width="100%" height="70%"></td>
-                            <td><img src="{{EEE.aadharcopy}}" width="50%" height="50%"></td>
-                            <td><img src="{{EEE.allotmentorder}}" width="50%" height="50%"></td>
                             <td>{{EEE.adminssionfee}}</td>
                             <td>{{EEE.status}}</td>
+                            <td class="download" (click)="download(EEE)">
+                                <span class="material-symbols-outlined">
+                                    download
+                                </span>
+                            </td>
+                            <td>
+                                <a class="edit" (click)="open(EEE)">
+                                    <span class="material-symbols-outlined">
+                                        edit_square
+                                    </span>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -96,30 +100,34 @@
                             <th scope="col">HallTicketNo</th>
                             <th scope="col">Name</th>
                             <th scope="col">Branch</th>
-                            <th scope="col">Mobileno</th>
-                            <th scope="col">EmailId</th>
                             <th scope="col">StudentType</th>
-                            <th scope="col">Photo</th>
-                            <th scope="col">AdharCopy</th>
-                            <th scope="col">AllotmentOrder</th>
                             <th scope="col">AdmissionFee</th>
                             <th scope="col">Status</th>
+                            <th scope="col">AllotmentOrder</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let ECE of ECEStudentsdata; index as i">
+                        <tr *ngFor="let ECE of ECEStudentsdata; index as i" class="tBody">
                             <th scope="row">{{i+1}}</th>
                             <td style="color: black;font-weight:bold;">{{ECE.hallticket}}</td>
-                            <td style="color: blue;font-weight:bold;">{{ECE.firstname}}&nbsp;{{ECE.lastname}}</td>
+                            <td style="color: rgb(14, 178, 207);font-weight:bold;">{{ECE.firstname}}&nbsp;{{ECE.lastname}}</td>
                             <td>{{ECE.branch}}</td>
-                            <td>{{ECE.mobileno}}</td>
-                            <td>{{ECE.emailid}}</td>
                             <td>{{ECE.typeofStudent}}</td>
-                            <td><img src="{{ECE.photo}}" width="50%" height="50%"></td>
-                            <td><img src="{{ECE.aadharcopy}}" width="50%" height="50%"></td>
-                            <td><img src="{{ECE.allotmentorder}}" width="50%" height="50%"></td>
                             <td>{{ECE.adminssionfee}}</td>
                             <td>{{ECE.status}}</td>
+                            <td class="download" (click)="download(ECE)">
+                                <span class="material-symbols-outlined">
+                                    download
+                                </span>
+                            </td>
+                            <td>
+                                <a class="edit" (click)="open(ECE)">
+                                    <span class="material-symbols-outlined">
+                                        edit_square
+                                    </span>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -151,30 +159,34 @@
                             <th scope="col">HallTicketNo</th>
                             <th scope="col">Name</th>
                             <th scope="col">Branch</th>
-                            <th scope="col">Mobileno</th>
-                            <th scope="col">EmailId</th>
                             <th scope="col">StudentType</th>
-                            <th scope="col">Photo</th>
-                            <th scope="col">AdharCopy</th>
-                            <th scope="col">AllotmentOrder</th>
                             <th scope="col">AdmissionFee</th>
                             <th scope="col">Status</th>
+                            <th scope="col">AllotmentOrder</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let CSE of CSEStudentsdata; index as i">
+                        <tr *ngFor="let CSE of CSEStudentsdata; index as i" class="tBody">
                             <th scope="row">{{i+1}}</th>
                             <td style="color: black;font-weight:bold;">{{CSE.hallticket}}</td>
-                            <td style="color: blue;">{{CSE.firstname}}&nbsp;{{CSE.lastname}}</td>
+                            <td style="color: rgb(14, 178, 207);font-weight:bold;">{{CSE.firstname}}&nbsp;{{CSE.lastname}}</td>
                             <td>{{CSE.branch}}</td>
-                            <td>{{CSE.mobileno}}</td>
-                            <td>{{CSE.emailid}}</td>
                             <td>{{CSE.typeofStudent}}</td>
-                            <td><img src="{{CSE.photo}}" width="50%" height="50%"></td>
-                            <td><img src="{{CSE.aadharcopy}}" width="50%" height="50%"></td>
-                            <td><img src="{{CSE.allotmentorder}}" width="50%" height="50%"></td>
                             <td>{{CSE.adminssionfee}}</td>
                             <td>{{CSE.status}}</td>
+                            <td class="download" (click)="download(CSE)">
+                                <span class="material-symbols-outlined">
+                                    download
+                                </span>
+                            </td>
+                            <td>
+                                <a class="edit" (click)="open(CSE)">
+                                    <span class="material-symbols-outlined">
+                                        edit_square
+                                    </span>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>
@@ -205,30 +217,34 @@
                             <th scope="col">HallTicketNo</th>
                             <th scope="col">Name</th>
                             <th scope="col">Branch</th>
-                            <th scope="col">Mobileno</th>
-                            <th scope="col">EmailId</th>
                             <th scope="col">StudentType</th>
-                            <th scope="col">Photo</th>
-                            <th scope="col">AdharCopy</th>
-                            <th scope="col">AllotmentOrder</th>
                             <th scope="col">AdmissionFee</th>
                             <th scope="col">Status</th>
+                            <th scope="col">AllotmentOrder</th>
+                            <th scope="col">Action</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let MECH of MECHStudentsdata; index as i">
+                        <tr *ngFor="let MECH of MECHStudentsdata; index as i" class="tBody">
                             <th scope="row">{{i+1}}</th>
                             <td style="color: black;font-weight:bold;">{{MECH.hallticket}}</td>
-                            <td style="color: blue;font-weight:bold;">{{MECH.firstname}}&nbsp;{{MECH.lastname}}</td>
+                            <td style="color: rgb(14, 178, 207);font-weight:bold;">{{MECH.firstname}}&nbsp;{{MECH.lastname}}</td>
                             <td>{{MECH.branch}}</td>
-                            <td>{{MECH.mobileno}}</td>
-                            <td>{{MECH.emailid}}</td>
                             <td>{{MECH.typeofStudent}}</td>
-                            <td><img src="{{MECH.photo}}" width="50%" height="50%"></td>
-                            <td><img src="{{MECH.aadharcopy}}" width="50%" height="50%"></td>
-                            <td><img src="{{MECH.allotmentorder}}" width="50%" height="50%"></td>
                             <td>{{MECH.adminssionfee}}</td>
                             <td>{{MECH.status}}</td>
+                            <td class="download" (click)="download(MECH)">
+                                <span class="material-symbols-outlined">
+                                    download
+                                </span>
+                            </td>
+                            <td>
+                                <a class="edit" (click)="open(MECH)">
+                                    <span class="material-symbols-outlined">
+                                        edit_square
+                                    </span>
+                                </a>
+                            </td>
                         </tr>
                     </tbody>
                 </table>

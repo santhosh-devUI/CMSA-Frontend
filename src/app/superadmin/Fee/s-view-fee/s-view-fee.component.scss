@@ -23,10 +23,10 @@ body {
     vertical-align: middle;
 }
 .heading1{
-  background-color: grey;
+  background-color: #403776;
   height: 50px;
   line-height: 2;
-  color: greenyellow;
+  color: gold;
 }
 .title{
   text-align: center;
@@ -75,5 +75,16 @@ body {
 }
 .btn-primary{
   background-color: royalblue;
+}
+.table{
+  width: 98%;
+  margin-right: auto;
+}
+.edit{
+  cursor: pointer;
+  color: rgb(146, 155, 255);
+}
+.edit:hover{
+  color: blue;
 }
 

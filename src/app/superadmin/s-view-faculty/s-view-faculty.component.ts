@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { SuperadminService } from 'src/app/shared/service/superadmin.service';
+import { SViewFacultyDetailsComponent } from './s-view-faculty-details/s-view-faculty-details.component';
 
 @Component({
   selector: 'app-s-view-faculty',
@@ -12,7 +14,7 @@ export class SViewFacultyComponent implements OnInit {
   CSEfaculty: any;
   MECHfaculty: any;
 
-  constructor(private Api:SuperadminService) { }
+  constructor(private Api:SuperadminService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.Api.getFaculty("EEE").subscribe((res:any)=>{
@@ -26,6 +28,13 @@ export class SViewFacultyComponent implements OnInit {
     })
     this.Api.getFaculty("MECH").subscribe((res:any)=>{
       this.MECHfaculty = res;
+    })
+  }
+  open(f:any){
+    this.dialog.open(SViewFacultyDetailsComponent,{
+      width:"40%",
+      height:"75%",
+      data:f
     })
   }
 

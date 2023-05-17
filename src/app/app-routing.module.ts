@@ -68,6 +68,11 @@ import { DashboardFacultyComponent } from './faculty/dashboard-faculty/dashboard
 import { FacultyEditprofileComponent } from './faculty/faculty-editprofile/faculty-editprofile.component';
 import { FacultyEditmarksComponent } from './faculty/faculty-editmarks/faculty-editmarks.component';
 import { FacultyEdittimetableComponent } from './faculty/faculty-edittimetable/faculty-edittimetable.component';
+import { SViewFacultyDetailsComponent } from './superadmin/s-view-faculty/s-view-faculty-details/s-view-faculty-details.component';
+import { SViewOfficerDetailsComponent } from './superadmin/s-view-officer/s-view-officer-details/s-view-officer-details.component';
+import { SViewCompaniesComponent } from './superadmin/s-view-companies/s-view-companies.component';
+import { SViewStdDetailsComponent } from './superadmin/s-view-studentslist/s-view-std-details/s-view-std-details.component';
+import { SStdAllotmentorderComponent } from './superadmin/s-view-studentslist/s-std-allotmentorder/s-std-allotmentorder.component';
 
 const routes: Routes = [
   {
@@ -102,11 +107,16 @@ const routes: Routes = [
     { path: '', redirectTo: 'superadmin-home', pathMatch: 'full' },
     {path:'superadmin-home',component:SuperadminHomeComponent},
     {path:'superadmin-viewOfficer',component:SViewOfficerComponent},
+    {path:'superadmin-viewOfficer-Details',component:SViewOfficerDetailsComponent},
     {path:'superadmin-viewFaculty',component:SViewFacultyComponent},
+    {path:'superadmin-viewfaculty-Details',component:SViewFacultyDetailsComponent},
     {path:'superadmin-viewFee',component:SViewFeeComponent},
     {path:'superadmin-EditFee',component:SEditFeeComponent},
     {path:'superadmin-viewStudents',component:SViewStudentslistComponent},
-    {path:'superadmin-viewBooks',component:SViewBooksComponent}
+    {path:'superadmin-viewStudentdDetails',component:SViewStdDetailsComponent},
+    {path:'Superadmin-stdAllotmentorder',component:SStdAllotmentorderComponent},
+    {path:'superadmin-viewBooks',component:SViewBooksComponent},
+    {path:'superadmin-placements',component:SViewCompaniesComponent}
   ]},
 
   { path: 'admin-dashboard', component: AdminDashboardComponent, children:[

@@ -1,0 +1,60 @@
+.mat-expansion-panel{
+    background-color: #a09ac1;
+    width: 100%;
+    margin: auto;
+}
+.headings{
+    background-color: #403776;
+    height: 50px;
+    line-height: 2;
+    color: gold;
+    text-align: center;
+  }
+.body{
+    text-align: center;
+    height: 50px;
+    background-color: transparent;
+}
+.panel-header{
+    font-size: 15px;
+    font-weight: 500;
+    color: blue;
+}
+.span{
+    width: 3%;
+    color: black;
+    font-weight: 400;
+}
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 700,
+  'GRAD' 200,
+  'opsz' 48
+}
+.Expand{
+    color: blue;
+    cursor: pointer;
+}
+.Expand:hover{
+color: lightgrey;
+}
+.pending{
+    color: brown;
+}
+.success{
+    color: green;
+}
+.form-control{
+    background-color: floralwhite;
+    border-color: rgb(228, 136, 16);
+    color: black;
+    font-weight: 500;
+}
+.nav-pills .nav-link.active{
+    background-color: midnightblue;
+  }
+  .download{
+    color: green;
+    cursor: pointer;
+  }

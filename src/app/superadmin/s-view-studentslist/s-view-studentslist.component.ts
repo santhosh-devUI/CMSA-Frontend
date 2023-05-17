@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { SuperadminService } from 'src/app/shared/service/superadmin.service';
+import { SViewStdDetailsComponent } from './s-view-std-details/s-view-std-details.component';
+import { SStdAllotmentorderComponent } from './s-std-allotmentorder/s-std-allotmentorder.component';
 
 @Component({
   selector: 'app-s-view-studentslist',
@@ -16,7 +19,7 @@ export class SViewStudentslistComponent implements OnInit {
   SearchECEValue:any
   SearchEEEValue:any
 
-  constructor(private Api:SuperadminService) { }
+  constructor(private Api:SuperadminService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.forEEEstd()
@@ -60,6 +63,21 @@ export class SViewStudentslistComponent implements OnInit {
   searchMECHdata(){
     this.Api.SearchStudents(this.SearchMECHValue).subscribe((res:any)=>{
       this.MECHStudentsdata = res     
+    })
+  }
+  open(s:any){
+    this.dialog.open(SViewStdDetailsComponent,{
+      width:"50%",
+      height:"75%",
+      data:s
+    })
+  }
+  download(d:any){
+    alert("Are you able to Download this file")
+    this.dialog.open(SStdAllotmentorderComponent,{
+      width:"50%",
+      height:"70%",
+      data:d
     })
   }
 }

@@ -102,6 +102,12 @@ import { DashboardFacultyComponent } from './faculty/dashboard-faculty/dashboard
 import { FacultyEditprofileComponent } from './faculty/faculty-editprofile/faculty-editprofile.component';
 import { FacultyEditmarksComponent } from './faculty/faculty-editmarks/faculty-editmarks.component';
 import { FacultyEdittimetableComponent } from './faculty/faculty-edittimetable/faculty-edittimetable.component';
+import { SViewFacultyDetailsComponent } from './superadmin/s-view-faculty/s-view-faculty-details/s-view-faculty-details.component';
+import { SViewOfficerDetailsComponent } from './superadmin/s-view-officer/s-view-officer-details/s-view-officer-details.component';
+import { SViewCompaniesComponent } from './superadmin/s-view-companies/s-view-companies.component';
+import { SViewStdDetailsComponent } from './superadmin/s-view-studentslist/s-view-std-details/s-view-std-details.component';
+import { SStdAllotmentorderComponent } from './superadmin/s-view-studentslist/s-std-allotmentorder/s-std-allotmentorder.component';
+
 
 @NgModule({
   declarations: [
@@ -207,6 +213,11 @@ import { FacultyEdittimetableComponent } from './faculty/faculty-edittimetable/f
    FacultyEditprofileComponent,
    FacultyEditmarksComponent,
    FacultyEdittimetableComponent,
+   SViewFacultyDetailsComponent,
+   SViewOfficerDetailsComponent,
+   SViewCompaniesComponent,
+   SViewStdDetailsComponent,
+   SStdAllotmentorderComponent,
 
     
   ],
