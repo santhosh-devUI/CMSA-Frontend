@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { log } from 'console';
+
 import { AdminService } from 'src/app/shared/service/admin.service';
 
 @Component({

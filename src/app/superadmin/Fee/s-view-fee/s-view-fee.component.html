@@ -40,20 +40,6 @@
                     <th scope="col">HallTicketNo</th>
                     <th scope="col">StudentName</th>
                     <th scope="col">Branch</th>
-                    <th scope="col">AdmissionFee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">college Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">library Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">JNTU Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">library Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Bus Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Hostel Fee</th>
-                    <th scope="col">Status</th>
                     <th scope="col">CleredBy</th>
                     <th scope="col">Action</th>
                 </tr>
@@ -61,26 +47,12 @@
             <tbody>
                 <tr *ngFor="let S of stotalFee; index as i">
                     <th scope="row">{{i+1}}</th>
-                    <td style="color: black;"><b>{{S.hallticket}}</b></td>
-                    <td style="color:blue"><b>{{S.studentname}}</b></td>
-                    <td style="color: rgb(143, 45, 45);"><b>{{S.branch}}</b></td>
-                    <td>{{S.admissionfee}}</td>
-                    <td>{{S.adminssionfeestatus}}</td>
-                    <td>{{S.collegefee}}</td>
-                    <td>{{S.collegefeestatus}}</td>
-                    <td>{{S.libraryfee}}</td>
-                    <td>{{S.libraryfeestatus}}</td>
-                    <td>{{S.jntufee}}</td>
-                    <td>{{S.jntufeestatus}}</td>
-                    <td>{{S.libraryfee}}</td>
-                    <td>{{S.libraryfeestatus}}</td>
-                    <td>{{S.busfee}}</td>
-                    <td>{{S.busfeestatus}}</td>
-                    <td>{{S.hostelfee}}</td>
-                    <td>{{S.hostelfeestatus}}</td>
+                    <td style="color: rgb(35, 33, 33);"><b>{{S.hallticket}}</b></td>
+                    <td style="color:rgb(0, 130, 128)"><b>{{S.studentname}}</b></td>
+                    <td>{{S.branch}}</td>
                     <td>{{S.clearedby}}</td>
                     <td>
-                        <a style="cursor:pointer; color:green" (click)="edit(S)">
+                        <a class="edit" (click)="edit(S)">
                             <span class="material-symbols-outlined">
                                 edit_square
                                 </span>

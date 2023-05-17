@@ -50,4 +50,13 @@ export class SuperadminService {
   TotalStudents(){
     return this.http.get('http://localhost:3000/superadmin/totalstudents')
   }
+  viewJobs(){
+    return this.http.get('http://localhost:3000/superadmin/viewplacements')
+  }
+  viewApplyJobs(){
+    return this.http.get('http://localhost:3000/superadmin/studentjobs')
+  }
+  SearchApplyCandidate(hallticket:any){
+    return this.http.get('http://localhost:3000/superadmin/searchstujob?hallticket=' + hallticket)
+  }
 }

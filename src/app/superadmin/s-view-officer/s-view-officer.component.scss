@@ -1,11 +1,20 @@
 .table{
-    margin: auto;
-    width: 99%;
+    width: 100%;
 }
 .heading{
-    background-color:#5e056e;
-    color:rgb(247, 230, 227);
-    font-size:15px;
-    height: 35px;
-    line-height: 35px;
+    background-color:#403776;
+    color: #f8cf03;
+    height: 55px;
+    text-align: center;
+    line-height: 55px;
+}
+.edit{
+    cursor: pointer;
+    color: rgb(146, 155, 255);
+  }
+  .edit:hover{
+    color: blue;
+  }
+  .tBody{
+    text-align: center;
 }
