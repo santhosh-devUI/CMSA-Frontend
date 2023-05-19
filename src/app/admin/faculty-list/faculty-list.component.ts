@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { AdminService } from 'src/app/shared/service/admin.service';
+import { SViewFacultyDetailsComponent } from 'src/app/superadmin/s-view-faculty/s-view-faculty-details/s-view-faculty-details.component';
 
 @Component({
   selector: 'app-faculty-list',
@@ -13,7 +15,7 @@ export class FacultyListComponent implements OnInit {
   MECHfaculty: any;
 
 
-  constructor(private Api:AdminService) { }
+  constructor(private Api:AdminService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.Api.ShowFaculty("EEE").subscribe((res:any)=>{
@@ -30,4 +32,11 @@ export class FacultyListComponent implements OnInit {
     })
   }
 
+  open(f:any){
+    this.dialog.open(SViewFacultyDetailsComponent,{
+      width:"40%",
+      height:"75%",
+      data:f
+    })
+  }
 }
