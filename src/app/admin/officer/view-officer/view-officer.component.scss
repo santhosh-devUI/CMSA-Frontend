@@ -2,7 +2,22 @@
     margin: auto;
     width: 99%;
 }
-thead{
-    background-color:indigo;
-    color:burlywood
+.tHead{
+    background-color:rgb(128, 162, 227);
+    color:midnightblue;
+    text-align: center;
+    height: 50px;
+    line-height: 50px;
+    font-size: 14px;
 }
+.tBody{
+    text-align: center;
+    line-height: 50px;
+}
+.edit{
+    cursor: pointer;
+    color: rgb(146, 155, 255);
+  }
+  .edit:hover{
+    color: blue;
+  }

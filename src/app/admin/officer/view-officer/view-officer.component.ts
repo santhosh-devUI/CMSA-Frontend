@@ -4,6 +4,7 @@ import { log } from 'console';
 import { AdminService } from 'src/app/shared/service/admin.service';
 import { EditOfficerComponent } from '../edit-officer/edit-officer.component';
 import { DeleteOfficerComponent } from '../delete-officer/delete-officer.component';
+import { SViewOfficerDetailsComponent } from 'src/app/superadmin/s-view-officer/s-view-officer-details/s-view-officer-details.component';
 
 @Component({
   selector: 'app-view-officer',
@@ -31,6 +32,13 @@ export class ViewOfficerComponent implements OnInit {
     this.dialog.open(DeleteOfficerComponent,{
       width:"30%",
       data:d
+    })
+  }
+  open(o:any){
+    this.dialog.open(SViewOfficerDetailsComponent,{
+      width:"40%",
+      height:"75%",
+      data:o
     })
   }
 }

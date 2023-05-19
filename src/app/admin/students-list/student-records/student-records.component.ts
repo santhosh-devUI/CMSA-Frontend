@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 
 import { AdminService } from 'src/app/shared/service/admin.service';
+import { SStdAllotmentorderComponent } from 'src/app/superadmin/s-view-studentslist/s-std-allotmentorder/s-std-allotmentorder.component';
+import { SViewStdDetailsComponent } from 'src/app/superadmin/s-view-studentslist/s-view-std-details/s-view-std-details.component';
 
 @Component({
   selector: 'app-student-records',
@@ -17,7 +20,7 @@ export class StudentRecordsComponent implements OnInit {
   CSEList:any;
   MECHList: any;
 
-  constructor(private Api:AdminService) { }
+  constructor(private Api:AdminService,public dialog:MatDialog) { }
 
   ngOnInit(): void {
   
@@ -67,6 +70,21 @@ export class StudentRecordsComponent implements OnInit {
     this.Api.SearchStudents(this.SearchMECHValue).subscribe((res:any)=>{
       console.log(res,"filtervalue");
       this.MECHList = res;      
+    })
+  }
+  open(s:any){
+    this.dialog.open(SViewStdDetailsComponent,{
+      width:"50%",
+      height:"75%",
+      data:s
+    })
+  }
+  download(d:any){
+    alert("Are you able to Download this file")
+    this.dialog.open(SStdAllotmentorderComponent,{
+      width:"50%",
+      height:"70%",
+      data:d
     })
   }
 

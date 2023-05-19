@@ -16,16 +16,16 @@ export class LibraryComponent implements OnInit {
   constructor(private Api:AdminService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
-    this.Api.ShowFaculty("Library").subscribe((res:any)=>{
+    this.Api.ShowFaculty("Librarian").subscribe((res:any)=>{
       this.Libraryfaculty = res;
+      console.log(res,"librarian");
+      
     })
     this.Api.TotalBooks().subscribe((res:any)=>{
       this.TotalBooks = res;
     })
     this.Api.StdBooks().subscribe((res:any)=>{
       this.StdBooks = res;
-      console.log(res,"res");
-      
     })
   }
   viewBankDetails(L:any){
