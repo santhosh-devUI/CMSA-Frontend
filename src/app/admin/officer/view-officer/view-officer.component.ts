@@ -17,7 +17,7 @@ export class ViewOfficerComponent implements OnInit {
   constructor(private Api:AdminService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
-    this.Api.getOfficer().subscribe((res:any)=>{
+    this.Api.getOfficer("Administration").subscribe((res:any)=>{
       this.OfficerList = res; 
     })
   }

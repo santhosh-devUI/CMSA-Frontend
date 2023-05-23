@@ -107,6 +107,7 @@ import { SViewOfficerDetailsComponent } from './superadmin/s-view-officer/s-view
 import { SViewCompaniesComponent } from './superadmin/s-view-companies/s-view-companies.component';
 import { SViewStdDetailsComponent } from './superadmin/s-view-studentslist/s-view-std-details/s-view-std-details.component';
 import { SStdAllotmentorderComponent } from './superadmin/s-view-studentslist/s-std-allotmentorder/s-std-allotmentorder.component';
+import { AdminFeeViewComponent } from './admin/fee-details/admin-fee-view/admin-fee-view.component';
 
 
 @NgModule({
@@ -218,6 +219,7 @@ import { SStdAllotmentorderComponent } from './superadmin/s-view-studentslist/s-
    SViewCompaniesComponent,
    SViewStdDetailsComponent,
    SStdAllotmentorderComponent,
+   AdminFeeViewComponent,
 
     
   ],

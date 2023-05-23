@@ -46,28 +46,17 @@
                     <th scope="col">HallTicketNo</th>
                     <th scope="col">StudentName</th>
                     <th scope="col">Branch</th>
-                    <th scope="col">AdmissionFee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">college Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">library Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">JNTU Fee</th>
-                    <th scope="col">library Fee</th>
-                    <th scope="col">Bus Fee</th>
-                    <th scope="col">Status</th>
-                    <th scope="col">Hostel Fee</th>
-                    <th scope="col">Status</th>
+                    <th scope="col">Fee Details</th>
                     <th scope="col">CleredBy</th>
                 </tr>
             </thead>
             <tbody>
-                <tr *ngFor="let S of Totalfee; index as i">
+                <tr *ngFor="let S of Totalfee; index as i" class="tBody">
                     <th scope="row">{{i+1}}</th>
-                    <td style="color: blue;"><b>{{S.hallticket}}</b></td>
+                    <td><b>{{S.hallticket}}</b></td>
                     <td style="color:brown"><b>{{S.studentname}}</b></td>
                     <td style="color: rgb(26, 129, 214);"><b>{{S.branch}}</b></td>
-                    <td>{{S.admissionfee}}</td>
+                    <!-- <td>{{S.admissionfee}}</td>
                     <td>{{S.adminssionfeestatus}}</td>
                     <td>{{S.collegefee}}</td>
                     <td>{{S.collegefeestatus}}</td>
@@ -78,8 +67,15 @@
                     <td>{{S.busfee}}</td>
                     <td>{{S.busfeestatus}}</td>
                     <td>{{S.hostelfee}}</td>
-                    <td>{{S.hostelfeestatus}}</td>
-                    <td>{{S.clearedby}}</td>
+                    <td>{{S.hostelfeestatus}}</td> -->
+                    <td>
+                        <a class="edit" (click)="edit(S)">
+                            <span class="material-symbols-outlined">
+                                edit_square
+                                </span>
+                        </a>
+                    </td>
+                    <td style="color: green;font-size: 15px;">{{S.clearedby}}</td>
                 </tr>
             </tbody>
         </table>
@@ -115,13 +111,13 @@
                         </tr>
                     </thead>
                     <tbody>
-                        <tr *ngFor="let S of Studentfee; index as i">
+                        <tr *ngFor="let S of Studentfee; index as i" class="tBody">
                             <th scope="row">{{i+1}}</th>
-                            <td style="color: blue;">{{S.hallticket}}</td>
+                            <td><b>{{S.hallticket}}</b></td>
                             <td>{{S.typeoffee}}</td>
-                            <td>{{S.totalfee}}</td>
-                            <td>{{S.payingfee}}</td>
-                            <td>{{S.clearedby}}</td>
+                            <td>{{S.totalfee}}/-</td>
+                            <td>{{S.payingfee}}/-</td>
+                            <td style="color: green;font-size: 15px;">{{S.clearedby}}</td>
                         </tr>
                     </tbody>
                 </table>

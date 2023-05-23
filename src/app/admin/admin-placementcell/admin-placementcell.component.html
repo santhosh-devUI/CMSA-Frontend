@@ -104,7 +104,9 @@
                         <td>{{S.interview}}<sup style="color: red;; font-size: 16px;">*</sup></td>
                         <td [ngClass]="S.status=='accept'?'success':'pending'">{{S.status}}</td>
                         <td>{{S.remarks}}</td>
-                        <td>{{S.resume}}</td>
+                        <td>
+                          <a class="Expand" (click)="resume()"><span class="material-symbols-outlined">download</span></a>
+                        </td>
                         <td>
                           <a class="Expand" (click)="details(S)"><span class="material-symbols-outlined">pan_zoom</span></a>
                         </td>

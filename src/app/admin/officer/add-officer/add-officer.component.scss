@@ -1,25 +1,32 @@
 .card{
-    background-color:aliceblue;
+    background-color:#f1f1f3;
+    width: 95%;
+    margin: auto;
 }
 .form-control{
-    background-color: #e3e7f8;
+    background-color: #fff;
 }
 .form-select{
-    background-color: #e3e7f8;
+    background-color: #fff;
 }
 h5{
-    margin-block-start: 1.67em;
-    margin-block-end: 1.67em;
+    margin-block-start: 1.2em;
+    margin-block-end: 1.2em;
     margin-inline-start: 0px;
     margin-inline-end: 0px;
-    font-size: 15px;
+    font-size: 18px;
     font-weight: 500;
-    color: blue;
+    color: brown;
     font-family: initial;
 }
 .btn{
     padding: 0.5rem 3rem;
     background: #3D5EE1;
     color: #fff;
+}
+.head{
+    font-size: 25px;
+    font-weight: bold;
+    letter-spacing: 1px;
 }
 
