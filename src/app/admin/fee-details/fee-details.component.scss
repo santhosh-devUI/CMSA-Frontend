@@ -27,6 +27,10 @@ body {
   color: #f8cf03;
   height: 45px;
   vertical-align: middle;
+  text-align: center;
+}
+.tBody{
+  text-align: center;
 }
 .title{
   text-align: center;
@@ -64,4 +68,10 @@ body {
   color: cornflowerblue;
     font-weight: 500;
 }
-
+.edit{
+  cursor: pointer;
+  color: rgb(146, 155, 255);
+}
+.edit:hover{
+  color: blue;
+}

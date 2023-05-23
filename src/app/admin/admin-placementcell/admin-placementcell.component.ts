@@ -38,5 +38,8 @@ export class AdminPlacementcellComponent implements OnInit {
       data:D
     })
   }
+  resume(){
+    alert("Are You Sure to Download Resume")
+  }
   
 }

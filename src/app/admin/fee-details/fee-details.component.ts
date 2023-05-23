@@ -1,5 +1,7 @@
 import { AdminService } from 'src/app/shared/service/admin.service';
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { AdminFeeViewComponent } from './admin-fee-view/admin-fee-view.component';
 
 @Component({
   selector: 'app-fee-details',
@@ -14,7 +16,7 @@ export class FeeDetailsComponent implements OnInit {
   searchvalue: any;
 
 
-  constructor(private Api:AdminService) { }
+  constructor(private Api:AdminService,private dialog:MatDialog) { }
 
   ngOnInit(): void {
     this.Api.ShowFee().subscribe((res:any)=>{
@@ -27,6 +29,15 @@ export class FeeDetailsComponent implements OnInit {
       this.Studentfee = res;
     })
   }
+
+  edit(e:any){
+    this.dialog.open(AdminFeeViewComponent,{
+      width:"55%",
+      height:"76%",
+      data:e
+    })
+  }
+
   searchstdfeedata(){
     let FilteredValue = this.SearchValue
     console.log(FilteredValue);

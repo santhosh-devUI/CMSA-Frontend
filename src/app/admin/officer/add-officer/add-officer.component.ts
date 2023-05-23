@@ -13,6 +13,7 @@ export class AddOfficerComponent implements OnInit {
   photourl: any;
   aadharurl: any;
   x: any;
+   TypeOfOfficer:any
 
   constructor(
     private fb: FormBuilder,
@@ -21,18 +22,29 @@ export class AddOfficerComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
+    this.Api.getOfficer("Administration").subscribe((res:any)=>{
+      this.TypeOfOfficer=['administrative officer','placement officer','accounts officer']
+      res.map((y:any)=>{
+        let designations= y.designation
+        this.TypeOfOfficer=this.TypeOfOfficer.filter((x:any)=>x !=designations)
+
+      })
+  
+      
+      
+      
+    })
     this.AddOfficerForm = this.fb.group({
       name: ['', [Validators.required]],
       gender: ['', [Validators.required]],
       dob: ['', [Validators.required]],
       mobileno: ['', [Validators.required]],
       emailid: ['', [Validators.required]],
-      typeofemployee: ['officer', [Validators.required]],
-      joiningdate: ['', [Validators.required]],
+      typeofemployee: ['officer',[Validators.required]],
       qualification: ['', [Validators.required]],
       yearofexperience: ['', [Validators.required]],
       designation: ['', [Validators.required]],
-      department: ['', [Validators.required]],
+      department: ['Administration', [Validators.required]],
       salary: ['', [Validators.required]],
       address: ['', [Validators.required]],
       city: ['', [Validators.required]],
@@ -68,9 +80,12 @@ export class AddOfficerComponent implements OnInit {
   }
   AddOfficer() {
     this.x = 'EMP' + Math.floor(Math.random() * 10000 + 1);
+    let pwd=Math.floor(Math.random() * 1000000 + 1)
     let data = {
       ...this.AddOfficerForm.value,
       empid: this.x,
+      password:pwd,
+      joiningdate:new Date(),
       photo: this.photourl,
       aadharcopy: this.aadharurl,
     };

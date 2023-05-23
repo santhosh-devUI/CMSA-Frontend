@@ -16,14 +16,14 @@ export class AdminHomeComponent implements OnInit {
   constructor(private Api:AdminService,private Routes:Router) { }
 
   ngOnInit(): void {
-    this.Api.getOfficer().subscribe((res:any)=>{
-      let officers=res.filter((x:any)=>x.typeofemployee=="officer")
-      this.OfficerList=officers.length
+    this.Api.getOfficer("Administration").subscribe((res:any)=>{
+      // let officers=res.filter((x:any)=>x.typeofemployee=="officer")
+      this.OfficerList=res.length
     })
-    this.Api.getOfficer().subscribe((res:any)=>{
-      let faculty=res.filter((x:any)=>x.typeofemployee!="officer")
-      this.FacultyList=faculty.length
-    })
+    // this.Api.getOfficer().subscribe((res:any)=>{
+    //   let faculty=res.filter((x:any)=>x.typeofemployee!="officer")
+    //   this.FacultyList=faculty.length
+    // })
     this.Api.TotalStudents().subscribe((res:any)=>{
       this.Students = res.length; 
     })

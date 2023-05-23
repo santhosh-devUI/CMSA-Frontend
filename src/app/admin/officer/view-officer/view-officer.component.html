@@ -20,7 +20,7 @@
             <td>{{O.name}}</td>
             <td>{{O.qualification}}</td>
             <td style="color:rgb(49, 11, 74);"><b>{{O.yearofexperience}}</b></td>
-            <td>{{O.joiningdate}}</td>
+            <td>{{O.joiningdate | date}}</td>
             <td>
               <a class="edit" (click)="open(O)">
                   <span class="material-symbols-outlined">

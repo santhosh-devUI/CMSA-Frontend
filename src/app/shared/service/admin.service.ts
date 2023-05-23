@@ -14,8 +14,8 @@ export class AdminService {
   addOfficer(data:any){
     return this.http.post('http://localhost:3000/admin/regofficer',data)
   }
-  getOfficer(){
-    return this.http.get('http://localhost:3000/admin/viewofficer')
+  getOfficer(data:any){
+    return this.http.get('http://localhost:3000/admin/viewofficer?department=' +data)
   }
   editOfficer(id:any,data:any){
     return this.http.put('http://localhost:3000/admin/updateofficer/'+id,data)
