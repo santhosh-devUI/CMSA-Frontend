@@ -1,9 +1,13 @@
-<h1 mat-dialog-title>Delete Officer Record</h1>
+<h5 mat-dialog-title>Are You Sure ?</h5>
 <div mat-dialog-content>
-  Are You sure wanted to Delete this Officer?
+  You will not be able to recover this!
 </div>
-<div class="text-center" mat-dialog-actions>
-  <button mat-button mat-dialog-close>No</button>
-  
-  <button color="accent" mat-button mat-dialog-close cdkFocusInitial (click)="deleteRecord()">ok</button>
+<hr>
+<!-- <div class="text-center" mat-dialog-actions>
+  <button mat-button mat-dialog-close>Close</button>
+  <button color="accent" mat-button mat-dialog-close cdkFocusInitial (click)="deleteRecord()">Delete</button>
+</div> -->
+<div class="text-center">
+  <button mat-button mat-dialog-close><i class="fa fa-times" aria-hidden="true"></i>&nbsp;Close</button>
+  <button color="accent" mat-button mat-dialog-close cdkFocusInitial (click)="deleteRecord()"><i class="fa fa-trash" aria-hidden="true"></i>&nbsp;Delete</button>
 </div>

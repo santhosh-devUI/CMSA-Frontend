@@ -30,7 +30,8 @@ export class ViewOfficerComponent implements OnInit {
   }
   deleteOfficer(d:any){
     this.dialog.open(DeleteOfficerComponent,{
-      width:"30%",
+      width:"25%",
+      height:"28%",
       data:d
     })
   }

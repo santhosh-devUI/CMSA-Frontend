@@ -31,9 +31,36 @@
       </button>
       <span>BITS</span>
       <span class="spacer"></span>
-      <span>
-        <button class="btn btn-primary" (click)="logout()">logout</button>
-      </span>
+        <!-- <button class="btn btn-primary" (click)="logout()">logout</button> -->
+        <!-- <span class="user-img">
+          <img class="rounded-circle" src="assets/images/sadminphoto1.jpg" alt="aa" width="31">
+        </span> -->
+        <div class="dropdown">
+          <a class="dropdown-toggle d-flex align-items-center hidden-arrow"
+            id="navbarDropdownMenuAvatar"
+            role="button"
+            data-bs-toggle="dropdown"
+            aria-expanded="false"
+          >
+            <img
+              src="assets/images/sadminphoto1.jpg"
+              class="rounded-circle user-img"
+              height="45"
+              alt="IMG"
+              loading="lazy"
+             
+            />
+            &nbsp;<p class="fs-6 m-auto"> SuperAdmin</p>
+          </a>
+          <ul
+            class="dropdown-menu dropdown-menu-end text-center"
+            aria-labelledby="navbarDropdownMenuAvatar"
+          >
+            <li>
+              <a class="dropdown-item" (click)="logout()">Account-Logout</a>
+            </li>
+          </ul>
+        </div>
     </mat-toolbar>
 <router-outlet></router-outlet>
   </mat-sidenav-content>
