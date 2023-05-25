@@ -12,31 +12,38 @@ import { OfficerService } from 'src/app/shared/service/officer.service';
 export class OfficerAddFeeComponent implements OnInit {
   feeForm!: FormGroup;
   Oid: any;
+  feeId: any;
   fees: any;
   addBtn: boolean = true;
   updateBtn: boolean = false;
+  selectedYear: number;
+  years: number[] = [];
   constructor(
     private fb: FormBuilder,
     private officerApi: OfficerService,
     private Routes: Router
-  ) {}
+  ) {
+    this.selectedYear = new Date().getFullYear();
+  let baseyear=2020
+  for(let i=baseyear;i<=2026;i++){
+    this.years.push(i)
+  }
+  }
 
   ngOnInit(): void {
     this.Oid = JSON.parse(localStorage.getItem('officer')!);
-
+    this.officerApi.viewFees().subscribe((res: any) => {
+      this.fees = res;
+      console.log(this.fees, 'fees');
+    });
     this.feeForm = this.fb.group({
+      year: [this.selectedYear, [Validators.required]],
       admissionfee: ['', [Validators.required]],
       collegefee: ['', [Validators.required]],
       libraryfee: ['', [Validators.required]],
       jntufee: ['', [Validators.required]],
       busfee: ['', [Validators.required]],
       hostelfee: ['', [Validators.required]],
-    });
-
-    this.officerApi.viewFees().subscribe((res: any) => {
-      res.filter((f: any) => {
-        this.fees = f;
-      });
     });
   }
 
@@ -47,19 +54,26 @@ export class OfficerAddFeeComponent implements OnInit {
       empid: this.Oid.empid,
       ...this.feeForm.value,
     };
-    this.officerApi.addFees(d).subscribe((res: any) => {
-      console.log(res, 'add');
-    });
-    window.location.reload();
+    if(this.feeForm.valid){
+      this.officerApi.addFees(d).subscribe((res: any) => {
+        console.log(res, 'add');
+        window.location.reload();
+      });
+    }else{
+      alert('plese fill all the required fields')
+    }
+    
+   
   }
-  editFee() {
+  editFee(s: any) {
+    this.feeId = s._id;
     this.feeForm.patchValue({
-      admissionfee: this.fees.admissionfee,
-      collegefee: this.fees.collegefee,
-      libraryfee: this.fees.libraryfee,
-      jntufee: this.fees.jntufee,
-      busfee: this.fees.busfee,
-      hostelfee: this.fees.hostelfee,
+      admissionfee: s.admissionfee,
+      collegefee: s.collegefee,
+      libraryfee: s.libraryfee,
+      jntufee: s.jntufee,
+      busfee: s.busfee,
+      hostelfee: s.hostelfee,
     });
 
     this.updateBtn = true;
@@ -67,7 +81,7 @@ export class OfficerAddFeeComponent implements OnInit {
   }
   updateFee() {
     this.officerApi
-      .updateFee(this.fees._id, this.feeForm.value)
+      .updateFee(this.feeId, this.feeForm.value)
       .subscribe((res: any) => {
         console.log(res, 'updated');
       });

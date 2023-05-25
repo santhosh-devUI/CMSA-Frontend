@@ -22,7 +22,6 @@ export class OfficerAddStudentComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    
     this.studentRegForm = this.fb.group({
       firstname: ['', [Validators.required]],
       lastname: ['', [Validators.required]],
@@ -50,13 +49,13 @@ export class OfficerAddStudentComponent implements OnInit {
       status: ['Paid', [Validators.required]],
     });
     this.officerApi.viewFees().subscribe((res: any) => {
-      res.map((f:any)=>{
-        this.fees =f;
+      res.map((f: any) => {
+        this.fees = f;
         this.studentRegForm.patchValue({
-          adminssionfee:f.admissionfee
-        })      
-      })
+          adminssionfee: f.admissionfee,
+        });
       });
+    });
   }
 
   onSelectPhotoFile(event: any) {
@@ -87,9 +86,36 @@ export class OfficerAddStudentComponent implements OnInit {
       };
     }
   }
+  selectedBranch(event:any){
+    this.officerApi.getBranchwiseStudents(event).subscribe((res:any)=>{
+      let studentcount=(res.length+1).toString()
+      var str=studentcount
+      var pad='00'
+      var ans=pad.substring(0,pad.length-str.length)+str
+      console.log(ans);
+      
+      let branchCode;
+if(event=="ECE"){
+branchCode="04"
+}else if(event=="EEE"){
+branchCode="02"
+} else if(event=="CSE"){
+branchCode="05"
+} else if(event=="IT"){
+branchCode="12"
+}  
+let year= new Date().getFullYear().toString().substring(2)
+let collegeCode="01"
+let regulation="1A"
+let ht=year+collegeCode+regulation+branchCode+ans
+this.studentRegForm.patchValue({
+  hallticket:ht
+})
+    })
 
+  }
   studentReg() {
-let o = JSON.parse(localStorage.getItem('officer')!).empid
+    let o = JSON.parse(localStorage.getItem('officer')!).empid;
 
     let data = {
       ...this.studentRegForm.value,
@@ -104,21 +130,22 @@ let o = JSON.parse(localStorage.getItem('officer')!).empid
       admissionfee: this.fees.admissionfee,
       admissionfeestatus: 'paid',
       collegefee: this.fees.collegefee,
-      collegefeestatus:'due' ,
+      collegefeestatus: 'due',
       libraryfee: this.fees.libraryfee,
       libraryfeestatus: 'due',
-      jntufee:this.fees.jntufee,
+      jntufee: this.fees.jntufee,
       jntufeestatus: 'due',
-      busfee:this.fees.busfee,
+      busfee: this.fees.busfee,
       busfeestatus: 'due',
+      busfacility: 'no',
       hostelfee: this.fees.hostelfee,
-      hostelfeestatus:'due' ,
+      hostelfeestatus: 'due',
       clearedby: o,
     };
-    this.officerApi.addStudents(data).subscribe((res: any) => {
-      this.officerApi.addstudentFee(feedata).subscribe((result:any)=>{
+    console.log(data, feedata, 'check');
 
-      })
+    this.officerApi.addStudents(data).subscribe((res: any) => {
+      console.log(res);
       alert('Student Added Successfully...');
     });
   }
