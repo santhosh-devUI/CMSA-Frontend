@@ -124,4 +124,9 @@ export class OfficerService {
       'http://localhost:3000/officer/searchstujobs?hallticket=' + h
     );
   }
+  getBranchwiseStudents(b:any){
+    return this.http.get(
+      'http://localhost:3000/officer/branchwisestudents?branch=' + b
+    ); 
+  }
 }

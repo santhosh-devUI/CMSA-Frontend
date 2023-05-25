@@ -108,6 +108,7 @@ import { SViewCompaniesComponent } from './superadmin/s-view-companies/s-view-co
 import { SViewStdDetailsComponent } from './superadmin/s-view-studentslist/s-view-std-details/s-view-std-details.component';
 import { SStdAllotmentorderComponent } from './superadmin/s-view-studentslist/s-std-allotmentorder/s-std-allotmentorder.component';
 import { AdminFeeViewComponent } from './admin/fee-details/admin-fee-view/admin-fee-view.component';
+import { CommonModule } from '@angular/common';
 
 
 @NgModule({
@@ -224,6 +225,7 @@ import { AdminFeeViewComponent } from './admin/fee-details/admin-fee-view/admin-
     
   ],
   imports: [
+    CommonModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,
