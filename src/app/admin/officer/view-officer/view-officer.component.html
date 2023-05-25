@@ -1,4 +1,4 @@
-
+<div class="card m-4">
 <div class="table-responsive text-nowrap">
     <table class="table mt-1">
         <thead>
@@ -8,8 +8,7 @@
             <th scope="col">EmployeeName</th>
             <th scope="col">Qualification</th>
             <th scope="col">Experience</th> 
-            <th scope="col">Joining Date</th>
-            <th scope="col">Details</th>   
+            <th scope="col">Joining Date</th>   
             <th scope="col">Action</th>        
           </tr>
         </thead>
@@ -22,21 +21,18 @@
             <td style="color:rgb(49, 11, 74);"><b>{{O.yearofexperience}}</b></td>
             <td>{{O.joiningdate | date}}</td>
             <td>
-              <a class="edit" (click)="open(O)">
-                  <span class="material-symbols-outlined">
-                      edit_square
-                  </span>
-              </a>
-          </td>
-            <td>
-                <button mat-icon-button color="primary" (click)="editOfficer(O)">
+                <button class="btn btn-icon btn-success btn-sm" (click)="open(O)">
+                  <i class="fa fa-eye" aria-hidden="true"></i>
+                </button>&nbsp;
+                <button class="btn btn-icon btn-primary btn-sm" (click)="editOfficer(O)">
                     <mat-icon>edit</mat-icon>
-                </button>
-                <button mat-icon-button color="warn" (click)="deleteOfficer(O)">
+                </button>&nbsp;
+                <button class="btn btn-icon btn-danger btn-sm" (click)="deleteOfficer(O)">
                     <mat-icon>delete</mat-icon>
                 </button>
             </td>
           </tr>
         </tbody>
       </table>
+    </div>
     </div>

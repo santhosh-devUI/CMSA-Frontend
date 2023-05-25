@@ -58,3 +58,18 @@
 .btn{
   background: transparent;
 }
+.user-img{
+  width: 40px;
+  height: 40px;
+  border: 2px solid #E6E6E6;
+  padding: 2px;
+  border-radius: 50%;
+  cursor: pointer;
+}
+.rounded-circle {
+  border-radius: 50%!important;
+}
+.dropdown-item{
+  cursor: pointer;
+  color: red;
+}

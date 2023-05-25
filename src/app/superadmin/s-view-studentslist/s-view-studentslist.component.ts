@@ -47,22 +47,46 @@ export class SViewStudentslistComponent implements OnInit {
   
   searchEEEdata(){
     this.Api.SearchStudents(this.SearchEEEValue).subscribe((res:any)=>{
-      this.EEEStudentsdata = res      
+      this.EEEStudentsdata = res     
+    if(this.EEEStudentsdata.length>0){
+
+    }else{
+      alert("Their is no such Data Here")
+      window.location.reload()
+    }     
     })
   }
   searchECEdata(){
     this.Api.SearchStudents(this.SearchECEValue).subscribe((res:any)=>{
-      this.ECEStudentsdata = res      
+      this.ECEStudentsdata = res     
+      if(this.ECEStudentsdata.length>0){
+
+      }else{
+        alert("Their is no such Data Here")
+        window.location.reload()
+      } 
     })
   }
   searchCSEdata(){
     this.Api.SearchStudents(this.SearchCSEValue).subscribe((res:any)=>{
-      this.CSEStudentsdata = res      
+      this.CSEStudentsdata = res  
+      if(this.CSEStudentsdata.length>0){
+
+      }else{
+        alert("Their is no such Data Here")
+        window.location.reload()
+      }    
     })
   }
   searchMECHdata(){
     this.Api.SearchStudents(this.SearchMECHValue).subscribe((res:any)=>{
-      this.MECHStudentsdata = res     
+      this.MECHStudentsdata = res  
+      if(this.MECHStudentsdata.length>0){
+
+      }else{
+        alert("Their is no such Data Here")
+        window.location.reload()
+      }   
     })
   }
   open(s:any){

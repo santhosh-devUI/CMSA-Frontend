@@ -1,12 +1,20 @@
 .sidenav-container {
   height: 100%;
-  background-color: #f6f8fb;
+  // background-color: #acc6ed;
+  background-image: radial-gradient(circle, #ffffff, #f9f9fd, #f1f3fb, #e7edfa, #dde8f8);
 }
 
 .sidenav {
-  width: 180px;
+  width: 240px;
   margin-top: 4rem;
-  background-color: gainsboro;
+  background-color: black;
+}
+mat-nav-list{
+  a{
+  color: white;
+  font-size: 14px;
+  font-family: Arial, Helvetica, sans-serif;
+  }
 }
 
 .sidenav .mat-toolbar {
@@ -20,7 +28,7 @@
 }
 .navbar{
   
-  background-color: cornflowerblue;
+  background-color: #3ea1e4;
 }
 .btn{
   background-color: cornflowerblue;
@@ -29,12 +37,16 @@
   color: gold;
 }
 .material-symbols-outlined {
-  color: blue;
+  // color: white;
   font-variation-settings:
   'FILL' 0,
-  'wght' 700,
+  'wght' 900,
   'GRAD' 0,
   'opsz' 48
+}
+.right{
+  font-size: 16px;
+  margin-left: 47%;
 }
 img{
   height: 45%;
@@ -51,19 +63,16 @@ img{
 }
 
 .links:hover {
-  font-size: 16px;
-  border-radius: 5px;
-  background-color: gray;
-  color: #fff;
+  font-size: 14px;
+  color: #3ea1e4;
 }
 .active {
-  border-left: 8px solid rgb(118, 156, 211);
-  border-bottom: 1px solid rgb(118, 156, 211);
-  border-top: 1px solid rgb(118, 156, 211);
-  font-family: 'Times New Roman';
-  font-weight: bold;
-  font-size: 20px;
+  border-left: 8px solid #3ea1e4;
+  border-bottom: 1px solid #3ea1e4;
+  border-top: 1px solid #3ea1e4;
+  font-size: 14px;
 
 }
+
 
 
