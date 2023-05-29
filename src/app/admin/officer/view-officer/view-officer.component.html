@@ -1,5 +1,5 @@
 <div class="card m-4">
-<div class="table-responsive text-nowrap">
+<div class="table-responsive text-nowrap table-striped">
     <table class="table mt-1">
         <thead>
           <tr class="tHead">
@@ -18,7 +18,7 @@
             <td><b>{{O.empid}}</b></td>
             <td>{{O.name}}</td>
             <td>{{O.qualification}}</td>
-            <td style="color:rgb(49, 11, 74);"><b>{{O.yearofexperience}}</b></td>
+            <td>{{O.yearofexperience}}</td>
             <td>{{O.joiningdate | date}}</td>
             <td>
                 <button class="btn btn-icon btn-success btn-sm" (click)="open(O)">

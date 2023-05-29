@@ -14,11 +14,11 @@
         </thead>
         <tbody>
           <tr class="tBody" *ngFor="let O of OfficerList index as i">
-            <th >{{i+1}}</th>
+            <td >{{i+1}}</td>
             <td><b>{{O.empid}}</b></td>
-            <td style="color:rgb(14, 178, 207);"><b>{{O.name}}</b></td>
+            <td>{{O.name}}</td>
             <td>{{O.qualification}}</td>
-            <td style="color:rgb(2, 80, 113);"><b>{{O.yearofexperience}}</b></td>
+            <td style="color:rgb(2, 80, 113);">{{O.yearofexperience}}</td>
             <td>{{O.joiningdate}}</td>
             <td>
               <a class="edit" (click)="open(O)">

@@ -14,7 +14,7 @@
   
           <div class="tab-content mt-3">
           <div class="tab-pane fade show active" id="Companies">            
-            <div class="container-fluid mt-4">
+            <!-- <div class="container-fluid mt-4">
                 <mat-accordion *ngFor="let C of placements index as i">
   
                     <mat-expansion-panel (opened)="panelOpenState = true"
@@ -28,33 +28,45 @@
                       <table class="table-responsive text-nowrap table-bordered">
                         <thead>
                             <tr class="headings">
-                                <th style="width:15%">CompanyName</th>
-                                <th style="width:5%">Mobleno</th>
-                                <th style="width:15%">Email-Id</th>
+                              <th style="width:10%">Jobrole</th>
+                              <th style="width:20%">Required Skills</th>
                                 <th style="width:15%">Joblocation</th>
-                                <th style="width:10%">Jobrole</th>
-                                <th style="width:20%">Required Skills</th>
                                 <th style="width:10%">Apply LastDate</th>
                                 <th style="width:10%"> &nbsp;website</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr class="body">
-                                <td style="color:rgb(30, 30, 81);font-weight: 600;font-size: 12px;">{{C.companyname}}</td>
-                                <td>{{C.mobileno}}</td>
-                                <td>{{C.emailid}}</td>
+                              <td>{{C.jobrole}}</td>
+                              <td>{{C.requiredskills}}</td>
                                 <td>{{C.joblocation}}</td>
-                                <td>{{C.jobrole}}</td>
-                                <td>{{C.requiredskills}}</td>
                                 <td>{{C.applylastdate}}<sup style="color: red; font-size: 16px;">*</sup></td>
-                                <td>{{C.companywebsite}}</td>
+                                <td>
+                                  <a href="https://www.google.com" target="_self">{{C.companywebsite}}</a>
+                                </td>
                             </tr>
                         </tbody>
                       </table>
                     </mat-expansion-panel>
                   </mat-accordion>
                   
-            </div>
+            </div> -->
+            <div class="row">
+              <div class="col-sm-4" *ngFor="let C of placements">
+                <div class="card" >
+                  <div class="card-body">
+                    <h2>{{C.jobrole}}</h2>
+                    <h5>{{C.companyname}}</h5>
+                    <p><span class="material-symbols-outlined location">location_on</span>&nbsp;{{C.joblocation}}</p>
+                    <p>Skills : {{C.requiredskills}}</p>
+                    <h6><span style="color:red;font-size: 14px;">*</span>&nbsp;LastDate:{{C.applylastdate}}</h6>
+                    website:  <a href="https://www.google.com" target="_self">{{C.companywebsite}}</a>
+                  </div>
+                </div>
+                
+              </div>
+                </div>
+
           </div>
   
   <!--Students Record for Apply Jobs -->
@@ -99,7 +111,9 @@
                           <td style="color: teal;font-weight: 500;">{{S.companyname}}</td>
                           <td>{{S.jobrole}}</td>
                           <td>{{S.interview}}<sup style="color: red;; font-size: 16px;">*</sup></td>
-                          <td [ngClass]="S.status=='accept'?'success':'pending'">{{S.status}}</td>
+                          <td >
+                            <span [ngClass]="S.status=='accept'?'success':'pending'"> {{S.status}}</span>
+                            </td>
                           <td>{{S.remarks}}</td>
                           <td class="download" (click)="download(S)">
                             <span class="material-symbols-outlined">
