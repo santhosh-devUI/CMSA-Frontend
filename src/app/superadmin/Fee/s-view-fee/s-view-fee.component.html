@@ -46,9 +46,9 @@
             </thead>
             <tbody>
                 <tr *ngFor="let S of stotalFee; index as i">
-                    <th scope="row">{{i+1}}</th>
+                    <td scope="row">{{i+1}}</td>
                     <td style="color: rgb(35, 33, 33);"><b>{{S.hallticket}}</b></td>
-                    <td style="color:rgb(0, 130, 128)"><b>{{S.studentname}}</b></td>
+                    <td>{{S.studentname}}</td>
                     <td>{{S.branch}}</td>
                     <td>{{S.clearedby}}</td>
                     <td>
@@ -94,7 +94,7 @@
                     </thead>
                     <tbody>
                         <tr *ngFor="let S of Totalfee; index as i">
-                            <th scope="row">{{i+1}}</th>
+                            <td scope="row">{{i+1}}</td>
                             <td style="color: black;font-weight: bold;">{{S.hallticket}}</td>
                             <td>{{S.typeoffee}}</td>
                             <td>{{S.totalfee}}</td>

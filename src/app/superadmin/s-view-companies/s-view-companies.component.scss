@@ -1,5 +1,9 @@
+.search-student-btn .btn-primary {
+    background-color: #403776;
+    color: gold;
+}
 .mat-expansion-panel{
-    background-color: #a09ac1;
+    background-color: transparent;
     width: 100%;
     margin: auto;
 }
@@ -33,17 +37,26 @@
   'opsz' 48
 }
 .Expand{
-    color: blue;
+    color: rgb(146, 155, 255);
     cursor: pointer;
 }
 .Expand:hover{
-color: lightgrey;
+color: blue;
 }
 .pending{
-    color: brown;
+    background-color: #ffee4a;;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0.6em 7px;
 }
 .success{
-    color: green;
+    background-color: #1de9b6;
+    color: white;
+    border-radius: 5px;
+    font-size: 12px;
+    font-weight: 400;
+    padding: 0.6em 7px;
 }
 .form-control{
     background-color: floralwhite;
@@ -58,3 +71,21 @@ color: lightgrey;
     color: green;
     cursor: pointer;
   }
+h2{
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 22px;
+    color: #121224;
+    max-width: 100%;
+    display: block;
+}
+.material-symbols-outlined{
+    font-size: 14px;
+}
+.location{
+    color: red;
+}
+.card{
+    background-color: lightgrey;
+    border-radius: 5px;
+}

@@ -24,7 +24,7 @@ export class ViewOfficerComponent implements OnInit {
   editOfficer(e:any){
     this.dialog.open(EditOfficerComponent,{
       width:"70%",
-      height:"80%",
+      height:"50%",
       data:e
     })
   }
